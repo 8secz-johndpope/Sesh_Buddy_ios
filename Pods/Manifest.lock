@@ -1,0 +1,45 @@
+PODS:
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
+  - HexColors (4.0.0)
+  - IQKeyboardManagerSwift (5.0.8)
+  - PPTopMostController (0.0.1)
+  - REFrostedViewController (2.4.8)
+  - RMessage (2.3.2):
+    - HexColors (~> 4.0)
+    - PPTopMostController
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.3)
+  - IQKeyboardManagerSwift (~> 5.0.8)
+  - REFrostedViewController (~> 2.4)
+  - RMessage
+  - SVProgressHUD (~> 2.2.5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - HexColors
+    - IQKeyboardManagerSwift
+    - PPTopMostController
+    - REFrostedViewController
+    - RMessage
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  PPTopMostController: 4e6f1e5f8c645bdcc74cd837a20f607ff262c048
+  REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+  RMessage: 761f8ff71247b8d72d0c4a0be5a8e6ce8dfdedd0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 2ab54569cbdd97b34daab062f045d71d4e37f5f7
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="126" id="KGk-i7-Jjw" customClass="EditProfileInputTableViewCell" customModule="SESH_BUDDY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fh8-ML-uiP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjC-4P-tSO">
+                                <rect key="frame" x="20" y="0.0" width="75" height="82"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY7-NX-758">
+                                <rect key="frame" x="20" y="124" width="280" height="1.5"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1.5" id="z6D-Im-beh"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yUV-08-Nfg">
+                                <rect key="frame" x="20" y="84" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cGk-j8-I6g"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xjC-4P-tSO" firstAttribute="leading" secondItem="Fh8-ML-uiP" secondAttribute="leading" constant="20" id="9g4-wt-qpP"/>
+                            <constraint firstItem="yUV-08-Nfg" firstAttribute="leading" secondItem="Fh8-ML-uiP" secondAttribute="leading" constant="20" id="AnA-k1-j7J"/>
+                            <constraint firstItem="xjC-4P-tSO" firstAttribute="top" secondItem="Fh8-ML-uiP" secondAttribute="top" id="C5I-ba-FRw"/>
+                            <constraint firstAttribute="trailing" secondItem="zY7-NX-758" secondAttribute="trailing" constant="20" id="NBY-4a-F9d"/>
+                            <constraint firstItem="yUV-08-Nfg" firstAttribute="top" secondItem="xjC-4P-tSO" secondAttribute="bottom" constant="2" id="gO8-sO-fj1"/>
+                            <constraint firstAttribute="trailing" secondItem="yUV-08-Nfg" secondAttribute="trailing" constant="20" id="hWH-dL-pxU"/>
+                            <constraint firstItem="zY7-NX-758" firstAttribute="leading" secondItem="Fh8-ML-uiP" secondAttribute="leading" constant="20" id="ikZ-rY-IfK"/>
+                            <constraint firstAttribute="bottom" secondItem="zY7-NX-758" secondAttribute="bottom" id="kGT-Ov-nwX"/>
+                            <constraint firstItem="zY7-NX-758" firstAttribute="top" secondItem="yUV-08-Nfg" secondAttribute="bottom" id="pau-VA-MZo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Fh8-ML-uiP" secondAttribute="bottom" id="9s7-eY-Q4t"/>
+                    <constraint firstItem="Fh8-ML-uiP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Jo9-iV-5JN"/>
+                    <constraint firstAttribute="trailing" secondItem="Fh8-ML-uiP" secondAttribute="trailing" id="KyA-m2-xYc"/>
+                    <constraint firstItem="Fh8-ML-uiP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="W5c-a3-MFF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="97" y="95"/>
+        </tableViewCell>
+    </objects>
+</document>

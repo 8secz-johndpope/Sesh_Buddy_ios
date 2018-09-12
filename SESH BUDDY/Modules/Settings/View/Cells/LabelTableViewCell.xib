@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="KGk-i7-Jjw" customClass="LabelTableViewCell" customModule="SESH_BUDDY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-xm-ed2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT1-Up-SOV">
+                                <rect key="frame" x="15" y="5" width="42" height="70.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZS-fD-K6X">
+                                <rect key="frame" x="256" y="25" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jZS-fD-K6X" firstAttribute="centerY" secondItem="DT1-Up-SOV" secondAttribute="centerY" id="4Sz-Wl-LT5"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80.5" id="7DR-UU-bVB"/>
+                            <constraint firstItem="DT1-Up-SOV" firstAttribute="top" secondItem="Alz-xm-ed2" secondAttribute="top" constant="5" id="FYA-XW-KUZ"/>
+                            <constraint firstAttribute="bottom" secondItem="DT1-Up-SOV" secondAttribute="bottom" constant="5" id="MFC-lZ-ZWe"/>
+                            <constraint firstItem="DT1-Up-SOV" firstAttribute="leading" secondItem="Alz-xm-ed2" secondAttribute="leading" constant="15" id="V0D-la-ESS"/>
+                            <constraint firstAttribute="trailing" secondItem="jZS-fD-K6X" secondAttribute="trailing" constant="15" id="YFG-Yn-Y4Y"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Alz-xm-ed2" secondAttribute="bottom" constant="5" id="Bu7-ya-8Zg"/>
+                    <constraint firstAttribute="trailing" secondItem="Alz-xm-ed2" secondAttribute="trailing" id="WPh-7t-VyX"/>
+                    <constraint firstItem="Alz-xm-ed2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mQd-nv-MKF"/>
+                    <constraint firstItem="Alz-xm-ed2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xo6-1N-tic"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="Alz-xm-ed2" id="aX8-Pk-tEu"/>
+                <outlet property="descLabel" destination="DT1-Up-SOV" id="Xuk-Ep-rha"/>
+                <outlet property="toggleSwitch" destination="jZS-fD-K6X" id="XTp-TH-pCs"/>
+            </connections>
+            <point key="canvasLocation" x="-155" y="5"/>
+        </tableViewCell>
+    </objects>
+</document>

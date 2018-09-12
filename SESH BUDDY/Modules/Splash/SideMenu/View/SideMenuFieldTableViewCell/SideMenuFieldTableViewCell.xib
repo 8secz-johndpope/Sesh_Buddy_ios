@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="SideMenuFieldTableViewCell" customModule="SESH_BUDDY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-Yi-wMi">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="66.5"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" image="sidemenuItemPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-94-2fu">
+                                <rect key="frame" x="15" y="9" width="15" height="20"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zky-dP-9Rk">
+                                <rect key="frame" x="55" y="8" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOb-l8-EBZ">
+                                <rect key="frame" x="20" y="65.5" width="260" height="1"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.20999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="FZ3-zm-0uu"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="uOK-eL-Oqb"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zky-dP-9Rk" firstAttribute="leading" secondItem="cmR-94-2fu" secondAttribute="trailing" constant="25" id="8Cr-38-Die"/>
+                            <constraint firstAttribute="bottom" secondItem="UOb-l8-EBZ" secondAttribute="bottom" id="9Ot-2b-cbB"/>
+                            <constraint firstItem="cmR-94-2fu" firstAttribute="centerY" secondItem="Zky-dP-9Rk" secondAttribute="centerY" id="9eV-bg-Omg"/>
+                            <constraint firstItem="Zky-dP-9Rk" firstAttribute="top" secondItem="b2c-Yi-wMi" secondAttribute="top" constant="8" id="DhC-nS-poU"/>
+                            <constraint firstAttribute="trailing" secondItem="UOb-l8-EBZ" secondAttribute="trailing" constant="20" id="POl-Yg-y6z"/>
+                            <constraint firstItem="UOb-l8-EBZ" firstAttribute="leading" secondItem="b2c-Yi-wMi" secondAttribute="leading" constant="20" id="bxl-VC-2EE"/>
+                            <constraint firstItem="UOb-l8-EBZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Zky-dP-9Rk" secondAttribute="bottom" constant="8" id="gKG-3a-oik"/>
+                            <constraint firstItem="cmR-94-2fu" firstAttribute="leading" secondItem="b2c-Yi-wMi" secondAttribute="leading" constant="15" id="iPN-Z0-elp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="b2c-Yi-wMi" secondAttribute="trailing" id="4kv-Y0-0o9"/>
+                    <constraint firstAttribute="bottom" secondItem="b2c-Yi-wMi" secondAttribute="bottom" id="G2m-fh-2BH"/>
+                    <constraint firstItem="b2c-Yi-wMi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HB5-0J-Yai"/>
+                    <constraint firstItem="b2c-Yi-wMi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xin-bb-5Eu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="b2c-Yi-wMi" id="cDR-Ub-UOV"/>
+                <outlet property="bottomLineView" destination="UOb-l8-EBZ" id="mUd-pE-OjC"/>
+                <outlet property="sideMenuFieldIcon" destination="cmR-94-2fu" id="p6O-yY-TjS"/>
+                <outlet property="sideMenuFieldName" destination="Zky-dP-9Rk" id="sfF-eU-9X3"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="77.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sidemenuItemPlaceholder" width="15" height="20"/>
+    </resources>
+</document>
