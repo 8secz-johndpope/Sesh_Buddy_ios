@@ -24,7 +24,7 @@ extension UIViewController {
       navController.navigationBar.setBackgroundImage(nil, for: .default)
       navController.navigationBar.shadowImage = nil
       navController.navigationBar.backgroundColor = .clear
-      navController.navigationBar.isTranslucent = false
+      navController.navigationBar.isTranslucent = true
       navController.navigationBar.barTintColor = to
     }
   }

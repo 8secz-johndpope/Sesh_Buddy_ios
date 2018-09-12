@@ -22,8 +22,6 @@ enum SideMenuSections:Int {
 }
 class SideMenuViewController: UIViewController {
     
-
-    
     @IBOutlet weak var versionButton: UIButton!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var editProfileButton: UIButton!
@@ -58,6 +56,16 @@ class SideMenuViewController: UIViewController {
     @IBAction func userViewClicked(_ sender: Any) {
     }
     @IBAction func editProfileButtonAction(_ sender: Any) {
+        let editProfileViewController = EditProfileWireFrame.createEditProfileModule()
+        guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+            return
+        }
+        self.frostedViewController.hideMenuViewController()
+        DispatchQueue.main.async {
+            nav.pushViewController(editProfileViewController, animated: true)
+        }
+        
+        
     }
 }
 
@@ -117,6 +125,9 @@ extension SideMenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == SideMenuSections.count.rawValue {
+            return 0
+        }
         return 1
     }
     
