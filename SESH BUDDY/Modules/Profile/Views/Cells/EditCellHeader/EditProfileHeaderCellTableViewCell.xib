@@ -30,7 +30,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9i-BW-f1M">
                                 <rect key="frame" x="0.0" y="-1" width="320" height="94"/>
-                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,6 +53,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="R3X-bg-TlT" id="1kd-T1-MVe"/>
+                <outlet property="headerButton" destination="L9i-BW-f1M" id="xwm-he-8za"/>
+                <outlet property="headerLabel" destination="7j2-L2-1B8" id="ZG2-PE-lSo"/>
+            </connections>
             <point key="canvasLocation" x="34" y="96"/>
         </tableViewCell>
     </objects>

@@ -9,16 +9,23 @@
 import UIKit
 
 class TextViewTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var characterLimitLabel: UILabel!
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var sepratorView: UIView!
+    @IBOutlet weak var profileTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        sepratorView.backgroundColor = UIColor.backgroundGrey
+        let smallFont = Fonts.mavenProRegular.getFont(11)
+        let textfieldFont = Fonts.mavenProRegular.getFont(14)
+        let characterLabelFont = Fonts.mavenProRegular.getFont(10)
+        characterLimitLabel.font = characterLabelFont
+        headerLabel.font = smallFont
+        profileTextView.font = textfieldFont
+        profileTextView.textColor =  UIColor.labelTextColor
+        headerLabel.textColor = UIColor.labelTextColor
+        profileTextView.contentInset = UIEdgeInsetsMake(5, 0, 5, 0)
     }
     
 }

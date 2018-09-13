@@ -37,7 +37,7 @@ class SettingsViewController:UIViewController {
     }
     
     func setUPUI() {
-        self.settingsTableView.backgroundColor = UIColor.greyBackgroundColor
+        self.settingsTableView.backgroundColor = UIColor.backgroundGrey
         self.settingsTableView.registerCellFrom(labelTableViewCell)
         self.settingsTableView.dataSource = self
         self.settingsTableView.delegate = self
@@ -54,6 +54,7 @@ extension SettingsViewController: SettingsViewProtocol {
 }
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let enumVal = SettingsSection.init(rawValue: indexPath.section) else {
             return 
         }

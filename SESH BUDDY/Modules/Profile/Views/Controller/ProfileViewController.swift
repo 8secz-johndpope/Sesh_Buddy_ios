@@ -117,19 +117,28 @@ extension ProfileViewController: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.setCellValue(type: .firstName)
                 return cell
             case .lastName:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                 cell.setCellValue(type: .lastName)
                 return cell
             case .dateOfBirth:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                 cell.setCellValue(type: .dateOfBirth)
                 return cell
             case .gender:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                    return UITableViewCell()
+                }
+                 cell.setCellValue(type: .gender)
+                return cell
+            case .aboutMe:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: textViewTableViewCell) as? TextViewTableViewCell else {
                     return UITableViewCell()
                 }
                 return cell
@@ -138,7 +147,20 @@ extension ProfileViewController: UITableViewDataSource {
             }
             
         case .accountDetails:
-            break
+            guard let rowVal = AccountDetailsSection.init(rawValue: indexPath.row) else {
+                return UITableViewCell()
+            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                return UITableViewCell()
+            }
+            switch rowVal {
+            case .userName: cell.setAccountDetails(type: .userName)
+            case .favoritShope: cell.setAccountDetails(type: .favoritShope)
+            case .emailAddress: cell.setAccountDetails(type: .emailAddress)
+            default:
+                break
+            }
+            return cell
         case .logout:
             break
         default:
@@ -150,5 +172,39 @@ extension ProfileViewController: UITableViewDataSource {
 }
 
 extension ProfileViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == ProfileSections.profileInfo.rawValue {
+            return 0
+        }
+        return 55
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if let view = Bundle.main.loadNibNamed("EditProfileHeaderCellTableViewCell", owner: self, options: nil)?[0] as? EditProfileHeaderCellTableViewCell {
+            
+            guard let enumVal = ProfileSections.init(rawValue: section) else {
+                return UIView()
+            }
+            
+            switch enumVal {
+            case .personalInfo:
+                view.headerLabel.text = "Personal Information"
+            case  .profileInfo:
+                view.headerLabel.text = ""
+            case .accountDetails:
+                view.headerLabel.text = "Account Details"
+            case .logout:
+               view.headerLabel.text = "LOGOUT"
+            default:
+                view.headerLabel.text = ""
+            }
+            
+            return view
+        }
+        return UIView()
+    }
+    
     
 }

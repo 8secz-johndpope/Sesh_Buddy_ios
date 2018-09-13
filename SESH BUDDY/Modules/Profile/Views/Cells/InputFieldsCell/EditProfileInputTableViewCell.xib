@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="125.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRST NAME:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjC-4P-tSO">
-                                <rect key="frame" x="20" y="0.0" width="75" height="82"/>
+                                <rect key="frame" x="20" y="8" width="75" height="74"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                         <constraints>
                             <constraint firstItem="xjC-4P-tSO" firstAttribute="leading" secondItem="Fh8-ML-uiP" secondAttribute="leading" constant="20" id="9g4-wt-qpP"/>
                             <constraint firstItem="yUV-08-Nfg" firstAttribute="leading" secondItem="Fh8-ML-uiP" secondAttribute="leading" constant="20" id="AnA-k1-j7J"/>
-                            <constraint firstItem="xjC-4P-tSO" firstAttribute="top" secondItem="Fh8-ML-uiP" secondAttribute="top" id="C5I-ba-FRw"/>
+                            <constraint firstItem="xjC-4P-tSO" firstAttribute="top" secondItem="Fh8-ML-uiP" secondAttribute="top" constant="8" id="C5I-ba-FRw"/>
                             <constraint firstAttribute="trailing" secondItem="zY7-NX-758" secondAttribute="trailing" constant="20" id="NBY-4a-F9d"/>
                             <constraint firstItem="yUV-08-Nfg" firstAttribute="top" secondItem="xjC-4P-tSO" secondAttribute="bottom" constant="2" id="gO8-sO-fj1"/>
                             <constraint firstAttribute="trailing" secondItem="yUV-08-Nfg" secondAttribute="trailing" constant="20" id="hWH-dL-pxU"/>
@@ -67,6 +67,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="Fh8-ML-uiP" id="PWw-AY-5zW"/>
+                <outlet property="headerLabel" destination="xjC-4P-tSO" id="47z-MS-i1n"/>
+                <outlet property="profileTextField" destination="yUV-08-Nfg" id="6ER-HM-KCN"/>
+                <outlet property="sepratorView" destination="zY7-NX-758" id="qQD-t2-BUy"/>
+            </connections>
             <point key="canvasLocation" x="97" y="95"/>
         </tableViewCell>
     </objects>

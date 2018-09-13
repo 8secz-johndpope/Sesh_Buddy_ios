@@ -22,6 +22,8 @@
 		0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5D213E74AA00FCE6BF /* Reachability.swift */; };
 		0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5E213E74AA00FCE6BF /* ServerResponseModal.swift */; };
 		0031CB67213E799F00FCE6BF /* AuthNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB66213E799F00FCE6BF /* AuthNavigationViewController.swift */; };
+		186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCFE2214AD852001D397F /* StatusPopUpView.swift */; };
+		186BCFE5214AD870001D397F /* StatusPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186BCFE4214AD870001D397F /* StatusPopUpView.xib */; };
 		1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884ACC72148397A0012666F /* SettingsInteractor.swift */; };
 		1884ACCC214841DB0012666F /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884ACCA214841DB0012666F /* NotificationsViewController.swift */; };
 		1884ACCD214841DB0012666F /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1884ACCB214841DB0012666F /* NotificationsViewController.xib */; };
@@ -114,6 +116,8 @@
 		0031CB5D213E74AA00FCE6BF /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0031CB5E213E74AA00FCE6BF /* ServerResponseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseModal.swift; sourceTree = "<group>"; };
 		0031CB66213E799F00FCE6BF /* AuthNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthNavigationViewController.swift; sourceTree = "<group>"; };
+		186BCFE2214AD852001D397F /* StatusPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPopUpView.swift; sourceTree = "<group>"; };
+		186BCFE4214AD870001D397F /* StatusPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusPopUpView.xib; sourceTree = "<group>"; };
 		1884ACC72148397A0012666F /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		1884ACCA214841DB0012666F /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		1884ACCB214841DB0012666F /* NotificationsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
@@ -515,6 +519,8 @@
 				21035203213DB30800ADCEAB /* Wrappers */,
 				210351FA213DAEF100ADCEAB /* Extension */,
 				21035222213DBB0D00ADCEAB /* Constants */,
+				186BCFE2214AD852001D397F /* StatusPopUpView.swift */,
+				186BCFE4214AD870001D397F /* StatusPopUpView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -932,6 +938,7 @@
 				219407CD2140510E0020FAA9 /* Lato-Light.ttf in Resources */,
 				2142EB9D2141AFDC0044D60C /* LabelTableViewCell.xib in Resources */,
 				219407D22140510E0020FAA9 /* MavenPro-Regular.ttf in Resources */,
+				186BCFE5214AD870001D397F /* StatusPopUpView.xib in Resources */,
 				1884ACDE2148559B0012666F /* TextViewTableViewCell.xib in Resources */,
 				213CDA48213EFF6800B1C874 /* HomeFlow.storyboard in Resources */,
 				18E888812142ED4D0050ECCF /* RMessagesDefaultDesign.json in Resources */,
@@ -1008,6 +1015,7 @@
 				0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */,
 				2142EB7D214198B40044D60C /* CreateUserInteracter.swift in Sources */,
 				2103521F213DB40500ADCEAB /* NSNumber+Extension.swift in Sources */,
+				186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */,
 				2103521A213DB40500ADCEAB /* UIImage+Extension.swift in Sources */,
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
 				1884ACF4214866F00012666F /* EditProfileProtocol.swift in Sources */,

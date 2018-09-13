@@ -13,12 +13,21 @@ class EntryViewController: REFrostedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       self.addBottomViewForIphoneX()
+        addStatusSheetView()
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func addStatusSheetView() {
+        let vw = UIView()
+        vw.backgroundColor = UIColor.red
+        vw.frame = CGRect(x: 0, y: 100, width: screenWidth, height: 60)
+        self.view.addSubview(vw)
+    }
+    
   func addBottomViewForIphoneX() {
     if UIDevice.current.type == .iPhoneX {
       if #available(iOS 11.0, *) {

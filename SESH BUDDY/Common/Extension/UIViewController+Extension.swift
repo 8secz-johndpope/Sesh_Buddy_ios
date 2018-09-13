@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+enum RightBarButtonType{
+    case plus
+    case save
+}
 extension UIViewController {
   func changeNavBarColor(_ to: UIColor) {
     guard let navController = self.navigationController else {
@@ -68,6 +72,9 @@ extension UIViewController {
         } else {
             self.navigationItem.leftBarButtonItem = nil
         }
+    }
+    func setNavBarRightButton() {
+        
     }
 }
 

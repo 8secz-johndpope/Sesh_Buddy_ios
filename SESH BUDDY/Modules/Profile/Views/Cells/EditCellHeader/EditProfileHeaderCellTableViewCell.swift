@@ -9,15 +9,15 @@
 import UIKit
 
 class EditProfileHeaderCellTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var headerButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.bgView.backgroundColor = UIColor.backgroundGrey
+        let textfieldFont = Fonts.mavenProRegular.getFont(14)
+        headerLabel.font = textfieldFont
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    
-}
+ }

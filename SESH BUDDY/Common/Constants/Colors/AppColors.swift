@@ -73,7 +73,7 @@ extension UIColor {
     }
     
     public class var backgroundGrey: UIColor {
-        return UIColor.init(red: 242, green: 242, blue: 242)
+        return UIColor.init(red: 244, green: 244, blue: 244)
     }
     
     public class var backgroundDarkGrey: UIColor {

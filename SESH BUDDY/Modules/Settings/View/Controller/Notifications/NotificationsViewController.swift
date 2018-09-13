@@ -23,7 +23,7 @@ class NotificationsViewController: UIViewController {
     let  labelTableViewCell = "LabelTableViewCell"
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.notificationsTableView.backgroundColor = UIColor.greyBackgroundColor
+        self.notificationsTableView.backgroundColor = UIColor.backgroundGrey
         self.notificationsTableView.registerCellFrom(labelTableViewCell)
         self.notificationsTableView.delegate = self
         self.notificationsTableView.dataSource = self
