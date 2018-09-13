@@ -24,10 +24,11 @@ enum PersonalInfoSection: Int {
     case count
 }
 
-enum accountDetailsSection {
+enum AccountDetailsSection: Int {
     case userName
     case favoritShope
     case emailAddress
+    case count
 }
 
 class ProfileViewController: UIViewController {
@@ -57,7 +58,7 @@ class ProfileViewController: UIViewController {
         self.profileTableView.registerCellFrom(editProfileInputTableViewCell)
         self.profileTableView.registerCellFrom(textViewTableViewCell)
         self.profileTableView.registerCellFrom(editProfileInputTableViewCell)
-         self.profileTableView.registerCellFrom(profileInfoTableViewCell)
+        self.profileTableView.registerCellFrom(profileInfoTableViewCell)
         self.profileTableView.delegate = self
         self.profileTableView.dataSource = self
         
@@ -79,7 +80,21 @@ extension ProfileViewController: UITableViewDataSource {
         return ProfileSections.count.rawValue
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let enumVal = ProfileSections.init(rawValue: section) else {
+            return 0
+        }
+        switch enumVal {
+        case .profileInfo:
+            return 1
+        case  .personalInfo:
+            return PersonalInfoSection.count.rawValue
+        case .accountDetails:
+            return AccountDetailsSection.count.rawValue
+        case .logout:
+            return 0
+        default:
+            return 0
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -99,13 +114,25 @@ extension ProfileViewController: UITableViewDataSource {
             }
             switch rowVal {
             case .firstName:
-                break
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                    return UITableViewCell()
+                }
+                return cell
             case .lastName:
-                break
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                    return UITableViewCell()
+                }
+                return cell
             case .dateOfBirth:
-                break
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                    return UITableViewCell()
+                }
+                return cell
             case .gender:
-                break
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
+                    return UITableViewCell()
+                }
+                return cell
             default:
                 break
             }
