@@ -20,4 +20,7 @@ enum Fonts : String {
   func getFont(_ size: CGFloat) -> UIFont {
     return UIFont.init(name: self.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
   }
+    func buttonFont()-> UIFont {
+        return UIFont.init(name: Fonts.mavenProMedium.rawValue, size: 16)!
+    }
 }

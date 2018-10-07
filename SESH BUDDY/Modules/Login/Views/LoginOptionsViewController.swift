@@ -18,7 +18,6 @@ class LoginOptionsViewController: UIViewController {
 
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginOptionsScrollView: UIScrollView!
-    
     @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var backgroungImageView: UIImageView!
@@ -30,6 +29,7 @@ class LoginOptionsViewController: UIViewController {
     @IBOutlet weak var rightSepratorView: UIView!
     @IBOutlet weak var signUpEmailButton: UIButton!
     
+    
     var presenter: LoginPresenterProtocol?
     
     override func viewDidLoad() {
@@ -39,28 +39,31 @@ class LoginOptionsViewController: UIViewController {
         setUPUI()
     }
     
+   
+    
     func setUPUI(){
         let buttonRadius: CGFloat = 3.0
         facebookLoginButton.layer.cornerRadius = buttonRadius
         snapchatLoginButton.layer.cornerRadius = buttonRadius
         signUpEmailButton.layer.cornerRadius = buttonRadius
         
+        signUpEmailButton.backgroundColor = UIColor.themeNavBarColor
         facebookLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Facebook ", image: Icons.facebook, type: .facebook), for: .normal)
         snapchatLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Snapchat ", image: Icons.snapchat, type: .snapchat), for: .normal)
         loginInfoLabel.font = Fonts.mavenProRegular.getFont(12)
         loginInfoLabel.text = "SeshBuddies respects your privacy. Name and Emails aren't displayed publicaly, and nothing posted to your Facebook and Snapchat account without permission."
-        signUpEmailButton.setTitle("Sign up with Email", for: .normal)
+        signUpEmailButton.setAttributedTitle(self.getAttributedString(withFirst: "Sign with", withSecond: " Email ", image: nil, type: .
+            email), for: .normal)
     }
     
-    
-    func getAttributedString(withFirst: String, withSecond: String , image: UIImage, type: LoginButtons)-> NSMutableAttributedString {
+    func getAttributedString(withFirst: String, withSecond: String , image: UIImage?, type: LoginButtons)-> NSMutableAttributedString {
         let firstString = NSMutableAttributedString(string: withFirst).lineSpacing(2)
         let secondString = NSMutableAttributedString(string: withSecond).lineSpacing(2)
         // create our NSTextAttachment
         let image1Attachment = NSTextAttachment()
-        image1Attachment.image = image
-        
-        // wrap the attachment in its own attributed string so we can append it
+        if image != nil {
+            image1Attachment.image = image
+        }
         let imageString = NSAttributedString(attachment: image1Attachment)
         switch type {
         case .facebook:
@@ -71,20 +74,23 @@ class LoginOptionsViewController: UIViewController {
             image1Attachment.bounds = CGRect(x: 0, y: -4, width: 15, height: 18)
             firstString.color(.black).font(Fonts.mavenProRegular.getFont(15)).alignment(.center)
             secondString.color(.black).font(Fonts.mavenProBold.getFont(15)).alignment(.center)
-        case .email: break
+        case .email:
+            firstString.color(.white).font(Fonts.mavenProRegular.getFont(15)).alignment(.center)
+            secondString.color(.white).font(Fonts.mavenProBold.getFont(15)).alignment(.center)
+             return firstString + secondString
         }
         return firstString + secondString + imageString
     }
     
     override func viewWillAppear(_ animated: Bool) {
+      //  self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
-        self.changeNavBarColor(.clear)
     }
     override func viewDidLayoutSubviews() {
-        self.changeNavBarColor(.clear)
+       // self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLayoutSubviews()
     }
-    
+   
     @IBAction func loginWithFacebookButtonclicked(_ sender: Any) {
         self.presenter?.didTapAtLoginWithFacebook()
     }

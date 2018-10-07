@@ -57,7 +57,8 @@ class LoginWireFrame: LoginWireFrameProtocol {
     func moveToCreateUserScreen(_ fromView: LoginViewProtocol) {
         let createUserView = CreateUserWireFrame.createUserModule()
         if let sourceView = fromView as? UIViewController {
-             sourceView.navigationController?.pushViewController(createUserView, animated: true)
+            sourceView.navigationController?.setNavigationBarHidden(false, animated: false)
+            sourceView.navigationController?.pushViewController(createUserView, animated: true)
            }
     }
 }

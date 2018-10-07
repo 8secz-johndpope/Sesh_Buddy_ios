@@ -45,27 +45,14 @@ extension UIAlertController {
   
   class func presentBanner(_ inView: UIViewController, message: String) {
     RMessage.showNotification(in: inView, title: "", subtitle: message, type: .custom, customTypeName: "banner") {
-      
     }
   }
   
   class func presentGlobalBanner(_ message: String) {
-    
-//    guard let window = appDelegate.window, let rootController = window.rootViewController as? EntryViewController else {
-//      return
-//    }
-   
-    RMessage.showNotification(withTitle: AppStrings.getBusinessName(), subtitle: message, type: .custom, customTypeName: "message", callback: {
-      
-      
-      
-    })
-    
-    
 
+    RMessage.showNotification(withTitle: AppStrings.getBusinessName(), subtitle: message, type: .custom, customTypeName: "message", callback: {
+    })
     }
-  
-  
   
   
   @discardableResult

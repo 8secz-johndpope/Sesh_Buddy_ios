@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CurrentSessionTableViewCell" customModule="SESH_BUDDY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wum-nF-eMT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1Q-ow-d1e">
+                                <rect key="frame" x="188" y="4.5" width="57" height="35"/>
+                                <color key="backgroundColor" red="1" green="0.13973214285714286" blue="0.15406994047619038" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="b3z-oH-fyd"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <state key="normal" title="End">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-4w-Ikr">
+                                <rect key="frame" x="75" y="15" width="42" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v1Q-ow-d1e" firstAttribute="centerY" secondItem="wum-nF-eMT" secondAttribute="centerY" id="39J-1S-j2k"/>
+                            <constraint firstItem="v1Q-ow-d1e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xtg-4w-Ikr" secondAttribute="trailing" constant="10" id="Mjl-X3-ojq"/>
+                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="centerY" secondItem="v1Q-ow-d1e" secondAttribute="centerY" id="XZz-yi-bmh"/>
+                            <constraint firstAttribute="bottom" secondItem="xtg-4w-Ikr" secondAttribute="bottom" constant="15" id="fJ8-1L-ESt"/>
+                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="top" secondItem="wum-nF-eMT" secondAttribute="top" constant="15" id="fzy-7k-x65"/>
+                            <constraint firstAttribute="trailing" secondItem="v1Q-ow-d1e" secondAttribute="trailing" constant="75" id="jmU-A9-I9a"/>
+                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="leading" secondItem="wum-nF-eMT" secondAttribute="leading" constant="75" id="u9U-a0-cpr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wum-nF-eMT" secondAttribute="trailing" id="NNg-JF-vG9"/>
+                    <constraint firstAttribute="bottom" secondItem="wum-nF-eMT" secondAttribute="bottom" id="TME-vD-fEK"/>
+                    <constraint firstItem="wum-nF-eMT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="e9n-aP-Y5k"/>
+                    <constraint firstItem="wum-nF-eMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l6O-q4-Vr1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="wum-nF-eMT" id="H4t-dT-KOD"/>
+                <outlet property="sessionEndButton" destination="v1Q-ow-d1e" id="5f4-DT-Lcn"/>
+                <outlet property="sessionLabel" destination="xtg-4w-Ikr" id="0Xs-as-18B"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

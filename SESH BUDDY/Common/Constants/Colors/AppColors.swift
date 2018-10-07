@@ -28,7 +28,9 @@ extension UIColor {
   public class var themeNavBarColor: UIColor {
     return UIColor.init(red: 1, green: 115, blue: 0)
   }
-  
+    public class var themeYellowColor: UIColor {
+        return UIColor.init(red: 251, green: 255, blue: 0)
+    }
   public class var themeNavBarTitleColor: UIColor {
     return .heading//UIColor.init(red: 63, green: 63, blue: 78)
   }
@@ -62,6 +64,9 @@ extension UIColor {
     return UIColor.init(red: 37, green: 42, blue: 54)
   }
   
+    public class var brown: UIColor {
+        return UIColor.init(red: 95, green: 32, blue: 0)
+    }
   //---------------------------------------------------- NAVIGATION BAR ----------------------------------------------------//
     
     convenience init(netHex:Int) {

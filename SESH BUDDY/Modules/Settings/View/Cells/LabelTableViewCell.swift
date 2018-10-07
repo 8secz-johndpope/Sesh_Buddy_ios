@@ -28,7 +28,7 @@ class LabelTableViewCell: UITableViewCell {
         toggleSwitch.onTintColor = onColor
         /*For off state*/
         toggleSwitch.tintColor = offColor
-        toggleSwitch.layer.cornerRadius = toggleSwitch.frame.height / 2
+        toggleSwitch.layer.cornerRadius = 16
         toggleSwitch.backgroundColor = offColor
     }
     func hideToogleButton(value: Bool){

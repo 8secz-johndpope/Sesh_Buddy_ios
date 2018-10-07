@@ -17,7 +17,6 @@ enum SideMenuSections:Int {
     case ratings
     case history
     case settings
-    case logout
     case count
 }
 class SideMenuViewController: UIViewController {
@@ -48,7 +47,7 @@ class SideMenuViewController: UIViewController {
         userImageView.image = Icons.profilePlaceHolder
         
         sideMenuTableView.registerCellFrom(sideMenuFieldTableViewCell)
-        
+        sideMenuTableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
     }
@@ -64,8 +63,6 @@ class SideMenuViewController: UIViewController {
         DispatchQueue.main.async {
             nav.pushViewController(editProfileViewController, animated: true)
         }
-        
-        
     }
 }
 
@@ -113,8 +110,24 @@ extension SideMenuViewController: UITableViewDelegate {
             DispatchQueue.main.async {
                 nav.pushViewController(settingsViewController, animated: true)
             }
-        case .logout: break
         default: break
+        }
+    }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? SideMenuFieldTableViewCell {
+            cell.sideMenuFieldIcon.isHighlighted = true
+            cell.sideMenuFieldName.textColor = .orange
+            cell.bgView.backgroundColor = UIColor.backgroundGrey
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? SideMenuFieldTableViewCell {
+            cell.sideMenuFieldIcon.isHighlighted = false
+            cell.sideMenuFieldName.textColor = .black
+            cell.bgView.backgroundColor = .sideMenuBackgroundColor
+            
         }
     }
 }
@@ -125,9 +138,6 @@ extension SideMenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == SideMenuSections.count.rawValue {
-            return 0
-        }
         return 1
     }
     

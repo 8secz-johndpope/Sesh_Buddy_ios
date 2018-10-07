@@ -28,6 +28,20 @@ struct Icons {
     static let session = #imageLiteral(resourceName: "session")
     static let buddies = #imageLiteral(resourceName: "buddies")
     static let setting = #imageLiteral(resourceName: "settings")
+
+    //MARK: STATUS ICONS
+    
+    static let plus_black = #imageLiteral(resourceName: "plus_black")
+    static let plus_green = #imageLiteral(resourceName: "plus_green")
+    static let plus_brown = #imageLiteral(resourceName: "plus_brown")
+    
+    //MARK: PROFILE
+    static let edit = #imageLiteral(resourceName: "edit")
+    
+    //MARK: COMMON
+    static let dropDown = UIImage(named: "dropDown")
+    static let plusRound = UIImage(named: "plus")
+    static let delete = UIImage(named: "delete")?.coloredImage(color: .white)
     
 }
 

@@ -23,23 +23,31 @@ class NotificationsViewController: UIViewController {
     let  labelTableViewCell = "LabelTableViewCell"
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.changeStyle(.default)
+        self.setNavBarTitleView(image: ThemeImages.appLogo)
+        
         self.notificationsTableView.backgroundColor = UIColor.backgroundGrey
         self.notificationsTableView.registerCellFrom(labelTableViewCell)
         self.notificationsTableView.delegate = self
         self.notificationsTableView.dataSource = self
         self.navigationItem.title = "Notifications"
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavBarRightButton(type: .plus)
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.setNavBarTitleView(image: ThemeImages.appLogo)
+        self.changeNavBarColor(.themeNavBarColor)
+    }
 }
 extension NotificationsViewController: SettingsViewProtocol {
     func onError(value: String) {
-        
     }
-    
     func showAlert(_ string: String) {
-        
     }
-    
-    
 }
 extension NotificationsViewController: UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,7 +58,6 @@ extension NotificationsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: labelTableViewCell) as? LabelTableViewCell else {
             return UITableViewCell()

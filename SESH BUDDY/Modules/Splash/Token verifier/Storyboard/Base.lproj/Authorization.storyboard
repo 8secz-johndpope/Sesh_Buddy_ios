@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pMq-ht-LKh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pMq-ht-LKh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +44,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7E-Il-iuw">
-                                                <rect key="frame" x="30" y="189" width="315" height="289"/>
+                                                <rect key="frame" x="30" y="189.5" width="315" height="288.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-Uz-tBG">
                                                         <rect key="frame" x="90" y="0.0" width="135" height="31"/>
@@ -63,7 +63,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-V8-UVs">
-                                                        <rect key="frame" x="0.0" y="101.5" width="315" height="40"/>
+                                                        <rect key="frame" x="0.0" y="101" width="315" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.99607843137254903" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Login with Snapchat">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,30 +73,30 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-MJ-ttB">
-                                                        <rect key="frame" x="0.0" y="151.5" width="315" height="57.5"/>
+                                                        <rect key="frame" x="0.0" y="151" width="315" height="57.5"/>
                                                         <string key="text">SeshBuddies respects your privacy. Names and emails aren't displayed publically, and nothing is posted to your Facebook or Snapchat account without permission.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCq-rK-Wzg">
-                                                        <rect key="frame" x="0.0" y="219" width="315" height="20"/>
+                                                        <rect key="frame" x="0.0" y="218.5" width="315" height="20"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="La4-R6-gJl">
-                                                                <rect key="frame" x="149.5" y="-0.5" width="17.5" height="21"/>
+                                                                <rect key="frame" x="149" y="-0.5" width="17.5" height="21"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-i5-50U">
-                                                                <rect key="frame" x="0.0" y="9" width="119.5" height="1"/>
+                                                                <rect key="frame" x="0.0" y="9.5" width="119" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Fbf-QV-47l"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1F-oI-Fr6">
-                                                                <rect key="frame" x="197" y="10" width="118" height="1"/>
+                                                                <rect key="frame" x="196.5" y="9.5" width="118.5" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="5YY-si-cMT"/>
@@ -117,7 +117,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emd-mS-78D">
-                                                        <rect key="frame" x="0.0" y="249" width="315" height="40"/>
+                                                        <rect key="frame" x="0.0" y="248.5" width="315" height="40"/>
                                                         <color key="backgroundColor" red="0.031372549019607843" green="0.70196078431372544" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="Sign up with Email">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

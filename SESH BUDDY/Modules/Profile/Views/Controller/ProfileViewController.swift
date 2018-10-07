@@ -23,7 +23,11 @@ enum PersonalInfoSection: Int {
     case aboutMe
     case count
 }
-
+enum Gender:Int {
+    case male
+    case female
+    case count
+}
 enum AccountDetailsSection: Int {
     case userName
     case favoritShope
@@ -40,12 +44,23 @@ class ProfileViewController: UIViewController {
     let textViewTableViewCell = "TextViewTableViewCell"
     let editProfileInputTableViewCell = "EditProfileInputTableViewCell"
     let profileInfoTableViewCell = "ProfileInfoTableViewCell"
+    var aboutMe = ""
+    var characterLimit = 100
+    let tagOfPlaceholderLabel = 200
+    let kTagaboutMeTextView = 201
+    let kTagprofileTextView = 202
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeStyle(.default)
+        self.setNavBarRightButton(type: .save)
+        self.showMenuBarButton(true)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         setUPUI()
+        let barButton = self.navigationItem.rightBarButtonItem
+        let btn = barButton?.customView as? UIButton
+        btn?.addTarget(self, action: #selector(self.saveProfileDetailsButtonClicked), for: .touchUpInside)
+        
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -129,18 +144,33 @@ extension ProfileViewController: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.profileTextField.tag = indexPath.row
+                self.setDatePickerToTextFieldInputAccessoryView(textfield: cell.profileTextField)
                  cell.setCellValue(type: .dateOfBirth)
                 return cell
             case .gender:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.profileTextField.tag = indexPath.row
+                self.setGenderPickerToTextfieldInputAccessoryView(textfield: cell.profileTextField)
                  cell.setCellValue(type: .gender)
                 return cell
             case .aboutMe:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: textViewTableViewCell) as? TextViewTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.selectionStyle = .none
+                cell.profileTextView.text = aboutMe
+                cell.profileTextView.tag = kTagaboutMeTextView
+                if aboutMe != "" {
+                    cell.placeHolderLAbel.isHidden = true
+                    cell.characterLimitLabel.text = "\(characterLimit-aboutMe.count)/\(characterLimit)"
+                }else {
+                    cell.characterLimitLabel.text = "Max 100 characters"
+                }
+                cell.placeHolderLAbel.tag = tagOfPlaceholderLabel
+                cell.profileTextView.delegate = self
                 return cell
             default:
                 break
@@ -169,10 +199,98 @@ extension ProfileViewController: UITableViewDataSource {
         
         return UITableViewCell()
     }
+    func getMinimumDateToBeSelect() -> Date {
+        
+        let currentDate = Date()
+        var returnedDate = Date()
+        returnedDate =  Calendar.current.date(byAdding: .year, value: -70, to: currentDate)!
+        
+        return returnedDate
+    }
+    
+    func getMaximumDateToBeSelect() -> Date {
+        
+        let currentDate = Date()
+        var returnedDate = Date()
+        returnedDate =  Calendar.current.date(byAdding: .year, value: -18, to: currentDate)!
+        
+        return returnedDate
+    }
+    
+    @objc func datePickerDidChange(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM yyyy, h:mm a"//"MMMM dd yyyy"
+        let orderDateString = dateFormatter.string(from: datePicker.date)
+        if orderDateString.count > 0 {
+            print(orderDateString)
+//            self.selectedDateNTime =  orderDateString
+//            selectedDate = datePicker.date
+        }
+    }
+     @objc func doneButtonAction(sender: UIBarButtonItem) {
+        self.view.endEditing(true)
+    }
+    func setDatePickerToTextFieldInputAccessoryView(textfield: UITextField){
+        let datePicker = UIDatePicker(frame: CGRect(x: 0, y: screenHeight, width: screenWidth, height: 216.0))
+        let minimumOrderDate = self.getMinimumDateToBeSelect()
+        datePicker.minimumDate = minimumOrderDate
+        datePicker.maximumDate = self.getMaximumDateToBeSelect()
+        datePicker.addTarget(self, action: #selector(self.datePickerDidChange(datePicker:)), for: .valueChanged)
+        datePicker.backgroundColor = UIColor.backgroundGrey
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.doneButtonAction(sender:)))
+        doneButton.tag = textfield.tag
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: screenHeight , width: screenWidth, height: 44.0))
+
+        toolBar.barStyle = .default
+        toolBar.items = [flexibleSpace, doneButton]
+        textfield.inputAccessoryView = toolBar
+        textfield.inputView = datePicker
+    }
+    
+    func setGenderPickerToTextfieldInputAccessoryView(textfield: UITextField) {
+        let genderPicker = UIPickerView()
+        genderPicker.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 216.0)
+        genderPicker.delegate = self
+        genderPicker.dataSource = self
+        genderPicker.backgroundColor = UIColor.backgroundGrey
+        textfield.inputAccessoryView = genderPicker
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(self.doneButtonAction(sender:)))
+        doneButton.tag = textfield.tag
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: screenHeight , width: screenWidth, height: 44.0))
+        toolBar.barStyle = .default
+        toolBar.items = [flexibleSpace, doneButton]
+        textfield.inputAccessoryView = toolBar
+        textfield.inputView = genderPicker
+    }
+    
+    @objc func saveProfileDetailsButtonClicked() {
+     print("Save profile button")
+    }
+}
+
+extension ProfileViewController: UIPickerViewDelegate {
+    
+}
+extension ProfileViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Gender.count.rawValue
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if row == Gender.male.rawValue {
+            return "Male"
+        } else {
+            return "Female"
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section == ProfileSections.profileInfo.rawValue {
             return 0
@@ -187,7 +305,8 @@ extension ProfileViewController: UITableViewDelegate {
             guard let enumVal = ProfileSections.init(rawValue: section) else {
                 return UIView()
             }
-            
+            let textfieldFont = Fonts.mavenProRegular.getFont(14)
+            view.headerLabel.font = textfieldFont
             switch enumVal {
             case .personalInfo:
                 view.headerLabel.text = "Personal Information"
@@ -197,14 +316,112 @@ extension ProfileViewController: UITableViewDelegate {
                 view.headerLabel.text = "Account Details"
             case .logout:
                view.headerLabel.text = "LOGOUT"
+               let textfieldBoldFont = Fonts.mavenProBold.getFont(15)
+               view.headerLabel.font = textfieldBoldFont
             default:
                 view.headerLabel.text = ""
             }
-            
             return view
         }
         return UIView()
     }
     
     
+}
+
+extension ProfileViewController: UITextViewDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if textView.tag == kTagaboutMeTextView {
+            let thisIndexPath = IndexPath(row: PersonalInfoSection.aboutMe.rawValue, section: ProfileSections.personalInfo.rawValue)
+            let cell = self.profileTableView.cellForRow(at: thisIndexPath) as? TextViewTableViewCell
+            
+            let currentText:NSString = textView.text as NSString
+            let updatedText = currentText.replacingCharacters(in: range, with: text)
+            
+            let startHeight = textView.frame.size.height
+            let calcHeight = textView.sizeThatFits(textView.frame.size).height  //iOS 8+ only
+            
+            if startHeight != calcHeight {
+                
+                UIView.setAnimationsEnabled(false) // Disable animations
+                self.profileTableView.beginUpdates()
+                self.profileTableView.endUpdates()
+                UIView.setAnimationsEnabled(true)
+                profileTableView?.scrollToRow(at: thisIndexPath,
+                                              at: .bottom,
+                                              animated: false)
+            }
+            aboutMe = updatedText
+            let superViewOfTextView = textView.superview
+            let placeHolderLabel = superViewOfTextView?.viewWithTag(tagOfPlaceholderLabel)
+            if aboutMe.count == 0 {
+                cell?.characterLimitLabel.text = "\(characterLimit)"
+                if placeHolderLabel != nil {
+                    placeHolderLabel!.isHidden = false
+                }
+            } else {
+                if aboutMe.count <= characterLimit {
+                     cell?.characterLimitLabel.text = "\(characterLimit-aboutMe.count)/\(characterLimit)"
+                    if placeHolderLabel != nil {
+                        placeHolderLabel!.isHidden = true
+                    }
+                }
+                else {
+                    return false
+                }
+            }
+        }
+
+        
+        return true
+        
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.tag == kTagaboutMeTextView {
+            let thisIndexPath = IndexPath(row: PersonalInfoSection.aboutMe.rawValue, section: ProfileSections.personalInfo.rawValue)
+            let cell = self.profileTableView.cellForRow(at: thisIndexPath) as? TextViewTableViewCell
+            cell?.placeHolderLAbel.isHidden = true
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        aboutMe = textView.text
+        
+        let superViewOfTextView = textView.superview
+        let placeHolderLabel = superViewOfTextView?.viewWithTag(tagOfPlaceholderLabel)
+        if aboutMe.count == 0 {
+            
+            if placeHolderLabel != nil {
+                placeHolderLabel!.isHidden = false
+            }
+        } else {
+            if placeHolderLabel != nil {
+                placeHolderLabel!.isHidden = true
+            }
+        }
+        self.profileTableView.reloadData()
+    }
+    
+    func updateHeightOfTextView(textview: UITextView) {
+        if textview.tag == kTagaboutMeTextView {
+            let indexPath = IndexPath(row: PersonalInfoSection.aboutMe.rawValue, section: ProfileSections.personalInfo.rawValue)
+            let cell = self.profileTableView.cellForRow(at: indexPath) as? TextViewTableViewCell
+            let startHeight = textview.frame.size.height
+            let calcHeight = textview.sizeThatFits(textview.frame.size).height  //iOS 8+ only
+            
+            if startHeight != calcHeight {
+                cell?.textviewHeightConstraint.constant = calcHeight
+            }
+        } else {
+        }
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        self.updateHeightOfTextView(textview: textView)
+    }
 }

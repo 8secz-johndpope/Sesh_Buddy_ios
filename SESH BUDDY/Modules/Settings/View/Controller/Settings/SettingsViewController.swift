@@ -28,21 +28,22 @@ class SettingsViewController:UIViewController {
         self.setNavBarTitleView(image: ThemeImages.appLogo)
         self.setUPUI() 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavBarRightButton(type: .plus)
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.setNavBarTitleView(image: ThemeImages.appLogo)
         self.changeNavBarColor(.themeNavBarColor)
-        
     }
-    
     func setUPUI() {
         self.settingsTableView.backgroundColor = UIColor.backgroundGrey
         self.settingsTableView.registerCellFrom(labelTableViewCell)
         self.settingsTableView.dataSource = self
         self.settingsTableView.delegate = self
     }
-    
 }
 extension SettingsViewController: SettingsViewProtocol {
     func onError(value: String) {
@@ -58,7 +59,6 @@ extension SettingsViewController: UITableViewDelegate {
         guard let enumVal = SettingsSection.init(rawValue: indexPath.section) else {
             return 
         }
-        
         switch enumVal {
         case .notifications:
             self.presenter?.didTapAtNotifications()
@@ -104,6 +104,4 @@ extension  SettingsViewController: UITableViewDataSource {
         cell.hideToogleButton(value: true)
         return cell
     }
-    
-    
 }

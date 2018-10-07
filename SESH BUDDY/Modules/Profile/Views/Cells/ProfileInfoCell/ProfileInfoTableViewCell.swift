@@ -19,6 +19,7 @@ class ProfileInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var bgView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        descriptionTextView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
     }
 
 }

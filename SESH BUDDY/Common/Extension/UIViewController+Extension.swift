@@ -56,7 +56,18 @@ extension UIViewController {
     @objc func menuBarBurronItemAction(_ sender: UIBarButtonItem) {
         self.frostedViewController.presentMenuViewController()
     }
-    
+    @objc func statusBarButtonItemAction(_ sender: UIBarButtonItem) {
+        guard let window = appDelegate.window, let rootController = window.rootViewController as? EntryViewController else {
+            return
+        }
+        rootController.addStatusSheetView(from: self)
+    }
+    func removeStatusSheetView() {
+        guard let window = appDelegate.window, let rootController = window.rootViewController as? EntryViewController else {
+            return
+        }
+        rootController.removeStatusSheet()
+    }
     func setNavBarTitleView(image: UIImage) {
         let imageView = UIImageView()
         imageView.image = image
@@ -73,11 +84,71 @@ extension UIViewController {
             self.navigationItem.leftBarButtonItem = nil
         }
     }
-    func setNavBarRightButton() {
-        
+    func setNavBarRightButton(type: RightBarButtonType) {
+        switch type {
+        case .plus:
+            var image = Icons.plus_green
+            switch AppInfo.selectedStatusType {
+            case .redUP:
+                image = Icons.plus_green
+            case .holding:
+                image = Icons.plus_brown
+            case .dry:
+                image = Icons.plus_black
+
+            }
+            let btn = BarButton(type: .custom)
+            btn.backgroundColor = .white
+            btn.setImage(image, for: .normal)
+            btn.topAnchor.constraint(equalTo: btn.topAnchor, constant: -20).isActive = true
+            btn.addTarget(self, action: #selector(self.statusBarButtonItemAction(_:)), for: .touchUpInside)
+            btn.widthAnchor.constraint(equalToConstant: 44).isActive = true
+            btn.heightAnchor.constraint(equalToConstant: 64).isActive = true
+            btn.translatesAutoresizingMaskIntoConstraints = false
+            let barButton = UIBarButtonItem(customView: btn)
+            self.navigationItem.rightBarButtonItem = barButton
+            
+        case .save:
+            self.removeStatusSheetView()
+            let btn = BarButton(type: .custom)
+            btn.setTitle("Save", for: .normal)
+            btn.setTitleColor(.white, for: .normal)
+            btn.titleLabel?.font = Fonts.mavenProMedium.getFont(16)
+            let barButton = UIBarButtonItem(customView: btn)
+            self.navigationItem.rightBarButtonItem = barButton
+            
+            break
+        }
+    }
+   
+    func changerightNavBarButton(type: StatusTypes) {
+        let vw = self.navigationItem.rightBarButtonItem?.customView as! UIButton
+        var image = Icons.plus_green
+        switch type {
+        case .redUP:
+            image = Icons.plus_green
+        case .holding:
+            image = Icons.plus_brown
+        case .dry:
+            image = Icons.plus_black
+        }
+        AppInfo.selectedStatusType = type
+        vw.setImage(image, for: .normal)
+        let barButton = UIBarButtonItem(customView: vw)
+        self.navigationItem.rightBarButtonItem = barButton
+        self.statusBarButtonItemAction(barButton)
+    }
+    func getNavigationBarHeight() -> CGFloat {
+        return  self.navigationController?.navigationBar.frame.size.height ?? 0
     }
 }
-
+class BarButton: UIButton {
+    
+    override var alignmentRectInsets: UIEdgeInsets {
+        return UIEdgeInsetsMake(0, -12, 0, 22)
+    }
+    
+}
 
 
 

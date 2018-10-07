@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import REFrostedViewController
 
-class CreateUserViewController: UIViewController {
-
+class CreateUserViewController: UIViewController, UITextViewDelegate {
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var createUserScrollView: UIScrollView!
     @IBOutlet weak var createUserContentView: UIView!
@@ -29,14 +30,18 @@ class CreateUserViewController: UIViewController {
     @IBOutlet weak var lastNameView: UIView!
     @IBOutlet weak var firstNameView: UIView!
     @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var privacyPolicyLabel: UILabel!
+    let TermsAndConditionURLString = ""
+    let PrivacyPolicyURLString = ""
     
+    @IBOutlet weak var termsAndConditionTextView: UITextView!
     
     var presenter: CreateUserPresenterProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeStyle(.default)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.setNavBarTitleView(image: ThemeImages.appLogo)
+        self.changeNavBarColor(.themeNavBarColor)
         setUPUI()
     }
     override func viewDidLayoutSubviews() {
@@ -45,9 +50,19 @@ class CreateUserViewController: UIViewController {
         self.setNavBarTitleView(image: ThemeImages.appLogo)
         self.changeNavBarColor(.themeNavBarColor)
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+          self.changeNavBarColor(.clear)
+         guard let rootController = appDelegate.window!.rootViewController as? REFrostedViewController, let navController = rootController.contentViewController as? UINavigationController else {
+            return
+        }
+        navController.setNavigationBarHidden(true, animated: false)
+        super.viewWillDisappear(animated)
+    }
     func setUPUI(){
-    let textfieldFont = Fonts.mavenProRegular.getFont(16)
+        setUPTermsAndConditionTextView()
+        self.termsAndConditionTextView.delegate = self
+        self.termsAndConditionTextView.textAlignment = .left
+        let textfieldFont = Fonts.mavenProRegular.getFont(16)
         let subTitleFont = Fonts.mavenProRegular.getFont(12)
         self.firstNameTextField.font = textfieldFont
         self.lastNameTextField.font = textfieldFont
@@ -69,9 +84,52 @@ class CreateUserViewController: UIViewController {
         self.lastNameTextField.delegate = self
         self.userNameTextField.delegate = self
         
+        joinNowButton.backgroundColor = UIColor.themeNavBarColor
+    }
+    
+    func setUPTermsAndConditionTextView() {
+        termsAndConditionTextView.isEditable = false
+        termsAndConditionTextView.attributedText = self.getTermsAndConditionStringFrom(firstString: "By tapping Join Now & Accept, You agree to the" + " ", termsString: "Terms Of Service" + " ", andString: "and" + " ", privacyPolicyString: "Privacy Policy")
+        let linkAttributes = [
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.orange,
+            NSAttributedStringKey.underlineColor.rawValue: UIColor.orange,
+            NSAttributedStringKey.underlineStyle.rawValue: NSUnderlineStyle.styleSingle.rawValue ] as [String : Any]
+        termsAndConditionTextView.linkTextAttributes = linkAttributes
     }
     
     
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange) -> Bool {
+        
+        //        UIApplication.shared.open(URL, options: , completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+        return true
+    }
+    
+    func getTermsAndConditionStringFrom(firstString: String, termsString: String, andString: String, privacyPolicyString: String)-> NSMutableAttributedString {
+        let combinedString = firstString + termsString + andString + privacyPolicyString
+        let attributedTermsAndConditions = NSMutableAttributedString(string: combinedString)
+        let rangeOfFirstString = (combinedString as NSString).range(of: firstString)
+        let rangeOfTermsString = (combinedString as NSString).range(of: termsString)
+        let rangeOfAndString = (combinedString as NSString).range(of: andString)
+        let rangeOfPrivacyString = (combinedString as NSString).range(of: privacyPolicyString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: rangeOfFirstString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: rangeOfAndString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.font, value: Fonts.mavenProRegular.getFont(12.5), range: rangeOfFirstString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.font, value: Fonts.mavenProRegular.getFont(13), range: rangeOfTermsString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.font, value: Fonts.mavenProRegular.getFont(12.5), range: rangeOfAndString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.font, value: Fonts.mavenProRegular.getFont(13), range: rangeOfPrivacyString)
+        let labelAtributes:[NSAttributedStringKey : Any]  = [
+            NSAttributedStringKey.foregroundColor: UIColor.orange,
+            NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+            NSAttributedStringKey.underlineColor: UIColor.orange
+        ]
+        attributedTermsAndConditions.addAttributes(labelAtributes, range: rangeOfTermsString)
+        attributedTermsAndConditions.addAttributes(labelAtributes, range: rangeOfPrivacyString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.link, value: URL(string: TermsAndConditionURLString) ?? "", range: rangeOfTermsString)
+        attributedTermsAndConditions.addAttribute(NSAttributedStringKey.link, value: URL(string: PrivacyPolicyURLString) ?? "", range: rangeOfPrivacyString)
+        return attributedTermsAndConditions
+        
+    }
     @IBAction func joinNowButtonClicked(_ sender: Any) {
         self.presenter?.createUserNuttonClicked()
     }

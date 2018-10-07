@@ -13,7 +13,7 @@ import UIKit
 var screenSize : CGRect     = UIScreen.main.bounds
 var screenWidth             = screenSize.size.width
 var screenHeight            = screenSize.size.height
-
+var navigationBarHeight     = 44
 //----------------------------------------STORYBOARDS---------------------------------------------------------------//
 
 enum Storyboards: String {
@@ -62,6 +62,19 @@ struct AppInfo {
                     ParametersKeys.operator_token: operatorToken]
         return dict
     }
+    static var selectedStatusType: StatusTypes = .redUP
+    static func setCurrentSelectedStatus(type: StatusTypes){
+        switch type {
+        case .redUP:
+            selectedStatusType = .redUP
+        case .holding:
+            selectedStatusType = .holding
+        case .dry:
+            selectedStatusType = .dry
+        }
+        
+    }
+    
     static func deviceToken() -> String {
         return ""//UserDefaults.standard.value(forKey: UserDefaultsKeys.deviceToken) as? String ?? "123456"
     }

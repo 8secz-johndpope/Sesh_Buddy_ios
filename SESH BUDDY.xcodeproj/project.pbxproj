@@ -97,6 +97,34 @@
 		219407D72140663B0020FAA9 /* SideMenuFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219407D52140663B0020FAA9 /* SideMenuFieldTableViewCell.swift */; };
 		219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219407D62140663B0020FAA9 /* SideMenuFieldTableViewCell.xib */; };
 		21EEAC4621402FE1009C5B8A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEAC4521402FE1009C5B8A /* HomeViewController.swift */; };
+		52184D6C2169C6D70002E800 /* SHMOKSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6B2169C6D70002E800 /* SHMOKSessionHandler.swift */; };
+		52184D6E2169C6F20002E800 /* MatchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6D2169C6F20002E800 /* MatchSessionHandler.swift */; };
+		52184D702169C7000002E800 /* DropSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6F2169C7000002E800 /* DropSessionHandler.swift */; };
+		52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D732169C7270002E800 /* SMOSssionHandler.swift */; };
+		52184D782169CBD70002E800 /* CurrentSessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D762169CBD70002E800 /* CurrentSessionTableViewCell.swift */; };
+		52184D792169CBD70002E800 /* CurrentSessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184D772169CBD70002E800 /* CurrentSessionTableViewCell.xib */; };
+		52184D7D216A1FF60002E800 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D7B216A1FF60002E800 /* HistoryViewController.swift */; };
+		52184D7E216A1FF60002E800 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184D7C216A1FF60002E800 /* HistoryViewController.xib */; };
+		52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D83216A210B0002E800 /* HistoryProtocols.swift */; };
+		52184D91216A210C0002E800 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D85216A210B0002E800 /* HistoryPresenter.swift */; };
+		52184D92216A210C0002E800 /* HistoryWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D87216A210C0002E800 /* HistoryWireFrame.swift */; };
+		52184D93216A210C0002E800 /* HistoryLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D8A216A210C0002E800 /* HistoryLocalDataManager.swift */; };
+		52184D94216A210C0002E800 /* HistoryAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D8C216A210C0002E800 /* HistoryAPIDataManager.swift */; };
+		52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D8E216A210C0002E800 /* HistoryInteractor.swift */; };
+		52184D96216A210C0002E800 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D8F216A210C0002E800 /* HistoryItem.swift */; };
+		52184D99216A23D60002E800 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D97216A23D60002E800 /* HistoryCollectionViewCell.swift */; };
+		52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184D98216A23D60002E800 /* HistoryCollectionViewCell.xib */; };
+		5219F5FC215F8EA100F1DC13 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F5215F8EA100F1DC13 /* HomeProtocol.swift */; };
+		5219F5FD215F8EA100F1DC13 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F7215F8EA100F1DC13 /* HomeWireframe.swift */; };
+		5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F9215F8EA100F1DC13 /* HomeInteractor.swift */; };
+		5219F5FF215F8EA100F1DC13 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */; };
+		5219F603215F93FF00F1DC13 /* HomeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */; };
+		5219F604215F93FF00F1DC13 /* HomeButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */; };
+		526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A6236215FAB2500573815 /* SessionTypeTableViewCell.swift */; };
+		526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A6237215FAB2500573815 /* SessionTypeTableViewCell.xib */; };
+		526A623D21609FF900573815 /* NewSessionNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A623B21609FF900573815 /* NewSessionNotificationVC.swift */; };
+		526A623E21609FF900573815 /* NewSessionNotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A623C21609FF900573815 /* NewSessionNotificationVC.xib */; };
+		529EF63C214CF82600402FD5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529EF63B214CF82600402FD5 /* Enums.swift */; };
 		E9D0A30A46EA5EC6C4435E77 /* Pods_SESH_BUDDY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */; };
 /* End PBXBuildFile section */
 
@@ -193,6 +221,34 @@
 		219407D52140663B0020FAA9 /* SideMenuFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuFieldTableViewCell.swift; sourceTree = "<group>"; };
 		219407D62140663B0020FAA9 /* SideMenuFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuFieldTableViewCell.xib; sourceTree = "<group>"; };
 		21EEAC4521402FE1009C5B8A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52184D6B2169C6D70002E800 /* SHMOKSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHMOKSessionHandler.swift; sourceTree = "<group>"; };
+		52184D6D2169C6F20002E800 /* MatchSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSessionHandler.swift; sourceTree = "<group>"; };
+		52184D6F2169C7000002E800 /* DropSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropSessionHandler.swift; sourceTree = "<group>"; };
+		52184D732169C7270002E800 /* SMOSssionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMOSssionHandler.swift; sourceTree = "<group>"; };
+		52184D762169CBD70002E800 /* CurrentSessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentSessionTableViewCell.swift; sourceTree = "<group>"; };
+		52184D772169CBD70002E800 /* CurrentSessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrentSessionTableViewCell.xib; sourceTree = "<group>"; };
+		52184D7B216A1FF60002E800 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		52184D7C216A1FF60002E800 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		52184D83216A210B0002E800 /* HistoryProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryProtocols.swift; sourceTree = "<group>"; };
+		52184D85216A210B0002E800 /* HistoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		52184D87216A210C0002E800 /* HistoryWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryWireFrame.swift; sourceTree = "<group>"; };
+		52184D8A216A210C0002E800 /* HistoryLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryLocalDataManager.swift; sourceTree = "<group>"; };
+		52184D8C216A210C0002E800 /* HistoryAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryAPIDataManager.swift; sourceTree = "<group>"; };
+		52184D8E216A210C0002E800 /* HistoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
+		52184D8F216A210C0002E800 /* HistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
+		52184D97216A23D60002E800 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		52184D98216A23D60002E800 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		5219F5F5215F8EA100F1DC13 /* HomeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		5219F5F7215F8EA100F1DC13 /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
+		5219F5F9215F8EA100F1DC13 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonTableViewCell.swift; sourceTree = "<group>"; };
+		5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeButtonTableViewCell.xib; sourceTree = "<group>"; };
+		526A6236215FAB2500573815 /* SessionTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeTableViewCell.swift; sourceTree = "<group>"; };
+		526A6237215FAB2500573815 /* SessionTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTypeTableViewCell.xib; sourceTree = "<group>"; };
+		526A623B21609FF900573815 /* NewSessionNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionNotificationVC.swift; sourceTree = "<group>"; };
+		526A623C21609FF900573815 /* NewSessionNotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSessionNotificationVC.xib; sourceTree = "<group>"; };
+		529EF63B214CF82600402FD5 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		717A799CC1731EEF7B1E94CD /* Pods-SESH BUDDY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.release.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.release.xcconfig"; sourceTree = "<group>"; };
 		88544D65EB3353306B80539A /* Pods-SESH BUDDY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.debug.xcconfig"; sourceTree = "<group>"; };
 		DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SESH_BUDDY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,8 +575,7 @@
 				21035203213DB30800ADCEAB /* Wrappers */,
 				210351FA213DAEF100ADCEAB /* Extension */,
 				21035222213DBB0D00ADCEAB /* Constants */,
-				186BCFE2214AD852001D397F /* StatusPopUpView.swift */,
-				186BCFE4214AD870001D397F /* StatusPopUpView.xib */,
+				529EF63A214CBE0A00402FD5 /* StatusPopUp */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -556,6 +611,7 @@
 				2142EB782141927D0044D60C /* CreateUser */,
 				2142EB972141AF5B0044D60C /* Settings */,
 				1884ACD321484B500012666F /* Profile */,
+				52184D7F216A1FFC0002E800 /* History */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -594,6 +650,7 @@
 				21035225213DBBF900ADCEAB /* Colors */,
 				21035227213DBBF900ADCEAB /* Fonts */,
 				21035220213DBAF900ADCEAB /* Keys.swift */,
+				529EF63B214CF82600402FD5 /* Enums.swift */,
 				18E888802142ED4D0050ECCF /* RMessagesDefaultDesign.json */,
 			);
 			path = Constants;
@@ -840,8 +897,14 @@
 		21BFE98D213F91A400504696 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5219F5F8215F8EA100F1DC13 /* Interactor */,
+				5219F5FA215F8EA100F1DC13 /* Presenter */,
+				5219F5F4215F8EA100F1DC13 /* Protocols */,
+				5219F5F6215F8EA100F1DC13 /* Wireframe */,
 				213CDA46213EFF6000B1C874 /* StoryBoard */,
 				21EEAC4721402FE8009C5B8A /* View */,
+				526A623F2160A00700573815 /* Notification */,
+				52184D752169C7D10002E800 /* SessionHandler */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -849,9 +912,230 @@
 		21EEAC4721402FE8009C5B8A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21EEAC4521402FE1009C5B8A /* HomeViewController.swift */,
+				5219F600215F93C000F1DC13 /* controller */,
+				526A6234215FAAE200573815 /* Cells */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52184D752169C7D10002E800 /* SessionHandler */ = {
+			isa = PBXGroup;
+			children = (
+				52184D6B2169C6D70002E800 /* SHMOKSessionHandler.swift */,
+				52184D6D2169C6F20002E800 /* MatchSessionHandler.swift */,
+				52184D6F2169C7000002E800 /* DropSessionHandler.swift */,
+				52184D732169C7270002E800 /* SMOSssionHandler.swift */,
+			);
+			path = SessionHandler;
+			sourceTree = "<group>";
+		};
+		52184D7A2169CBDB0002E800 /* CurrentSession */ = {
+			isa = PBXGroup;
+			children = (
+				52184D762169CBD70002E800 /* CurrentSessionTableViewCell.swift */,
+				52184D772169CBD70002E800 /* CurrentSessionTableViewCell.xib */,
+			);
+			path = CurrentSession;
+			sourceTree = "<group>";
+		};
+		52184D7F216A1FFC0002E800 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				52184D8D216A210C0002E800 /* HistoryInteractor */,
+				52184D88216A210C0002E800 /* HistoryManager */,
+				52184D84216A210B0002E800 /* HistoryPresenter */,
+				52184D82216A210B0002E800 /* HistoryProtocols */,
+				52184D86216A210C0002E800 /* HistoryWireFrame */,
+				52184D80216A200A0002E800 /* Views */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		52184D80216A200A0002E800 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				52184D81216A201C0002E800 /* Controller */,
+				52184D9B216A23DF0002E800 /* View */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		52184D81216A201C0002E800 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52184D7B216A1FF60002E800 /* HistoryViewController.swift */,
+				52184D7C216A1FF60002E800 /* HistoryViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52184D82216A210B0002E800 /* HistoryProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				52184D83216A210B0002E800 /* HistoryProtocols.swift */,
+			);
+			path = HistoryProtocols;
+			sourceTree = "<group>";
+		};
+		52184D84216A210B0002E800 /* HistoryPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				52184D85216A210B0002E800 /* HistoryPresenter.swift */,
+			);
+			path = HistoryPresenter;
+			sourceTree = "<group>";
+		};
+		52184D86216A210C0002E800 /* HistoryWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				52184D87216A210C0002E800 /* HistoryWireFrame.swift */,
+			);
+			path = HistoryWireFrame;
+			sourceTree = "<group>";
+		};
+		52184D88216A210C0002E800 /* HistoryManager */ = {
+			isa = PBXGroup;
+			children = (
+				52184D89216A210C0002E800 /* Local */,
+				52184D8B216A210C0002E800 /* API */,
+			);
+			path = HistoryManager;
+			sourceTree = "<group>";
+		};
+		52184D89216A210C0002E800 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				52184D8A216A210C0002E800 /* HistoryLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		52184D8B216A210C0002E800 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				52184D8C216A210C0002E800 /* HistoryAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52184D8D216A210C0002E800 /* HistoryInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				52184D8E216A210C0002E800 /* HistoryInteractor.swift */,
+				52184D8F216A210C0002E800 /* HistoryItem.swift */,
+			);
+			path = HistoryInteractor;
+			sourceTree = "<group>";
+		};
+		52184D9B216A23DF0002E800 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52184D97216A23D60002E800 /* HistoryCollectionViewCell.swift */,
+				52184D98216A23D60002E800 /* HistoryCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5219F5F4215F8EA100F1DC13 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5219F5F5215F8EA100F1DC13 /* HomeProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5219F5F6215F8EA100F1DC13 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				5219F5F7215F8EA100F1DC13 /* HomeWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		5219F5F8215F8EA100F1DC13 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5219F5F9215F8EA100F1DC13 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5219F5FA215F8EA100F1DC13 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5219F600215F93C000F1DC13 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				21EEAC4521402FE1009C5B8A /* HomeViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		526A6234215FAAE200573815 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				526A6235215FAB0A00573815 /* Buttons */,
+				526A623A215FAB6900573815 /* SessionType */,
+				52184D7A2169CBDB0002E800 /* CurrentSession */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		526A6235215FAB0A00573815 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */,
+				5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		526A623A215FAB6900573815 /* SessionType */ = {
+			isa = PBXGroup;
+			children = (
+				526A6236215FAB2500573815 /* SessionTypeTableViewCell.swift */,
+				526A6237215FAB2500573815 /* SessionTypeTableViewCell.xib */,
+			);
+			path = SessionType;
+			sourceTree = "<group>";
+		};
+		526A623F2160A00700573815 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				526A62402160A04500573815 /* View */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		526A62402160A04500573815 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				526A62412160B63700573815 /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		526A62412160B63700573815 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				526A623B21609FF900573815 /* NewSessionNotificationVC.swift */,
+				526A623C21609FF900573815 /* NewSessionNotificationVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		529EF63A214CBE0A00402FD5 /* StatusPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				186BCFE2214AD852001D397F /* StatusPopUpView.swift */,
+				186BCFE4214AD870001D397F /* StatusPopUpView.xib */,
+			);
+			path = StatusPopUp;
 			sourceTree = "<group>";
 		};
 		63726AAE732216A74C2F5E7B /* Pods */ = {
@@ -925,6 +1209,7 @@
 			files = (
 				210351F0213D9A6B00ADCEAB /* LaunchScreen.storyboard in Resources */,
 				1884ACE9214860400012666F /* ProfileInfoTableViewCell.xib in Resources */,
+				52184D792169CBD70002E800 /* CurrentSessionTableViewCell.xib in Resources */,
 				210351ED213D9A6B00ADCEAB /* Assets.xcassets in Resources */,
 				219407CF2140510E0020FAA9 /* Lato-Semibold.ttf in Resources */,
 				219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */,
@@ -937,15 +1222,20 @@
 				18E8888C2142F0190050ECCF /* SettingsViewController.xib in Resources */,
 				219407CD2140510E0020FAA9 /* Lato-Light.ttf in Resources */,
 				2142EB9D2141AFDC0044D60C /* LabelTableViewCell.xib in Resources */,
+				52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */,
+				526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */,
 				219407D22140510E0020FAA9 /* MavenPro-Regular.ttf in Resources */,
+				5219F604215F93FF00F1DC13 /* HomeButtonTableViewCell.xib in Resources */,
 				186BCFE5214AD870001D397F /* StatusPopUpView.xib in Resources */,
 				1884ACDE2148559B0012666F /* TextViewTableViewCell.xib in Resources */,
+				526A623E21609FF900573815 /* NewSessionNotificationVC.xib in Resources */,
 				213CDA48213EFF6800B1C874 /* HomeFlow.storyboard in Resources */,
 				18E888812142ED4D0050ECCF /* RMessagesDefaultDesign.json in Resources */,
 				0031CB51213E6ECE00FCE6BF /* AuthTokenVerifierViewController.xib in Resources */,
 				1884ACCD214841DB0012666F /* NotificationsViewController.xib in Resources */,
 				219407CE2140510E0020FAA9 /* Lato-Regular.ttf in Resources */,
 				210351EB213D9A6500ADCEAB /* Authorization.storyboard in Resources */,
+				52184D7E216A1FF60002E800 /* HistoryViewController.xib in Resources */,
 				1884ACD221484B4B0012666F /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1010,38 +1300,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */,
 				1884ACD721484D680012666F /* EditProfileHeaderCellTableViewCell.swift in Sources */,
 				21035212213DB40500ADCEAB /* UICollectionView+Extension.swift in Sources */,
+				52184D99216A23D60002E800 /* HistoryCollectionViewCell.swift in Sources */,
+				52184D91216A210C0002E800 /* HistoryPresenter.swift in Sources */,
+				52184D6E2169C6F20002E800 /* MatchSessionHandler.swift in Sources */,
 				0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */,
 				2142EB7D214198B40044D60C /* CreateUserInteracter.swift in Sources */,
 				2103521F213DB40500ADCEAB /* NSNumber+Extension.swift in Sources */,
 				186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */,
 				2103521A213DB40500ADCEAB /* UIImage+Extension.swift in Sources */,
+				52184D93216A210C0002E800 /* HistoryLocalDataManager.swift in Sources */,
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
 				1884ACF4214866F00012666F /* EditProfileProtocol.swift in Sources */,
 				18E8889A2142F1F80050ECCF /* SettingsProtocol.swift in Sources */,
 				0031CB4F213E6ECE00FCE6BF /* AuthTokenVerifierProtocol.swift in Sources */,
 				1884ACF6214866F00012666F /* EditProfileInteractor.swift in Sources */,
 				18E888982142F1F80050ECCF /* SettingsPresenter.swift in Sources */,
+				5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */,
 				1884ACD121484B4B0012666F /* ProfileViewController.swift in Sources */,
 				0031CB60213E74AA00FCE6BF /* CLProgressHUD.swift in Sources */,
 				0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */,
 				2103521D213DB40500ADCEAB /* UIButton+Extension.swift in Sources */,
 				2103521B213DB40500ADCEAB /* UIView+Extension.swift in Sources */,
 				21035215213DB40500ADCEAB /* ReFrosted+Extension.swift in Sources */,
+				526A623D21609FF900573815 /* NewSessionNotificationVC.swift in Sources */,
+				52184D7D216A1FF60002E800 /* HistoryViewController.swift in Sources */,
 				21035217213DB40500ADCEAB /* Objects+Extension.swift in Sources */,
 				219407D72140663B0020FAA9 /* SideMenuFieldTableViewCell.swift in Sources */,
+				52184D782169CBD70002E800 /* CurrentSessionTableViewCell.swift in Sources */,
 				0031CB57213E73B200FCE6BF /* EntryViewController.swift in Sources */,
 				0031CB5F213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift in Sources */,
+				5219F603215F93FF00F1DC13 /* HomeButtonTableViewCell.swift in Sources */,
 				0031CB67213E799F00FCE6BF /* AuthNavigationViewController.swift in Sources */,
+				529EF63C214CF82600402FD5 /* Enums.swift in Sources */,
 				210351F8213DAED700ADCEAB /* String+Extension.swift in Sources */,
 				0031CB50213E6ECE00FCE6BF /* AuthTokenVerifierViewController.swift in Sources */,
 				213CDA43213EE6CD00B1C874 /* LoginProtocol.swift in Sources */,
+				52184D6C2169C6D70002E800 /* SHMOKSessionHandler.swift in Sources */,
 				21035221213DBAF900ADCEAB /* Keys.swift in Sources */,
 				2103522B213DBBF900ADCEAB /* Fonts.swift in Sources */,
 				21035218213DB40500ADCEAB /* Data+Extension.swift in Sources */,
 				213CDA41213EE6CD00B1C874 /* LoginInteractor.swift in Sources */,
+				5219F5FC215F8EA100F1DC13 /* HomeProtocol.swift in Sources */,
 				2142EB81214198E70044D60C /* CreateUserPresenter.swift in Sources */,
+				52184D96216A210C0002E800 /* HistoryItem.swift in Sources */,
 				213CDA42213EE6CD00B1C874 /* LoginPresenter.swift in Sources */,
 				2142EB7F214198C80044D60C /* CreateUserWireFrame.swift in Sources */,
 				0031CB4D213E6ECE00FCE6BF /* AuthTokenVerifierPresenter.swift in Sources */,
@@ -1054,26 +1358,34 @@
 				0031CB61213E74AA00FCE6BF /* HTTPRequest.swift in Sources */,
 				0031CB52213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift in Sources */,
 				21035213213DB40500ADCEAB /* UIViewController+Extension.swift in Sources */,
+				52184D702169C7000002E800 /* DropSessionHandler.swift in Sources */,
 				1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */,
+				52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */,
 				213CDA45213EE6CD00B1C874 /* LoginWireframe.swift in Sources */,
 				2103522A213DBBF900ADCEAB /* AppColors.swift in Sources */,
+				52184D92216A210C0002E800 /* HistoryWireFrame.swift in Sources */,
 				21035216213DB40500ADCEAB /* UIAlertController+Extension.swift in Sources */,
 				1884ACF5214866F00012666F /* EditProfileWireframe.swift in Sources */,
 				2142EB7B2141989B0044D60C /* CreateUserProtocols.swift in Sources */,
 				213CDA40213EE6CD00B1C874 /* LoginDataManager.swift in Sources */,
+				5219F5FD215F8EA100F1DC13 /* HomeWireframe.swift in Sources */,
 				21035214213DB40500ADCEAB /* Date+Extension.swift in Sources */,
 				21035219213DB40500ADCEAB /* UIColor+Extension.swift in Sources */,
 				2142EB9C2141AFDC0044D60C /* LabelTableViewCell.swift in Sources */,
 				1884ACCC214841DB0012666F /* NotificationsViewController.swift in Sources */,
 				21EEAC4621402FE1009C5B8A /* HomeViewController.swift in Sources */,
+				52184D94216A210C0002E800 /* HistoryAPIDataManager.swift in Sources */,
 				1884ACE1214855FA0012666F /* EditProfileInputTableViewCell.swift in Sources */,
+				5219F5FF215F8EA100F1DC13 /* HomePresenter.swift in Sources */,
 				0031CB4E213E6ECE00FCE6BF /* AuthTokenVerifierWireframe.swift in Sources */,
 				2142EB76214192730044D60C /* CreateUserViewController.swift in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,
 				18E888992142F1F80050ECCF /* SettingsWireframe.swift in Sources */,
+				52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */,
 				21035202213DB30300ADCEAB /* L102Language.swift in Sources */,
+				52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */,
 				210351E6213D9A6500ADCEAB /* AppDelegate.swift in Sources */,
 				18E8888B2142F0190050ECCF /* SettingsViewController.swift in Sources */,
 			);

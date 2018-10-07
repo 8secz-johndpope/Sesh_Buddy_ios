@@ -10,35 +10,70 @@ import UIKit
 import REFrostedViewController
 
 class EntryViewController: REFrostedViewController {
+    
+    var statusView: StatusPopUpView?
     override func viewDidLoad() {
         super.viewDidLoad()
-      self.addBottomViewForIphoneX()
-        addStatusSheetView()
-        // Do any additional setup after loading the view.
+        self.addBottomViewForIphoneX()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func addStatusSheetView() {
-        let vw = UIView()
-        vw.backgroundColor = UIColor.red
-        vw.frame = CGRect(x: 0, y: 100, width: screenWidth, height: 60)
-        self.view.addSubview(vw)
-    }
-    
-  func addBottomViewForIphoneX() {
-    if UIDevice.current.type == .iPhoneX {
-      if #available(iOS 11.0, *) {
-        guard let window = appDelegate.window else {
-          return
+    func addStatusSheetView(from: UIViewController) {
+        
+        if statusView == nil {
+            if let statusSheet = Bundle.main.loadNibNamed("StatusPopUpView", owner: self, options: nil)?[0] as? StatusPopUpView {
+                statusSheet.source = from
+                var frame = statusSheet.frame
+                frame = CGRect(x: 0, y: -200, width: Int(screenWidth), height: Int(frame.size.height))
+                statusView = statusSheet
+                statusView?.frame = frame
+                self.view.addSubview(statusView!)
+                self.addStatusSheet()
+            }
+        } else {
+            self.removeStatusSheet()
         }
-        let bottomPadding = window.safeAreaInsets.bottom
-        let view = UIView.init(frame: CGRect.init(x: 0, y: screenHeight - bottomPadding, width: screenWidth, height: bottomPadding))
-        view.backgroundColor = .themeNavBarColor
-        self.view.addSubview(view)
-      }
+       
     }
-  }
+    func removeStatusSheet(){
+        if statusView != nil {
+            UIView.animate(withDuration: 0.5, animations: {
+                var frame = self.statusView?.frame
+                frame = CGRect(x: 0, y: -200, width: Int(screenWidth), height: Int((frame?.size.height)!))
+                self.statusView?.frame = frame!
+            }) { (complete) in
+                self.statusView?.removeFromSuperview()
+                self.statusView = nil
+            }
+        }
+    }
+    func addStatusSheet(){
+        if statusView != nil {
+            UIView.animate(withDuration: 0.5, animations: {
+                var frame = self.statusView?.frame
+                frame = CGRect(x: 0, y: navigationBarHeight, width: Int(screenWidth), height: Int((frame?.size.height)!))
+                self.statusView?.frame = frame!
+            }) { (complete) in
+                
+            }
+        }
+    }
+    func addBottomViewForIphoneX() {
+        if UIDevice.current.type == .iPhoneX {
+            if #available(iOS 11.0, *) {
+                guard let window = appDelegate.window else {
+                    return
+                }
+                let bottomPadding = window.safeAreaInsets.bottom
+                let view = UIView.init(frame: CGRect.init(x: 0, y: screenHeight - bottomPadding, width: screenWidth, height: bottomPadding))
+                view.backgroundColor = .themeNavBarColor
+                self.view.addSubview(view)
+            }
+        }
+    }
+}
+
+extension EntryViewController: StatusPopUpProtocol {
+    func changeStatus(to: StatusTypes) {
+        
+        
+    }
 }
