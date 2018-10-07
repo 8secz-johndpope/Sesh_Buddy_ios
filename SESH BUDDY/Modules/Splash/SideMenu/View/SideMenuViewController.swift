@@ -61,7 +61,7 @@ class SideMenuViewController: UIViewController {
         }
         self.frostedViewController.hideMenuViewController()
         DispatchQueue.main.async {
-            nav.pushViewController(editProfileViewController, animated: true)
+            nav.setViewControllers([editProfileViewController], animated: true)
         }
     }
 }
@@ -97,10 +97,34 @@ extension SideMenuViewController: UITableViewDelegate {
                 }
             }
         case .deals: break
-        case .sessions: break
-        case .buddies: break
+        case .sessions:
+            let settingsViewController = SessionsWireFrame.presentSessionsModule()
+            guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+                return
+            }
+            self.frostedViewController.hideMenuViewController()
+            DispatchQueue.main.async {
+                nav.setViewControllers([settingsViewController], animated: true)
+            }
+        case .buddies:
+            let settingsViewController = BuddiesWireFrame.presentBuddiesModule()
+            guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+                return
+            }
+            self.frostedViewController.hideMenuViewController()
+            DispatchQueue.main.async {
+                nav.setViewControllers([settingsViewController], animated: true)
+            }
         case .ratings: break
-        case .history: break
+        case .history:
+            let settingsViewController = HistoryWireFrame.presentHistoryModule()
+        guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+            return
+        }
+        self.frostedViewController.hideMenuViewController()
+        DispatchQueue.main.async {
+            nav.setViewControllers([settingsViewController], animated: true)
+            }
         case .settings:
             let settingsViewController = SettingsWireFrame.createSettingsModule()
             guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
@@ -108,7 +132,7 @@ extension SideMenuViewController: UITableViewDelegate {
             }
             self.frostedViewController.hideMenuViewController()
             DispatchQueue.main.async {
-                nav.pushViewController(settingsViewController, animated: true)
+                nav.setViewControllers([settingsViewController], animated: true)
             }
         default: break
         }

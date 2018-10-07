@@ -18,3 +18,4 @@ extension UITableView {
         self.register(UINib(nibName: string, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: string)
     }
 }
+

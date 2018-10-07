@@ -41,8 +41,8 @@
                   symbolName = "(extension in SESH_BUDDY):__C.UIViewController.changerightNavBarButton(type: SESH_BUDDY.StatusTypes) -&gt; ()"
                   moduleName = "SESH BUDDY"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/test/Desktop/My%20data/SESH%20BUDDY/SESH%20BUDDY/Common/Extension/UIViewController+Extension.swift"
-                  timestampString = "560589508.4137779"
+                  urlString = "file:///Users/test/Documents/MyData/SESH%20BUDDY/SESH%20BUDDY/Common/Extension/UIViewController+Extension.swift"
+                  timestampString = "560625490.0279"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "125"
@@ -56,8 +56,8 @@
                   symbolName = "(extension in SESH_BUDDY):__C.UIViewController.changerightNavBarButton(type: SESH_BUDDY.StatusTypes) -&gt; ()"
                   moduleName = "SESH BUDDY"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/test/Desktop/My%20data/SESH%20BUDDY/SESH%20BUDDY/Common/Extension/UIViewController+Extension.swift"
-                  timestampString = "560589508.416441"
+                  urlString = "file:///Users/test/Documents/MyData/SESH%20BUDDY/SESH%20BUDDY/Common/Extension/UIViewController+Extension.swift"
+                  timestampString = "560625490.031559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "125"
@@ -112,6 +112,22 @@
             startingLineNumber = "169"
             endingLineNumber = "169"
             landmarkName = "removeBuddyButtonAction(_sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SESH BUDDY/Modules/History/Views/View/HistoryCollectionViewCell.swift"
+            timestampString = "560629607.835241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "awakeFromNib()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -1,5 +1,5 @@
 //
-//  HistoryViewController.swift
+//  SessionsViewController.swift
 //  SESH BUDDY
 //
 //  Created by test on 07/10/18.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, HistoryViewProtocol {
+class SessionsViewController: UIViewController, SessionsViewProtocol {
     
-    @IBOutlet weak var historyCollectionViewFlowLayout: UICollectionViewFlowLayout!
-    @IBOutlet weak var historyCollectionView: UICollectionView!
-    var presenter: HistoryPresenterProtocol?
+    var presenter: SessionsPresenterProtocol?
+
+    @IBOutlet weak var sessionsCollectionView: UICollectionView!
+    
     let historyCollectionViewCell = "HistoryCollectionViewCell"
     
     override func viewDidLoad() {
@@ -33,18 +34,17 @@ class HistoryViewController: UIViewController, HistoryViewProtocol {
         self.changeNavBarColor(.themeNavBarColor)
     }
     func registerNib() {
-        historyCollectionView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0)
-        historyCollectionView.register(UINib(nibName: historyCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: historyCollectionViewCell)
-        historyCollectionView.delegate = self
-        historyCollectionView.dataSource = self
-       // historyCollectionViewFlowLayout.itemSize = CGSize(width: (screenWidth)/3, height: (screenWidth)/3 + 10)
+        sessionsCollectionView.contentInset = UIEdgeInsetsMake(10, 0, 10, 0)
+        sessionsCollectionView.register(UINib(nibName: historyCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: historyCollectionViewCell)
+        sessionsCollectionView.delegate = self
+        sessionsCollectionView.dataSource = self
         
     }
 }
-extension HistoryViewController: UICollectionViewDelegate {
+extension SessionsViewController: UICollectionViewDelegate {
     
 }
-extension HistoryViewController: UICollectionViewDataSource {
+extension SessionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -55,7 +55,7 @@ extension HistoryViewController: UICollectionViewDataSource {
         return cell
     }
 }
-extension HistoryViewController: UICollectionViewDelegateFlowLayout {
+extension SessionsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let margin: CGFloat = 20.0
         let width = collectionView.frame.size.width

@@ -114,6 +114,24 @@
 		52184D96216A210C0002E800 /* HistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D8F216A210C0002E800 /* HistoryItem.swift */; };
 		52184D99216A23D60002E800 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D97216A23D60002E800 /* HistoryCollectionViewCell.swift */; };
 		52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184D98216A23D60002E800 /* HistoryCollectionViewCell.xib */; };
+		52184D9E216A7C210002E800 /* SessionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D9C216A7C210002E800 /* SessionsViewController.swift */; };
+		52184D9F216A7C210002E800 /* SessionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184D9D216A7C210002E800 /* SessionsViewController.xib */; };
+		52184DB0216A7D560002E800 /* SessionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DA3216A7D560002E800 /* SessionsInteractor.swift */; };
+		52184DB1216A7D560002E800 /* SessionsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DA4216A7D560002E800 /* SessionsItem.swift */; };
+		52184DB2216A7D560002E800 /* SessionsLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DA7216A7D560002E800 /* SessionsLocalDataManager.swift */; };
+		52184DB3216A7D560002E800 /* SessionsAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DA9216A7D560002E800 /* SessionsAPIDataManager.swift */; };
+		52184DB4216A7D560002E800 /* SessionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DAB216A7D560002E800 /* SessionsPresenter.swift */; };
+		52184DB5216A7D560002E800 /* SessionsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DAD216A7D560002E800 /* SessionsProtocols.swift */; };
+		52184DB6216A7D560002E800 /* SessionsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DAF216A7D560002E800 /* SessionsWireFrame.swift */; };
+		52184DB9216A83680002E800 /* BuddiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DB7216A83680002E800 /* BuddiesViewController.swift */; };
+		52184DBA216A83680002E800 /* BuddiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52184DB8216A83680002E800 /* BuddiesViewController.xib */; };
+		52184DCB216A85420002E800 /* BuddiesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DBE216A85420002E800 /* BuddiesProtocols.swift */; };
+		52184DCC216A85420002E800 /* BuddiesWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DC0216A85420002E800 /* BuddiesWireFrame.swift */; };
+		52184DCD216A85420002E800 /* BuddiesItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DC2216A85420002E800 /* BuddiesItem.swift */; };
+		52184DCE216A85420002E800 /* BuddiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DC3216A85420002E800 /* BuddiesInteractor.swift */; };
+		52184DCF216A85420002E800 /* BuddiesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DC6216A85420002E800 /* BuddiesDataManager.swift */; };
+		52184DD0216A85420002E800 /* BuddiesAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DC8216A85420002E800 /* BuddiesAPIDataManager.swift */; };
+		52184DD1216A85420002E800 /* BuddiesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184DCA216A85420002E800 /* BuddiesPresenter.swift */; };
 		5219F5FC215F8EA100F1DC13 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F5215F8EA100F1DC13 /* HomeProtocol.swift */; };
 		5219F5FD215F8EA100F1DC13 /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F7215F8EA100F1DC13 /* HomeWireframe.swift */; };
 		5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5F9215F8EA100F1DC13 /* HomeInteractor.swift */; };
@@ -238,6 +256,24 @@
 		52184D8F216A210C0002E800 /* HistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryItem.swift; sourceTree = "<group>"; };
 		52184D97216A23D60002E800 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		52184D98216A23D60002E800 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		52184D9C216A7C210002E800 /* SessionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsViewController.swift; sourceTree = "<group>"; };
+		52184D9D216A7C210002E800 /* SessionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionsViewController.xib; sourceTree = "<group>"; };
+		52184DA3216A7D560002E800 /* SessionsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsInteractor.swift; sourceTree = "<group>"; };
+		52184DA4216A7D560002E800 /* SessionsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsItem.swift; sourceTree = "<group>"; };
+		52184DA7216A7D560002E800 /* SessionsLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsLocalDataManager.swift; sourceTree = "<group>"; };
+		52184DA9216A7D560002E800 /* SessionsAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsAPIDataManager.swift; sourceTree = "<group>"; };
+		52184DAB216A7D560002E800 /* SessionsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsPresenter.swift; sourceTree = "<group>"; };
+		52184DAD216A7D560002E800 /* SessionsProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsProtocols.swift; sourceTree = "<group>"; };
+		52184DAF216A7D560002E800 /* SessionsWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionsWireFrame.swift; sourceTree = "<group>"; };
+		52184DB7216A83680002E800 /* BuddiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddiesViewController.swift; sourceTree = "<group>"; };
+		52184DB8216A83680002E800 /* BuddiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddiesViewController.xib; sourceTree = "<group>"; };
+		52184DBE216A85420002E800 /* BuddiesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesProtocols.swift; sourceTree = "<group>"; };
+		52184DC0216A85420002E800 /* BuddiesWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesWireFrame.swift; sourceTree = "<group>"; };
+		52184DC2216A85420002E800 /* BuddiesItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesItem.swift; sourceTree = "<group>"; };
+		52184DC3216A85420002E800 /* BuddiesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesInteractor.swift; sourceTree = "<group>"; };
+		52184DC6216A85420002E800 /* BuddiesDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesDataManager.swift; sourceTree = "<group>"; };
+		52184DC8216A85420002E800 /* BuddiesAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesAPIDataManager.swift; sourceTree = "<group>"; };
+		52184DCA216A85420002E800 /* BuddiesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesPresenter.swift; sourceTree = "<group>"; };
 		5219F5F5215F8EA100F1DC13 /* HomeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		5219F5F7215F8EA100F1DC13 /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
 		5219F5F9215F8EA100F1DC13 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -612,6 +648,8 @@
 				2142EB972141AF5B0044D60C /* Settings */,
 				1884ACD321484B500012666F /* Profile */,
 				52184D7F216A1FFC0002E800 /* History */,
+				52184DA0216A7C260002E800 /* Sessions */,
+				52184DBB216A837D0002E800 /* Buddies */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1036,6 +1074,166 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		52184DA0216A7C260002E800 /* Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				52184DA2216A7D560002E800 /* SessionsInteractor */,
+				52184DA5216A7D560002E800 /* SessionsManager */,
+				52184DAA216A7D560002E800 /* SessionsPresenter */,
+				52184DAC216A7D560002E800 /* SessionsProtocols */,
+				52184DAE216A7D560002E800 /* SessionsWireFrame */,
+				52184DA1216A7C350002E800 /* Controller */,
+			);
+			path = Sessions;
+			sourceTree = "<group>";
+		};
+		52184DA1216A7C350002E800 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52184D9C216A7C210002E800 /* SessionsViewController.swift */,
+				52184D9D216A7C210002E800 /* SessionsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52184DA2216A7D560002E800 /* SessionsInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				52184DA3216A7D560002E800 /* SessionsInteractor.swift */,
+				52184DA4216A7D560002E800 /* SessionsItem.swift */,
+			);
+			path = SessionsInteractor;
+			sourceTree = "<group>";
+		};
+		52184DA5216A7D560002E800 /* SessionsManager */ = {
+			isa = PBXGroup;
+			children = (
+				52184DA6216A7D560002E800 /* Local */,
+				52184DA8216A7D560002E800 /* API */,
+			);
+			path = SessionsManager;
+			sourceTree = "<group>";
+		};
+		52184DA6216A7D560002E800 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				52184DA7216A7D560002E800 /* SessionsLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		52184DA8216A7D560002E800 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				52184DA9216A7D560002E800 /* SessionsAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52184DAA216A7D560002E800 /* SessionsPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				52184DAB216A7D560002E800 /* SessionsPresenter.swift */,
+			);
+			path = SessionsPresenter;
+			sourceTree = "<group>";
+		};
+		52184DAC216A7D560002E800 /* SessionsProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				52184DAD216A7D560002E800 /* SessionsProtocols.swift */,
+			);
+			path = SessionsProtocols;
+			sourceTree = "<group>";
+		};
+		52184DAE216A7D560002E800 /* SessionsWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				52184DAF216A7D560002E800 /* SessionsWireFrame.swift */,
+			);
+			path = SessionsWireFrame;
+			sourceTree = "<group>";
+		};
+		52184DBB216A837D0002E800 /* Buddies */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC1216A85420002E800 /* BuddiesInteractor */,
+				52184DC4216A85420002E800 /* BuddiesManager */,
+				52184DC9216A85420002E800 /* BuddiesPresenter */,
+				52184DBD216A85420002E800 /* BuddiesProtocols */,
+				52184DBF216A85420002E800 /* BudiesWireFrame */,
+				52184DBC216A838C0002E800 /* Controller */,
+			);
+			path = Buddies;
+			sourceTree = "<group>";
+		};
+		52184DBC216A838C0002E800 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52184DB7216A83680002E800 /* BuddiesViewController.swift */,
+				52184DB8216A83680002E800 /* BuddiesViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52184DBD216A85420002E800 /* BuddiesProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				52184DBE216A85420002E800 /* BuddiesProtocols.swift */,
+			);
+			path = BuddiesProtocols;
+			sourceTree = "<group>";
+		};
+		52184DBF216A85420002E800 /* BudiesWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC0216A85420002E800 /* BuddiesWireFrame.swift */,
+			);
+			path = BudiesWireFrame;
+			sourceTree = "<group>";
+		};
+		52184DC1216A85420002E800 /* BuddiesInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC2216A85420002E800 /* BuddiesItem.swift */,
+				52184DC3216A85420002E800 /* BuddiesInteractor.swift */,
+			);
+			path = BuddiesInteractor;
+			sourceTree = "<group>";
+		};
+		52184DC4216A85420002E800 /* BuddiesManager */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC5216A85420002E800 /* Local */,
+				52184DC7216A85420002E800 /* API */,
+			);
+			path = BuddiesManager;
+			sourceTree = "<group>";
+		};
+		52184DC5216A85420002E800 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC6216A85420002E800 /* BuddiesDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		52184DC7216A85420002E800 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				52184DC8216A85420002E800 /* BuddiesAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52184DC9216A85420002E800 /* BuddiesPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				52184DCA216A85420002E800 /* BuddiesPresenter.swift */,
+			);
+			path = BuddiesPresenter;
+			sourceTree = "<group>";
+		};
 		5219F5F4215F8EA100F1DC13 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -1216,11 +1414,13 @@
 				219407D02140510E0020FAA9 /* MavenPro-Bold.ttf in Resources */,
 				2142EB77214192730044D60C /* CreateUserViewController.xib in Resources */,
 				1884ACD821484D680012666F /* EditProfileHeaderCellTableViewCell.xib in Resources */,
+				52184DBA216A83680002E800 /* BuddiesViewController.xib in Resources */,
 				219407D12140510E0020FAA9 /* MavenPro-Medium.ttf in Resources */,
 				1884ACE2214855FA0012666F /* EditProfileInputTableViewCell.xib in Resources */,
 				0031CB56213E73B200FCE6BF /* Entry.storyboard in Resources */,
 				18E8888C2142F0190050ECCF /* SettingsViewController.xib in Resources */,
 				219407CD2140510E0020FAA9 /* Lato-Light.ttf in Resources */,
+				52184D9F216A7C210002E800 /* SessionsViewController.xib in Resources */,
 				2142EB9D2141AFDC0044D60C /* LabelTableViewCell.xib in Resources */,
 				52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */,
 				526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */,
@@ -1302,6 +1502,7 @@
 			files = (
 				526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */,
 				1884ACD721484D680012666F /* EditProfileHeaderCellTableViewCell.swift in Sources */,
+				52184DD0216A85420002E800 /* BuddiesAPIDataManager.swift in Sources */,
 				21035212213DB40500ADCEAB /* UICollectionView+Extension.swift in Sources */,
 				52184D99216A23D60002E800 /* HistoryCollectionViewCell.swift in Sources */,
 				52184D91216A210C0002E800 /* HistoryPresenter.swift in Sources */,
@@ -1310,8 +1511,11 @@
 				2142EB7D214198B40044D60C /* CreateUserInteracter.swift in Sources */,
 				2103521F213DB40500ADCEAB /* NSNumber+Extension.swift in Sources */,
 				186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */,
+				52184DCC216A85420002E800 /* BuddiesWireFrame.swift in Sources */,
 				2103521A213DB40500ADCEAB /* UIImage+Extension.swift in Sources */,
+				52184DB6216A7D560002E800 /* SessionsWireFrame.swift in Sources */,
 				52184D93216A210C0002E800 /* HistoryLocalDataManager.swift in Sources */,
+				52184DB2216A7D560002E800 /* SessionsLocalDataManager.swift in Sources */,
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
 				1884ACF4214866F00012666F /* EditProfileProtocol.swift in Sources */,
 				18E8889A2142F1F80050ECCF /* SettingsProtocol.swift in Sources */,
@@ -1321,14 +1525,19 @@
 				5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */,
 				1884ACD121484B4B0012666F /* ProfileViewController.swift in Sources */,
 				0031CB60213E74AA00FCE6BF /* CLProgressHUD.swift in Sources */,
+				52184D9E216A7C210002E800 /* SessionsViewController.swift in Sources */,
 				0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */,
 				2103521D213DB40500ADCEAB /* UIButton+Extension.swift in Sources */,
 				2103521B213DB40500ADCEAB /* UIView+Extension.swift in Sources */,
+				52184DB9216A83680002E800 /* BuddiesViewController.swift in Sources */,
 				21035215213DB40500ADCEAB /* ReFrosted+Extension.swift in Sources */,
 				526A623D21609FF900573815 /* NewSessionNotificationVC.swift in Sources */,
 				52184D7D216A1FF60002E800 /* HistoryViewController.swift in Sources */,
 				21035217213DB40500ADCEAB /* Objects+Extension.swift in Sources */,
 				219407D72140663B0020FAA9 /* SideMenuFieldTableViewCell.swift in Sources */,
+				52184DB1216A7D560002E800 /* SessionsItem.swift in Sources */,
+				52184DCD216A85420002E800 /* BuddiesItem.swift in Sources */,
+				52184DCB216A85420002E800 /* BuddiesProtocols.swift in Sources */,
 				52184D782169CBD70002E800 /* CurrentSessionTableViewCell.swift in Sources */,
 				0031CB57213E73B200FCE6BF /* EntryViewController.swift in Sources */,
 				0031CB5F213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift in Sources */,
@@ -1342,12 +1551,15 @@
 				21035221213DBAF900ADCEAB /* Keys.swift in Sources */,
 				2103522B213DBBF900ADCEAB /* Fonts.swift in Sources */,
 				21035218213DB40500ADCEAB /* Data+Extension.swift in Sources */,
+				52184DCF216A85420002E800 /* BuddiesDataManager.swift in Sources */,
 				213CDA41213EE6CD00B1C874 /* LoginInteractor.swift in Sources */,
 				5219F5FC215F8EA100F1DC13 /* HomeProtocol.swift in Sources */,
 				2142EB81214198E70044D60C /* CreateUserPresenter.swift in Sources */,
 				52184D96216A210C0002E800 /* HistoryItem.swift in Sources */,
 				213CDA42213EE6CD00B1C874 /* LoginPresenter.swift in Sources */,
 				2142EB7F214198C80044D60C /* CreateUserWireFrame.swift in Sources */,
+				52184DB4216A7D560002E800 /* SessionsPresenter.swift in Sources */,
+				52184DB0216A7D560002E800 /* SessionsInteractor.swift in Sources */,
 				0031CB4D213E6ECE00FCE6BF /* AuthTokenVerifierPresenter.swift in Sources */,
 				210351FE213DAFE900ADCEAB /* LoginOptionsViewController.swift in Sources */,
 				0031CB62213E74AA00FCE6BF /* HTTPStatusCodes.swift in Sources */,
@@ -1362,11 +1574,14 @@
 				1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */,
 				52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */,
 				213CDA45213EE6CD00B1C874 /* LoginWireframe.swift in Sources */,
+				52184DB3216A7D560002E800 /* SessionsAPIDataManager.swift in Sources */,
 				2103522A213DBBF900ADCEAB /* AppColors.swift in Sources */,
 				52184D92216A210C0002E800 /* HistoryWireFrame.swift in Sources */,
 				21035216213DB40500ADCEAB /* UIAlertController+Extension.swift in Sources */,
 				1884ACF5214866F00012666F /* EditProfileWireframe.swift in Sources */,
 				2142EB7B2141989B0044D60C /* CreateUserProtocols.swift in Sources */,
+				52184DB5216A7D560002E800 /* SessionsProtocols.swift in Sources */,
+				52184DD1216A85420002E800 /* BuddiesPresenter.swift in Sources */,
 				213CDA40213EE6CD00B1C874 /* LoginDataManager.swift in Sources */,
 				5219F5FD215F8EA100F1DC13 /* HomeWireframe.swift in Sources */,
 				21035214213DB40500ADCEAB /* Date+Extension.swift in Sources */,
@@ -1379,6 +1594,7 @@
 				5219F5FF215F8EA100F1DC13 /* HomePresenter.swift in Sources */,
 				0031CB4E213E6ECE00FCE6BF /* AuthTokenVerifierWireframe.swift in Sources */,
 				2142EB76214192730044D60C /* CreateUserViewController.swift in Sources */,
+				52184DCE216A85420002E800 /* BuddiesInteractor.swift in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,

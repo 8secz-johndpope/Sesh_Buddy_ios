@@ -10,10 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="SESH_BUDDY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SessionsViewController" customModule="SESH_BUDDY" customModuleProvider="target">
             <connections>
-                <outlet property="historyCollectionView" destination="xVe-4G-tgs" id="7EM-dJ-tjh"/>
-                <outlet property="historyCollectionViewFlowLayout" destination="4Mq-Da-JXA" id="WiO-fq-MTO"/>
+                <outlet property="sessionsCollectionView" destination="Pgk-8O-1ad" id="S9c-qB-0Jv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,10 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xVe-4G-tgs">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pgk-8O-1ad">
                     <rect key="frame" x="10" y="20" width="355" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4Mq-Da-JXA">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="LXO-AI-Smj">
                         <size key="itemSize" width="0.0" height="0.0"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,10 +34,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xVe-4G-tgs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Bbh-0h-4V4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xVe-4G-tgs" secondAttribute="trailing" constant="10" id="UzL-iH-rGM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xVe-4G-tgs" secondAttribute="bottom" id="xFk-GQ-atZ"/>
-                <constraint firstItem="xVe-4G-tgs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="zWg-GM-dP8"/>
+                <constraint firstItem="Pgk-8O-1ad" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4Rc-KQ-3jb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pgk-8O-1ad" secondAttribute="bottom" id="Ivc-Cc-fG1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pgk-8O-1ad" secondAttribute="trailing" constant="10" id="frl-Ox-oNg"/>
+                <constraint firstItem="Pgk-8O-1ad" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wrb-CJ-Tqi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

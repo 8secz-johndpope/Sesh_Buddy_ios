@@ -4,13 +4,13 @@
 //
 
 import Foundation
+import UIKit
 
 class HistoryWireFrame: HistoryWireFrameProtocol
 {
-    class func presentHistoryModule(fromView view: AnyObject)
-    {
+    class func presentHistoryModule() -> UIViewController {
         // Generating module components
-        let view: HistoryViewProtocol = HistoryViewController()
+        let view = HistoryViewController()
         let presenter: HistoryPresenterProtocol & HistoryInteractorOutputProtocol = HistoryPresenter()
         let interactor: HistoryInteractorInputProtocol = HistoryInteractor()
         let APIDataManager: HistoryAPIDataManagerInputProtocol = HistoryAPIDataManager()
@@ -25,5 +25,6 @@ class HistoryWireFrame: HistoryWireFrameProtocol
         interactor.presenter = presenter
         interactor.APIDataManager = APIDataManager
         interactor.localDatamanager = localDataManager
+        return view
     }
 }

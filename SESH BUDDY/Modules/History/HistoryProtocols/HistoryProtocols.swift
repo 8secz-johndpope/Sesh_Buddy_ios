@@ -4,25 +4,23 @@
 //
 
 import Foundation
+import UIKit
 
-protocol HistoryViewProtocol: class
-{
+protocol HistoryViewProtocol: class {
     var presenter: HistoryPresenterProtocol? { get set }
     /**
     * Add here your methods for communication PRESENTER -> VIEW
     */
 }
 
-protocol HistoryWireFrameProtocol: class
-{
-    static func presentHistoryModule(fromView view: AnyObject)
+protocol HistoryWireFrameProtocol: class {
+    static func presentHistoryModule() -> UIViewController
     /**
     * Add here your methods for communication PRESENTER -> WIREFRAME
     */
 }
 
-protocol HistoryPresenterProtocol: class
-{
+protocol HistoryPresenterProtocol: class {
     var view: HistoryViewProtocol? { get set }
     var interactor: HistoryInteractorInputProtocol? { get set }
     var wireFrame: HistoryWireFrameProtocol? { get set }
@@ -31,15 +29,13 @@ protocol HistoryPresenterProtocol: class
     */
 }
 
-protocol HistoryInteractorOutputProtocol: class
-{
+protocol HistoryInteractorOutputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> PRESENTER
     */
 }
 
-protocol HistoryInteractorInputProtocol: class
-{
+protocol HistoryInteractorInputProtocol: class {
     var presenter: HistoryInteractorOutputProtocol? { get set }
     var APIDataManager: HistoryAPIDataManagerInputProtocol? { get set }
     var localDatamanager: HistoryLocalDataManagerInputProtocol? { get set }
@@ -48,22 +44,19 @@ protocol HistoryInteractorInputProtocol: class
     */
 }
 
-protocol HistoryDataManagerInputProtocol: class
-{
+protocol HistoryDataManagerInputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> DATAMANAGER
     */
 }
 
-protocol HistoryAPIDataManagerInputProtocol: class
-{
+protocol HistoryAPIDataManagerInputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> APIDATAMANAGER
     */
 }
 
-protocol HistoryLocalDataManagerInputProtocol: class
-{
+protocol HistoryLocalDataManagerInputProtocol: class {
     /**
     * Add here your methods for communication INTERACTOR -> LOCALDATAMANAGER
     */
