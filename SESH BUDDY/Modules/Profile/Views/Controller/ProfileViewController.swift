@@ -78,7 +78,13 @@ class ProfileViewController: UIViewController {
         self.profileTableView.dataSource = self
         
     }
-
+    
+    // MARK: Logout from app
+    @objc func logoutFromApp() {
+        self.frostedViewController.hideMenuViewController()
+        let loginModule = LoginWireFrame.createLoginWithOTPModuleWithoutNav()
+        appDelegate.changeVisibleRootController(loginModule)
+    }
 }
 extension ProfileViewController: EditProfileViewProtocol {
     func onError(value: String) {
@@ -232,6 +238,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
     func setDatePickerToTextFieldInputAccessoryView(textfield: UITextField){
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: screenHeight, width: screenWidth, height: 216.0))
+        datePicker.datePickerMode = .date
         let minimumOrderDate = self.getMinimumDateToBeSelect()
         datePicker.minimumDate = minimumOrderDate
         datePicker.maximumDate = self.getMaximumDateToBeSelect()
@@ -307,6 +314,7 @@ extension ProfileViewController: UITableViewDelegate {
             }
             let textfieldFont = Fonts.mavenProRegular.getFont(14)
             view.headerLabel.font = textfieldFont
+            view.headerButton.addTarget(nil, action: #selector(self.logoutFromApp), for: .touchUpInside )
             switch enumVal {
             case .personalInfo:
                 view.headerLabel.text = "Personal Information"
@@ -318,6 +326,7 @@ extension ProfileViewController: UITableViewDelegate {
                view.headerLabel.text = "LOGOUT"
                let textfieldBoldFont = Fonts.mavenProBold.getFont(15)
                view.headerLabel.font = textfieldBoldFont
+               view.headerButton.addTarget(self, action: #selector(self.logoutFromApp), for: .touchUpInside )
             default:
                 view.headerLabel.text = ""
             }

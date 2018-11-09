@@ -13,7 +13,9 @@ extension UITableView {
   func registerCellFrom(_ string: String) {
     self.register(UINib.init(nibName: string, bundle: Bundle.main), forCellReuseIdentifier: string)
   }
-    
+    func registerCellFrom(_ string: String, identifier: String) {
+        self.register(UINib.init(nibName: string, bundle: Bundle.main), forCellReuseIdentifier: identifier)
+    }
     func registerHeaderFooterView(_ string: String) {
         self.register(UINib(nibName: string, bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: string)
     }

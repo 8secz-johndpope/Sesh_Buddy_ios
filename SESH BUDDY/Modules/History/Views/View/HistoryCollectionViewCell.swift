@@ -28,7 +28,7 @@ class HistoryCollectionViewCell: UICollectionViewCell {
         
         let seshTypeFont = Fonts.mavenProBold.getFont(15)
         let seshTitleLabelFont = Fonts.mavenProRegular.getFont(13)
-        let seshButtonFont = Fonts.mavenProRegular.getFont(17)
+        let seshButtonFont = Fonts.mavenProRegular.getFont(15)
         
         seshTypeLabel.font = seshTypeFont
         seshTitleLabel.font = seshTitleLabelFont

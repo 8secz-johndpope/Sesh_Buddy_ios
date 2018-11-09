@@ -17,8 +17,13 @@ enum SettingsSection: Int {
     case count
 }
 class SettingsViewController:UIViewController {
-
+    
+    
+    @IBOutlet weak var versionInfiLabel: UILabel!
+    @IBOutlet weak var appInfoLabel: UILabel!
+    @IBOutlet weak var appInfoView: UIView!
     @IBOutlet weak var settingsTableView: UITableView!
+    
     var presenter: SettingsPresenterProtocol?
     let labelTableViewCell = "LabelTableViewCell"
 	override func viewDidLoad() {
@@ -26,7 +31,8 @@ class SettingsViewController:UIViewController {
         self.changeStyle(.default)
         self.showMenuBarButton(true)
         self.setNavBarTitleView(image: ThemeImages.appLogo)
-        self.setUPUI() 
+        self.setUPUI()
+        setFooterView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -43,7 +49,20 @@ class SettingsViewController:UIViewController {
         self.settingsTableView.registerCellFrom(labelTableViewCell)
         self.settingsTableView.dataSource = self
         self.settingsTableView.delegate = self
+        
     }
+    func setFooterView() {
+        self.appInfoView.backgroundColor = UIColor.backgroundGrey
+        let firstString = NSMutableAttributedString(string: "Version ").color(UIColor.themeDarkTextColor).font(Fonts.mavenProRegular.getFont(11))
+        let secondString = NSMutableAttributedString(string: "1.0.0").color(UIColor.themeDarkTextColor).font(Fonts.mavenProMedium.getFont(11))
+        versionInfiLabel.attributedText = firstString + secondString
+        
+        let appInfoText = "Copyright 2018 Sesh Buddies.\n All logos are registered trademark of Sesh Buddies, LLC. All right reserved."
+        appInfoLabel.text = appInfoText
+        appInfoLabel.font = Fonts.mavenProRegular.getFont(10)
+        appInfoLabel.textColor = UIColor.themeDarkTextColor
+    }
+
 }
 extension SettingsViewController: SettingsViewProtocol {
     func onError(value: String) {
@@ -54,6 +73,8 @@ extension SettingsViewController: SettingsViewProtocol {
     }
 }
 extension SettingsViewController: UITableViewDelegate {
+  
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let enumVal = SettingsSection.init(rawValue: indexPath.section) else {

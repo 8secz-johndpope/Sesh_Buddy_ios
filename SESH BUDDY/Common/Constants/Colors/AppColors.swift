@@ -43,7 +43,9 @@ extension UIColor {
   public class var themeOrange: UIColor {
     return UIColor.init(red: 0, green: 127, blue: 0)
   }
-  
+    public class var themeRed: UIColor {
+        return UIColor.init(red: 204, green: 0, blue: 1)
+    }
   public class var heading: UIColor {
     return UIColor.white
   }
@@ -77,10 +79,12 @@ extension UIColor {
         return themeOrange
     }
     
+    public class var backgroundHeaderGrey: UIColor {
+        return UIColor.init(red: 190, green: 189, blue: 189)
+    }
     public class var backgroundGrey: UIColor {
         return UIColor.init(red: 244, green: 244, blue: 244)
     }
-    
     public class var backgroundDarkGrey: UIColor {
         return UIColor.init(red: 157, green: 157, blue: 157)
     }

@@ -23,18 +23,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1Q-ow-d1e">
-                                <rect key="frame" x="188" y="4.5" width="57" height="35"/>
+                                <rect key="frame" x="198" y="4.5" width="47" height="35"/>
                                 <color key="backgroundColor" red="1" green="0.13973214285714286" blue="0.15406994047619038" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="b3z-oH-fyd"/>
                                 </constraints>
-                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="End">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-4w-Ikr">
-                                <rect key="frame" x="75" y="15" width="42" height="13.5"/>
+                                <rect key="frame" x="146" y="0.0" width="42" height="43.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -42,13 +42,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="1Es-eZ-JfN"/>
                             <constraint firstItem="v1Q-ow-d1e" firstAttribute="centerY" secondItem="wum-nF-eMT" secondAttribute="centerY" id="39J-1S-j2k"/>
-                            <constraint firstItem="v1Q-ow-d1e" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xtg-4w-Ikr" secondAttribute="trailing" constant="10" id="Mjl-X3-ojq"/>
+                            <constraint firstItem="v1Q-ow-d1e" firstAttribute="leading" secondItem="xtg-4w-Ikr" secondAttribute="trailing" constant="10" id="Mjl-X3-ojq"/>
+                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wum-nF-eMT" secondAttribute="leading" constant="10" id="R5O-ev-Uwq"/>
                             <constraint firstItem="xtg-4w-Ikr" firstAttribute="centerY" secondItem="v1Q-ow-d1e" secondAttribute="centerY" id="XZz-yi-bmh"/>
-                            <constraint firstAttribute="bottom" secondItem="xtg-4w-Ikr" secondAttribute="bottom" constant="15" id="fJ8-1L-ESt"/>
-                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="top" secondItem="wum-nF-eMT" secondAttribute="top" constant="15" id="fzy-7k-x65"/>
+                            <constraint firstAttribute="bottom" secondItem="xtg-4w-Ikr" secondAttribute="bottom" id="fJ8-1L-ESt"/>
                             <constraint firstAttribute="trailing" secondItem="v1Q-ow-d1e" secondAttribute="trailing" constant="75" id="jmU-A9-I9a"/>
-                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="leading" secondItem="wum-nF-eMT" secondAttribute="leading" constant="75" id="u9U-a0-cpr"/>
+                            <constraint firstItem="xtg-4w-Ikr" firstAttribute="top" secondItem="wum-nF-eMT" secondAttribute="top" id="szy-TK-Smx"/>
                         </constraints>
                     </view>
                 </subviews>

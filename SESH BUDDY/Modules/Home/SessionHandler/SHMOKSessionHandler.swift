@@ -9,11 +9,17 @@
 import Foundation
 
 class SHMOKSessionHandler: NSObject {
-    var currentSessions = [[String: Any]]()
-    var buddiesList = [[String: Any]]()
+    var currentSessions = [String]()
+    var buddiesList = [String]()
+    var selectedSeshType = ""
+    var selectedStrainType = ""
+    var selectedUtensilType = ""
+    var selectedTime = ""
+    var selectedDate = ""
+    var selectedLocation = ""
+    
     override init() {
-        currentSessions.append([:])
-        currentSessions.append([:])
-        
+        currentSessions.append("90805fish")
+        currentSessions.append("90806fish")
     }
 }

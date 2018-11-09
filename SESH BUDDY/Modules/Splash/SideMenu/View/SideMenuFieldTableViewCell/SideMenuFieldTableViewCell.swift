@@ -22,11 +22,6 @@ class SideMenuFieldTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setUpUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func setUpUI() {
         self.bgView.backgroundColor = .sideMenuBackgroundColor
         self.sideMenuFieldName.font = Fonts.mavenProRegular.getFont(fieldNameSize)

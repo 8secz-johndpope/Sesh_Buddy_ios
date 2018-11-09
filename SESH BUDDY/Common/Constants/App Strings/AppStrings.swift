@@ -22,8 +22,9 @@ struct AppStrings {
     static let MATCH = "MATCH"
     static let SMO = "SMO"
     
+    static let BUDDYUP = "BUDDY UP"
     static let sesh_type = "SESH TYPE:"
-    static let point = "POINT:"
+    static let point = "POINTS:"
     static let straint = "STRAIN:"
     static let time = "TIME:"
     static let location = "LOCATION:"

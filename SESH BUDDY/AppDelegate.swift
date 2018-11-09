@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         DispatchQueue.main.async {
-            navController.setViewControllers([controller], animated: true)
+            navController.setViewControllers([controller], animated: false)
         }
     }
     

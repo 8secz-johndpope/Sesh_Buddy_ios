@@ -89,7 +89,7 @@ class CreateUserViewController: UIViewController, UITextViewDelegate {
     
     func setUPTermsAndConditionTextView() {
         termsAndConditionTextView.isEditable = false
-        termsAndConditionTextView.attributedText = self.getTermsAndConditionStringFrom(firstString: "By tapping Join Now & Accept, You agree to the" + " ", termsString: "Terms Of Service" + " ", andString: "and" + " ", privacyPolicyString: "Privacy Policy")
+        termsAndConditionTextView.attributedText = self.getTermsAndConditionStringFrom(firstString: "By tapping Join Now & Accept, You agree to the" + " ", termsString: "Terms of Service" + " ", andString: "and" + " ", privacyPolicyString: "Privacy Policy")
         let linkAttributes = [
             NSAttributedStringKey.foregroundColor.rawValue: UIColor.orange,
             NSAttributedStringKey.underlineColor.rawValue: UIColor.orange,

@@ -15,7 +15,7 @@ class EditProfileHeaderCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bgView.backgroundColor = UIColor.backgroundGrey
+        self.bgView.backgroundColor = UIColor.backgroundHeaderGrey
         let textfieldFont = Fonts.mavenProRegular.getFont(14)
         headerLabel.font = textfieldFont
         

@@ -97,6 +97,7 @@
 		219407D72140663B0020FAA9 /* SideMenuFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219407D52140663B0020FAA9 /* SideMenuFieldTableViewCell.swift */; };
 		219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 219407D62140663B0020FAA9 /* SideMenuFieldTableViewCell.xib */; };
 		21EEAC4621402FE1009C5B8A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EEAC4521402FE1009C5B8A /* HomeViewController.swift */; };
+		52175825219544F6002A370D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52175824219544F6002A370D /* Common.swift */; };
 		52184D6C2169C6D70002E800 /* SHMOKSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6B2169C6D70002E800 /* SHMOKSessionHandler.swift */; };
 		52184D6E2169C6F20002E800 /* MatchSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6D2169C6F20002E800 /* MatchSessionHandler.swift */; };
 		52184D702169C7000002E800 /* DropSessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52184D6F2169C7000002E800 /* DropSessionHandler.swift */; };
@@ -138,6 +139,20 @@
 		5219F5FF215F8EA100F1DC13 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */; };
 		5219F603215F93FF00F1DC13 /* HomeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */; };
 		5219F604215F93FF00F1DC13 /* HomeButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */; };
+		521BA63321721E7A006AFFD4 /* BuddyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */; };
+		521BA63421721E7A006AFFD4 /* BuddyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */; };
+		521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63721723917006AFFD4 /* FloatRatingView.swift */; };
+		524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FB21730F98007086ED /* RatingProtocols.swift */; };
+		524ABA0921730F98007086ED /* RatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FD21730F98007086ED /* RatingItem.swift */; };
+		524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FE21730F98007086ED /* RatingInteractor.swift */; };
+		524ABA0B21730F98007086ED /* RatingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA0121730F98007086ED /* RatingDataManager.swift */; };
+		524ABA0C21730F98007086ED /* RatingAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA0321730F98007086ED /* RatingAPIDataManager.swift */; };
+		524ABA0D21730F98007086ED /* RatingWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA0521730F98007086ED /* RatingWireFrame.swift */; };
+		524ABA0E21730F98007086ED /* RatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA0721730F98007086ED /* RatingPresenter.swift */; };
+		524ABA1121730FC6007086ED /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA0F21730FC6007086ED /* RatingViewController.swift */; };
+		524ABA1221730FC6007086ED /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524ABA1021730FC6007086ED /* RatingViewController.xib */; };
+		524ABA1621731B78007086ED /* AppInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524ABA1421731B78007086ED /* AppInfoTableViewCell.swift */; };
+		524ABA1721731B78007086ED /* AppInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524ABA1521731B78007086ED /* AppInfoTableViewCell.xib */; };
 		526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A6236215FAB2500573815 /* SessionTypeTableViewCell.swift */; };
 		526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A6237215FAB2500573815 /* SessionTypeTableViewCell.xib */; };
 		526A623D21609FF900573815 /* NewSessionNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A623B21609FF900573815 /* NewSessionNotificationVC.swift */; };
@@ -239,6 +254,7 @@
 		219407D52140663B0020FAA9 /* SideMenuFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuFieldTableViewCell.swift; sourceTree = "<group>"; };
 		219407D62140663B0020FAA9 /* SideMenuFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuFieldTableViewCell.xib; sourceTree = "<group>"; };
 		21EEAC4521402FE1009C5B8A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		52175824219544F6002A370D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		52184D6B2169C6D70002E800 /* SHMOKSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHMOKSessionHandler.swift; sourceTree = "<group>"; };
 		52184D6D2169C6F20002E800 /* MatchSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchSessionHandler.swift; sourceTree = "<group>"; };
 		52184D6F2169C7000002E800 /* DropSessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropSessionHandler.swift; sourceTree = "<group>"; };
@@ -280,6 +296,20 @@
 		5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonTableViewCell.swift; sourceTree = "<group>"; };
 		5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeButtonTableViewCell.xib; sourceTree = "<group>"; };
+		521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddyInfoTableViewCell.xib; sourceTree = "<group>"; };
+		521BA63721723917006AFFD4 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		524AB9FB21730F98007086ED /* RatingProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProtocols.swift; sourceTree = "<group>"; };
+		524AB9FD21730F98007086ED /* RatingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingItem.swift; sourceTree = "<group>"; };
+		524AB9FE21730F98007086ED /* RatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingInteractor.swift; sourceTree = "<group>"; };
+		524ABA0121730F98007086ED /* RatingDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingDataManager.swift; sourceTree = "<group>"; };
+		524ABA0321730F98007086ED /* RatingAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingAPIDataManager.swift; sourceTree = "<group>"; };
+		524ABA0521730F98007086ED /* RatingWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingWireFrame.swift; sourceTree = "<group>"; };
+		524ABA0721730F98007086ED /* RatingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingPresenter.swift; sourceTree = "<group>"; };
+		524ABA0F21730FC6007086ED /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		524ABA1021730FC6007086ED /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		524ABA1421731B78007086ED /* AppInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoTableViewCell.swift; sourceTree = "<group>"; };
+		524ABA1521731B78007086ED /* AppInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppInfoTableViewCell.xib; sourceTree = "<group>"; };
 		526A6236215FAB2500573815 /* SessionTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTypeTableViewCell.swift; sourceTree = "<group>"; };
 		526A6237215FAB2500573815 /* SessionTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTypeTableViewCell.xib; sourceTree = "<group>"; };
 		526A623B21609FF900573815 /* NewSessionNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionNotificationVC.swift; sourceTree = "<group>"; };
@@ -535,6 +565,8 @@
 			children = (
 				2142EB9A2141AFDC0044D60C /* LabelTableViewCell.swift */,
 				2142EB9B2141AFDC0044D60C /* LabelTableViewCell.xib */,
+				524ABA1421731B78007086ED /* AppInfoTableViewCell.swift */,
+				524ABA1521731B78007086ED /* AppInfoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -592,6 +624,7 @@
 		210351E4213D9A6500ADCEAB /* SESH BUDDY */ = {
 			isa = PBXGroup;
 			children = (
+				521BA6392172391E006AFFD4 /* Wrapper */,
 				210351F9213DAEDC00ADCEAB /* Common */,
 				210351E5213D9A6500ADCEAB /* AppDelegate.swift */,
 				210351FB213DAF1F00ADCEAB /* Modules */,
@@ -641,6 +674,7 @@
 		210351FB213DAF1F00ADCEAB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				524AB9F921730F98007086ED /* Rating */,
 				21BFE98D213F91A400504696 /* Home */,
 				213CDA33213EE6CD00B1C874 /* Login */,
 				210351FC213DAF8E00ADCEAB /* Splash */,
@@ -690,6 +724,7 @@
 				21035220213DBAF900ADCEAB /* Keys.swift */,
 				529EF63B214CF82600402FD5 /* Enums.swift */,
 				18E888802142ED4D0050ECCF /* RMessagesDefaultDesign.json */,
+				52175824219544F6002A370D /* Common.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -1163,6 +1198,7 @@
 				52184DBD216A85420002E800 /* BuddiesProtocols */,
 				52184DBF216A85420002E800 /* BudiesWireFrame */,
 				52184DBC216A838C0002E800 /* Controller */,
+				521BA63521721E81006AFFD4 /* Cells */,
 			);
 			path = Buddies;
 			sourceTree = "<group>";
@@ -1272,6 +1308,111 @@
 				21EEAC4521402FE1009C5B8A /* HomeViewController.swift */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		521BA63521721E81006AFFD4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */,
+				521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		521BA63621723917006AFFD4 /* FloatRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				521BA63721723917006AFFD4 /* FloatRatingView.swift */,
+			);
+			path = FloatRatingView;
+			sourceTree = "<group>";
+		};
+		521BA6392172391E006AFFD4 /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				521BA63621723917006AFFD4 /* FloatRatingView */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
+		524AB9F921730F98007086ED /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				524AB9FA21730F98007086ED /* RatingProtocols */,
+				524AB9FC21730F98007086ED /* RatingInteractor */,
+				524AB9FF21730F98007086ED /* RatingManager */,
+				524ABA0421730F98007086ED /* RatingWireFrame */,
+				524ABA0621730F98007086ED /* RatingPresenter */,
+				524ABA1321730FD6007086ED /* Controller */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
+		524AB9FA21730F98007086ED /* RatingProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				524AB9FB21730F98007086ED /* RatingProtocols.swift */,
+			);
+			path = RatingProtocols;
+			sourceTree = "<group>";
+		};
+		524AB9FC21730F98007086ED /* RatingInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				524AB9FD21730F98007086ED /* RatingItem.swift */,
+				524AB9FE21730F98007086ED /* RatingInteractor.swift */,
+			);
+			path = RatingInteractor;
+			sourceTree = "<group>";
+		};
+		524AB9FF21730F98007086ED /* RatingManager */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0021730F98007086ED /* Local */,
+				524ABA0221730F98007086ED /* API */,
+			);
+			path = RatingManager;
+			sourceTree = "<group>";
+		};
+		524ABA0021730F98007086ED /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0121730F98007086ED /* RatingDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		524ABA0221730F98007086ED /* API */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0321730F98007086ED /* RatingAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		524ABA0421730F98007086ED /* RatingWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0521730F98007086ED /* RatingWireFrame.swift */,
+			);
+			path = RatingWireFrame;
+			sourceTree = "<group>";
+		};
+		524ABA0621730F98007086ED /* RatingPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0721730F98007086ED /* RatingPresenter.swift */,
+			);
+			path = RatingPresenter;
+			sourceTree = "<group>";
+		};
+		524ABA1321730FD6007086ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				524ABA0F21730FC6007086ED /* RatingViewController.swift */,
+				524ABA1021730FC6007086ED /* RatingViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		526A6234215FAAE200573815 /* Cells */ = {
@@ -1410,6 +1551,7 @@
 				52184D792169CBD70002E800 /* CurrentSessionTableViewCell.xib in Resources */,
 				210351ED213D9A6B00ADCEAB /* Assets.xcassets in Resources */,
 				219407CF2140510E0020FAA9 /* Lato-Semibold.ttf in Resources */,
+				524ABA1221730FC6007086ED /* RatingViewController.xib in Resources */,
 				219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */,
 				219407D02140510E0020FAA9 /* MavenPro-Bold.ttf in Resources */,
 				2142EB77214192730044D60C /* CreateUserViewController.xib in Resources */,
@@ -1417,6 +1559,7 @@
 				52184DBA216A83680002E800 /* BuddiesViewController.xib in Resources */,
 				219407D12140510E0020FAA9 /* MavenPro-Medium.ttf in Resources */,
 				1884ACE2214855FA0012666F /* EditProfileInputTableViewCell.xib in Resources */,
+				524ABA1721731B78007086ED /* AppInfoTableViewCell.xib in Resources */,
 				0031CB56213E73B200FCE6BF /* Entry.storyboard in Resources */,
 				18E8888C2142F0190050ECCF /* SettingsViewController.xib in Resources */,
 				219407CD2140510E0020FAA9 /* Lato-Light.ttf in Resources */,
@@ -1430,6 +1573,7 @@
 				1884ACDE2148559B0012666F /* TextViewTableViewCell.xib in Resources */,
 				526A623E21609FF900573815 /* NewSessionNotificationVC.xib in Resources */,
 				213CDA48213EFF6800B1C874 /* HomeFlow.storyboard in Resources */,
+				521BA63421721E7A006AFFD4 /* BuddyInfoTableViewCell.xib in Resources */,
 				18E888812142ED4D0050ECCF /* RMessagesDefaultDesign.json in Resources */,
 				0031CB51213E6ECE00FCE6BF /* AuthTokenVerifierViewController.xib in Resources */,
 				1884ACCD214841DB0012666F /* NotificationsViewController.xib in Resources */,
@@ -1509,11 +1653,14 @@
 				52184D6E2169C6F20002E800 /* MatchSessionHandler.swift in Sources */,
 				0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */,
 				2142EB7D214198B40044D60C /* CreateUserInteracter.swift in Sources */,
+				524ABA0E21730F98007086ED /* RatingPresenter.swift in Sources */,
 				2103521F213DB40500ADCEAB /* NSNumber+Extension.swift in Sources */,
 				186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */,
+				52175825219544F6002A370D /* Common.swift in Sources */,
 				52184DCC216A85420002E800 /* BuddiesWireFrame.swift in Sources */,
 				2103521A213DB40500ADCEAB /* UIImage+Extension.swift in Sources */,
 				52184DB6216A7D560002E800 /* SessionsWireFrame.swift in Sources */,
+				524ABA1121730FC6007086ED /* RatingViewController.swift in Sources */,
 				52184D93216A210C0002E800 /* HistoryLocalDataManager.swift in Sources */,
 				52184DB2216A7D560002E800 /* SessionsLocalDataManager.swift in Sources */,
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
@@ -1524,8 +1671,10 @@
 				18E888982142F1F80050ECCF /* SettingsPresenter.swift in Sources */,
 				5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */,
 				1884ACD121484B4B0012666F /* ProfileViewController.swift in Sources */,
+				521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */,
 				0031CB60213E74AA00FCE6BF /* CLProgressHUD.swift in Sources */,
 				52184D9E216A7C210002E800 /* SessionsViewController.swift in Sources */,
+				524ABA1621731B78007086ED /* AppInfoTableViewCell.swift in Sources */,
 				0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */,
 				2103521D213DB40500ADCEAB /* UIButton+Extension.swift in Sources */,
 				2103521B213DB40500ADCEAB /* UIView+Extension.swift in Sources */,
@@ -1538,6 +1687,7 @@
 				52184DB1216A7D560002E800 /* SessionsItem.swift in Sources */,
 				52184DCD216A85420002E800 /* BuddiesItem.swift in Sources */,
 				52184DCB216A85420002E800 /* BuddiesProtocols.swift in Sources */,
+				524ABA0C21730F98007086ED /* RatingAPIDataManager.swift in Sources */,
 				52184D782169CBD70002E800 /* CurrentSessionTableViewCell.swift in Sources */,
 				0031CB57213E73B200FCE6BF /* EntryViewController.swift in Sources */,
 				0031CB5F213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift in Sources */,
@@ -1571,15 +1721,19 @@
 				0031CB52213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift in Sources */,
 				21035213213DB40500ADCEAB /* UIViewController+Extension.swift in Sources */,
 				52184D702169C7000002E800 /* DropSessionHandler.swift in Sources */,
+				521BA63321721E7A006AFFD4 /* BuddyInfoTableViewCell.swift in Sources */,
 				1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */,
 				52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */,
 				213CDA45213EE6CD00B1C874 /* LoginWireframe.swift in Sources */,
 				52184DB3216A7D560002E800 /* SessionsAPIDataManager.swift in Sources */,
 				2103522A213DBBF900ADCEAB /* AppColors.swift in Sources */,
+				524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */,
+				524ABA0921730F98007086ED /* RatingItem.swift in Sources */,
 				52184D92216A210C0002E800 /* HistoryWireFrame.swift in Sources */,
 				21035216213DB40500ADCEAB /* UIAlertController+Extension.swift in Sources */,
 				1884ACF5214866F00012666F /* EditProfileWireframe.swift in Sources */,
 				2142EB7B2141989B0044D60C /* CreateUserProtocols.swift in Sources */,
+				524ABA0B21730F98007086ED /* RatingDataManager.swift in Sources */,
 				52184DB5216A7D560002E800 /* SessionsProtocols.swift in Sources */,
 				52184DD1216A85420002E800 /* BuddiesPresenter.swift in Sources */,
 				213CDA40213EE6CD00B1C874 /* LoginDataManager.swift in Sources */,
@@ -1597,8 +1751,10 @@
 				52184DCE216A85420002E800 /* BuddiesInteractor.swift in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
+				524ABA0D21730F98007086ED /* RatingWireFrame.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,
 				18E888992142F1F80050ECCF /* SettingsWireframe.swift in Sources */,
+				524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */,
 				52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */,
 				21035202213DB30300ADCEAB /* L102Language.swift in Sources */,
 				52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */,
@@ -1749,15 +1905,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "OAESolutions.SESH-BUDDY";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1767,15 +1925,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "OAESolutions.SESH-BUDDY";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

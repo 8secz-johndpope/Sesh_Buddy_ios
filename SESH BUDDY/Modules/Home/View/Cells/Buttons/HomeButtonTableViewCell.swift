@@ -20,16 +20,19 @@ class HomeButtonTableViewCell: UITableViewCell {
         self.backgroundColor = .clear
         self.bgView.backgroundColor = .clear
     }
-    func setUPUI(isButtonSelected: Bool, type: SessionType){
+    func setUPUI(isButtonSelected: Bool, type: HomeViewSections){
+        button.setTitle("", for: .normal)
         switch type {
-        case .SHMOKE:
+        case .shmokButton:
             button.setTitle(AppStrings.SHMOKE.localized, for: .normal)
-        case .MATCH:
+        case .matchButton:
             button.setTitle(AppStrings.MATCH.localized, for: .normal)
-        case .DROP:
+        case .dropButton:
             button.setTitle(AppStrings.DROP.localized, for: .normal)
-        case .SMO:
+        case .smoButton:
             button.setTitle(AppStrings.SMO.localized, for: .normal)
+        case .buddyUpButton:
+            button.setTitle(AppStrings.BUDDYUP.localized, for: .normal)
         default:
             break
         }

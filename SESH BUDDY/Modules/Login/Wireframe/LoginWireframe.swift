@@ -48,7 +48,6 @@ class LoginWireFrame: LoginWireFrameProtocol {
       interactor.presenter = presenter
       interactor.dataManager = remoteDataManager
       remoteDataManager.remoteRequestHandler = interactor
-      
       return view
     } else {
       return UIViewController()

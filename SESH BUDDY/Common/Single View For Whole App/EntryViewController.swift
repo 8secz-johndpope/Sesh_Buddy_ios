@@ -26,6 +26,7 @@ class EntryViewController: REFrostedViewController {
                 statusView = statusSheet
                 statusView?.frame = frame
                 self.view.addSubview(statusView!)
+                statusView?.addShadow(0)
                 self.addStatusSheet()
             }
         } else {

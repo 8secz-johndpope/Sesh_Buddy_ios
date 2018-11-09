@@ -102,37 +102,73 @@ extension SideMenuViewController: UITableViewDelegate {
             guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
                 return
             }
-            self.frostedViewController.hideMenuViewController()
-            DispatchQueue.main.async {
-                nav.setViewControllers([settingsViewController], animated: true)
+          
+            let navChild = nav.viewControllers
+            if navChild.last is SessionsViewController  {
+                self.frostedViewController.hideMenuViewController()
+            } else {
+                self.frostedViewController.hideMenuViewController()
+                DispatchQueue.main.async {
+                    nav.setViewControllers([settingsViewController], animated: true)
+                }
             }
+           
         case .buddies:
             let settingsViewController = BuddiesWireFrame.presentBuddiesModule()
             guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
                 return
             }
-            self.frostedViewController.hideMenuViewController()
-            DispatchQueue.main.async {
-                nav.setViewControllers([settingsViewController], animated: true)
+            
+            let navChild = nav.viewControllers
+            if navChild.last is BuddiesViewController  {
+                self.frostedViewController.hideMenuViewController()
+            } else {
+                self.frostedViewController.hideMenuViewController()
+                DispatchQueue.main.async {
+                    nav.setViewControllers([settingsViewController], animated: true)
+                }
             }
-        case .ratings: break
+        case .ratings:
+            let settingsViewController = RatingWireFrame.presentRatingModule()
+            guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+                return
+            }
+            let navChild = nav.viewControllers
+            if navChild.last is RatingViewController  {
+                self.frostedViewController.hideMenuViewController()
+            } else {
+                self.frostedViewController.hideMenuViewController()
+                DispatchQueue.main.async {
+                    nav.setViewControllers([settingsViewController], animated: true)
+                }
+            }
         case .history:
             let settingsViewController = HistoryWireFrame.presentHistoryModule()
         guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
             return
         }
-        self.frostedViewController.hideMenuViewController()
-        DispatchQueue.main.async {
-            nav.setViewControllers([settingsViewController], animated: true)
+            let navChild = nav.viewControllers
+            if navChild.last is HistoryViewController  {
+                self.frostedViewController.hideMenuViewController()
+            } else {
+                self.frostedViewController.hideMenuViewController()
+                DispatchQueue.main.async {
+                    nav.setViewControllers([settingsViewController], animated: true)
+                }
             }
         case .settings:
             let settingsViewController = SettingsWireFrame.createSettingsModule()
             guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
                 return
             }
-            self.frostedViewController.hideMenuViewController()
-            DispatchQueue.main.async {
-                nav.setViewControllers([settingsViewController], animated: true)
+            let navChild = nav.viewControllers
+            if navChild.last is SettingsViewController  {
+                self.frostedViewController.hideMenuViewController()
+            } else {
+                self.frostedViewController.hideMenuViewController()
+                DispatchQueue.main.async {
+                    nav.setViewControllers([settingsViewController], animated: true)
+                }
             }
         default: break
         }
@@ -142,16 +178,16 @@ extension SideMenuViewController: UITableViewDelegate {
             cell.sideMenuFieldIcon.isHighlighted = true
             cell.sideMenuFieldName.textColor = .orange
             cell.bgView.backgroundColor = UIColor.backgroundGrey
-            
+
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? SideMenuFieldTableViewCell {
             cell.sideMenuFieldIcon.isHighlighted = false
             cell.sideMenuFieldName.textColor = .black
             cell.bgView.backgroundColor = .sideMenuBackgroundColor
-            
+
         }
     }
 }

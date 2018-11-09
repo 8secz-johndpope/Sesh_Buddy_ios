@@ -9,8 +9,14 @@
 import Foundation
 
 class MatchSessionHandler: NSObject {
-    var currentSessions = [[String: Any]]()
+    var currentSessions = [String]()
     var buddiesList = [[String: Any]]()
+    var selectedSeshType = ""
+    var selectedGramType = ""
+    var selectedStrainType = ""
+    var selectedUtensilType = ""
+    var selectedTime = ""
+    var selectedDate = ""
     override init() {
            
     }

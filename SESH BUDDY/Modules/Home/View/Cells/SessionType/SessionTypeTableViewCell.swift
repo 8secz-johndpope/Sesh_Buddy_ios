@@ -29,7 +29,7 @@ class SessionTypeTableViewCell: UITableViewCell {
         headerTileLabel.textColor = UIColor.white
         headerTileLabel.font = Fonts.mavenProRegular.getFont(13)
         let font = Fonts.mavenProMedium.getFont(15)
-        sessionTextField.font = Fonts.mavenProRegular.getFont(14)
+        sessionTextField.font = Fonts.mavenProRegular.getFont(15)
         sessionTypeButton.titleLabel?.font =  font
         sessionTypeButton.setTitleColor(UIColor.white, for: .normal)
         dropDownImageView.image = Icons.dropDown?.coloredImage(color: .white)
@@ -48,24 +48,24 @@ class SessionTypeTableViewCell: UITableViewCell {
         switch type {
         case .seshType:
             headerTileLabel.text = AppStrings.sesh_type.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .point:
             headerTileLabel.text = AppStrings.point.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .strain:
             headerTileLabel.text = AppStrings.straint.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .time:
             headerTileLabel.text = AppStrings.time.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
-            dropDownImageView.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
+            dropDownImageView.isHidden = true
         case .location:
             headerTileLabel.text = AppStrings.location.localized
             sessionTextField.isHidden = false
@@ -73,8 +73,8 @@ class SessionTypeTableViewCell: UITableViewCell {
             dropDownImageView.isHidden = true
         case .utensils:
             headerTileLabel.text = AppStrings.utensils.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .addBuddies:
             headerTileLabel.text = AppStrings.buddies.localized
@@ -94,8 +94,8 @@ class SessionTypeTableViewCell: UITableViewCell {
             addOrRemoveButton.setImage(Icons.delete, for: .normal)
         case .gram:
             headerTileLabel.text = AppStrings.gram.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .reason:
             headerTileLabel.text = AppStrings.reason.localized
@@ -104,9 +104,9 @@ class SessionTypeTableViewCell: UITableViewCell {
             dropDownImageView.isHidden = false
         case .date:
             headerTileLabel.text = AppStrings.date.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
-            dropDownImageView.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
+            dropDownImageView.isHidden = true
         default:
             break
         }

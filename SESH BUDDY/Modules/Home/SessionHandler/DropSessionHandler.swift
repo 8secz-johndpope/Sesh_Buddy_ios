@@ -9,9 +9,15 @@
 import Foundation
 
 class DropSessionHandler: NSObject {
-    var currentSessions = [[String: Any]]()
+    var currentSessions = [String]()
     var buddiesList = [[String: Any]]()
+    var selectedSeshType = ""
+    var selectedPointType = ""
+    var selectedStrainType = ""
+    var selectedUtensilType = ""
+    var selectedTime = ""
+    var selectedDate = ""
     override init() {
-        currentSessions.append([:])
+        currentSessions.append("90801fish")
     }
 }

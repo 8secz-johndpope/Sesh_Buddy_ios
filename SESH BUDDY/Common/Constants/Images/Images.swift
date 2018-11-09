@@ -42,6 +42,7 @@ struct Icons {
     static let dropDown = UIImage(named: "dropDown")
     static let plusRound = UIImage(named: "plus")
     static let delete = UIImage(named: "delete")?.coloredImage(color: .white)
-    
+    static let starGreen = UIImage(named: "starGreen")
+    static let starGray = UIImage(named: "starGray")
 }
 

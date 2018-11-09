@@ -39,7 +39,11 @@ class LoginOptionsViewController: UIViewController {
         setUPUI()
     }
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.changeNavBarColor(.clear)
+    }
     
     func setUPUI(){
         let buttonRadius: CGFloat = 3.0
@@ -51,8 +55,8 @@ class LoginOptionsViewController: UIViewController {
         facebookLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Facebook ", image: Icons.facebook, type: .facebook), for: .normal)
         snapchatLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Snapchat ", image: Icons.snapchat, type: .snapchat), for: .normal)
         loginInfoLabel.font = Fonts.mavenProRegular.getFont(12)
-        loginInfoLabel.text = "SeshBuddies respects your privacy. Name and Emails aren't displayed publicaly, and nothing posted to your Facebook and Snapchat account without permission."
-        signUpEmailButton.setAttributedTitle(self.getAttributedString(withFirst: "Sign with", withSecond: " Email ", image: nil, type: .
+        loginInfoLabel.text = "SeshBuddies respects your privacy. Name and Emails aren't displayed publicly, and nothing posted to your Facebook and Snapchat account without permission."
+        signUpEmailButton.setAttributedTitle(self.getAttributedString(withFirst: "Sign up with", withSecond: " Email ", image: nil, type: .
             email), for: .normal)
     }
     
@@ -81,11 +85,7 @@ class LoginOptionsViewController: UIViewController {
         }
         return firstString + secondString + imageString
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-      //  self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewWillAppear(animated)
-    }
+
     override func viewDidLayoutSubviews() {
        // self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLayoutSubviews()
