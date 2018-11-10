@@ -44,7 +44,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7E-Il-iuw">
-                                                <rect key="frame" x="30" y="189.5" width="315" height="288.5"/>
+                                                <rect key="frame" x="30" y="154.5" width="315" height="358.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hFc-Uz-tBG">
                                                         <rect key="frame" x="90" y="0.0" width="135" height="31"/>
@@ -126,17 +126,31 @@
                                                             <action selector="loginInWithEmailButtonClicked:" destination="70Q-S7-xSY" eventType="touchUpInside" id="TZJ-1i-MJy"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qs2-Eu-3Ef">
+                                                        <rect key="frame" x="0.0" y="298.5" width="315" height="40"/>
+                                                        <color key="backgroundColor" red="0.031372549020000001" green="0.70196078429999997" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <state key="normal" title="Login with Email">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="loginWithEmailButtonAction:" destination="70Q-S7-xSY" eventType="touchUpInside" id="DEh-dQ-hv6"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="cQI-MJ-ttB" secondAttribute="trailing" id="0Q5-ku-PmX"/>
-                                                    <constraint firstAttribute="bottom" secondItem="emd-mS-78D" secondAttribute="bottom" id="5ql-mq-lOU"/>
                                                     <constraint firstAttribute="trailing" secondItem="iCq-rK-Wzg" secondAttribute="trailing" id="6kQ-6E-zpy"/>
                                                     <constraint firstItem="iCq-rK-Wzg" firstAttribute="leading" secondItem="d7E-Il-iuw" secondAttribute="leading" id="8yO-pu-3K1"/>
                                                     <constraint firstItem="cQI-MJ-ttB" firstAttribute="leading" secondItem="d7E-Il-iuw" secondAttribute="leading" id="B0Q-7k-s2Z"/>
+                                                    <constraint firstItem="Qs2-Eu-3Ef" firstAttribute="leading" secondItem="emd-mS-78D" secondAttribute="leading" id="F02-sQ-X2T"/>
                                                     <constraint firstItem="RMa-V8-UVs" firstAttribute="height" secondItem="pTU-tW-6xX" secondAttribute="height" id="GYb-9u-Hwn"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Qs2-Eu-3Ef" secondAttribute="bottom" constant="20" id="HLa-WX-nO2"/>
+                                                    <constraint firstItem="emd-mS-78D" firstAttribute="top" secondItem="iCq-rK-Wzg" secondAttribute="bottom" constant="10" id="HjT-ZQ-Mv7"/>
+                                                    <constraint firstItem="Qs2-Eu-3Ef" firstAttribute="top" secondItem="emd-mS-78D" secondAttribute="bottom" constant="10" id="LAx-yO-a3B"/>
                                                     <constraint firstItem="pTU-tW-6xX" firstAttribute="top" secondItem="hFc-Uz-tBG" secondAttribute="bottom" constant="20" id="ME2-E7-tRe"/>
                                                     <constraint firstItem="RMa-V8-UVs" firstAttribute="top" secondItem="pTU-tW-6xX" secondAttribute="bottom" constant="10" id="Nbe-n3-6Ke"/>
+                                                    <constraint firstItem="Qs2-Eu-3Ef" firstAttribute="trailing" secondItem="emd-mS-78D" secondAttribute="trailing" id="P8P-3C-okw"/>
                                                     <constraint firstItem="pTU-tW-6xX" firstAttribute="leading" secondItem="d7E-Il-iuw" secondAttribute="leading" id="R4n-dp-Aau"/>
                                                     <constraint firstItem="emd-mS-78D" firstAttribute="leading" secondItem="d7E-Il-iuw" secondAttribute="leading" id="Udt-As-gSp"/>
                                                     <constraint firstItem="emd-mS-78D" firstAttribute="height" secondItem="pTU-tW-6xX" secondAttribute="height" id="ZEI-Ct-Acg"/>
@@ -146,6 +160,7 @@
                                                     <constraint firstItem="hFc-Uz-tBG" firstAttribute="centerX" secondItem="d7E-Il-iuw" secondAttribute="centerX" id="eD6-aD-3N1"/>
                                                     <constraint firstAttribute="trailing" secondItem="emd-mS-78D" secondAttribute="trailing" id="fC8-H8-8v7"/>
                                                     <constraint firstItem="cQI-MJ-ttB" firstAttribute="top" secondItem="RMa-V8-UVs" secondAttribute="bottom" constant="10" id="htb-ub-ucO"/>
+                                                    <constraint firstItem="Qs2-Eu-3Ef" firstAttribute="height" secondItem="emd-mS-78D" secondAttribute="height" id="iAV-cW-aAh"/>
                                                     <constraint firstAttribute="trailing" secondItem="RMa-V8-UVs" secondAttribute="trailing" id="kSu-ti-Hro"/>
                                                     <constraint firstItem="hFc-Uz-tBG" firstAttribute="top" secondItem="d7E-Il-iuw" secondAttribute="top" id="kyp-K3-pwg"/>
                                                     <constraint firstItem="RMa-V8-UVs" firstAttribute="leading" secondItem="d7E-Il-iuw" secondAttribute="leading" id="sAw-aC-Ddf"/>
@@ -193,6 +208,7 @@
                         <outlet property="leftSepratorView" destination="1ey-i5-50U" id="2DF-Kb-pNE"/>
                         <outlet property="loginInfoLabel" destination="cQI-MJ-ttB" id="qxg-05-Lw3"/>
                         <outlet property="loginOptionsScrollView" destination="Ckh-PO-Qac" id="4QL-Ow-fkX"/>
+                        <outlet property="loginWithEmailButton" destination="Qs2-Eu-3Ef" id="5sR-QI-NZN"/>
                         <outlet property="logoImageView" destination="hFc-Uz-tBG" id="J7n-X6-f2U"/>
                         <outlet property="middleView" destination="d7E-Il-iuw" id="7KY-n3-tJQ"/>
                         <outlet property="orLabel" destination="La4-R6-gJl" id="M6u-vG-wZS"/>

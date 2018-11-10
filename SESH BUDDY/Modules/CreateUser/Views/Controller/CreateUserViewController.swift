@@ -10,7 +10,15 @@ import UIKit
 import REFrostedViewController
 
 class CreateUserViewController: UIViewController, UITextViewDelegate {
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
     
+    @IBOutlet weak var passwordSepratorView: UIView!
+    @IBOutlet weak var passwordView: UIView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var emailSepratorView: UIView!
+    @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var createUserScrollView: UIScrollView!
     @IBOutlet weak var createUserContentView: UIView!

@@ -16,6 +16,7 @@ enum LoginButtons {
 
 class LoginOptionsViewController: UIViewController {
 
+    @IBOutlet weak var loginWithEmailButton: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginOptionsScrollView: UIScrollView!
     @IBOutlet weak var middleView: UIView!
@@ -50,13 +51,17 @@ class LoginOptionsViewController: UIViewController {
         facebookLoginButton.layer.cornerRadius = buttonRadius
         snapchatLoginButton.layer.cornerRadius = buttonRadius
         signUpEmailButton.layer.cornerRadius = buttonRadius
+        loginWithEmailButton.layer.cornerRadius = buttonRadius
         
         signUpEmailButton.backgroundColor = UIColor.themeNavBarColor
+        loginWithEmailButton.backgroundColor = UIColor.themeNavBarColor
         facebookLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Facebook ", image: Icons.facebook, type: .facebook), for: .normal)
         snapchatLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Snapchat ", image: Icons.snapchat, type: .snapchat), for: .normal)
         loginInfoLabel.font = Fonts.mavenProRegular.getFont(12)
         loginInfoLabel.text = "SeshBuddies respects your privacy. Name and Emails aren't displayed publicly, and nothing posted to your Facebook and Snapchat account without permission."
         signUpEmailButton.setAttributedTitle(self.getAttributedString(withFirst: "Sign up with", withSecond: " Email ", image: nil, type: .
+            email), for: .normal)
+        loginWithEmailButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Email ", image: nil, type: .
             email), for: .normal)
     }
     
@@ -90,7 +95,9 @@ class LoginOptionsViewController: UIViewController {
        // self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewDidLayoutSubviews()
     }
-   
+    @IBAction func loginWithEmailButtonAction(_ sender: Any) {
+    }
+    
     @IBAction func loginWithFacebookButtonclicked(_ sender: Any) {
         self.presenter?.didTapAtLoginWithFacebook()
     }

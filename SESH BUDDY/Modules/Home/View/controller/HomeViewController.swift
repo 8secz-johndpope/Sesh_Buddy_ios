@@ -416,6 +416,8 @@ extension HomeViewController: UITableViewDataSource {
             return sessionTypeCell
         case .location:
              updateTableViewHeight()
+             sessionTypeCell.sessionTextField.inputAccessoryView = nil
+             sessionTypeCell.sessionTextField.inputView = nil
             return sessionTypeCell
         case .utensils:
              updateTableViewHeight()
@@ -424,10 +426,14 @@ extension HomeViewController: UITableViewDataSource {
             return sessionTypeCell
         case .addBuddies:
              updateTableViewHeight()
+             sessionTypeCell.sessionTextField.inputAccessoryView = nil
+             sessionTypeCell.sessionTextField.inputView = nil
              sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
              sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
              return sessionTypeCell
         case .buddiesList:
+            sessionTypeCell.sessionTextField.inputAccessoryView = nil
+            sessionTypeCell.sessionTextField.inputView = nil
             updateTableViewHeight()
             sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
             sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
