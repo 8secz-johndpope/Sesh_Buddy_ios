@@ -10,6 +10,7 @@ import UIKit
 
 class HomeButtonTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var button: UIButton!
     
@@ -24,14 +25,20 @@ class HomeButtonTableViewCell: UITableViewCell {
         button.setTitle("", for: .normal)
         switch type {
         case .shmokButton:
+            subTitleLabel.isHidden = true
             button.setTitle(AppStrings.SHMOKE.localized, for: .normal)
         case .matchButton:
+            subTitleLabel.isHidden = true
             button.setTitle(AppStrings.MATCH.localized, for: .normal)
         case .dropButton:
+            subTitleLabel.isHidden = true
             button.setTitle(AppStrings.DROP.localized, for: .normal)
         case .smoButton:
+            subTitleLabel.isHidden = false
             button.setTitle(AppStrings.SMO.localized, for: .normal)
         case .buddyUpButton:
+            
+            subTitleLabel.isHidden = true
             button.setTitle(AppStrings.BUDDYUP.localized, for: .normal)
         default:
             break
@@ -40,6 +47,9 @@ class HomeButtonTableViewCell: UITableViewCell {
         let font = Fonts.mavenProMedium.getFont(17)
         button.titleLabel?.font =  font
         button.setTitleColor(UIColor.white, for: .normal)
+        
+        subTitleLabel.textColor = UIColor.white
+        subTitleLabel.font = Fonts.mavenProRegular.getFont(9)
         if !isButtonSelected {
             button.layer.borderColor = UIColor.white.cgColor
             button.layer.borderWidth = 1

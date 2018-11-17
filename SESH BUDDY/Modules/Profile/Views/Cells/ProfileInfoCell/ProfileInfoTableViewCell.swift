@@ -20,6 +20,8 @@ class ProfileInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         descriptionTextView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2
     }
 
 }

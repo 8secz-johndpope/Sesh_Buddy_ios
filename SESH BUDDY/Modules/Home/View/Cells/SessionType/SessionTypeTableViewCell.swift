@@ -99,8 +99,8 @@ class SessionTypeTableViewCell: UITableViewCell {
             dropDownImageView.isHidden = false
         case .reason:
             headerTileLabel.text = AppStrings.reason.localized
-            sessionTextField.isHidden = true
-            sessionTypeButton.isHidden = false
+            sessionTextField.isHidden = false
+            sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
         case .date:
             headerTileLabel.text = AppStrings.date.localized

@@ -73,6 +73,36 @@ class HomeViewController: UIViewController {
         self.setNavBarRightButton(type: .plus)
     }
     func setUPTableView() {
+        let firstSesh = Common.share.getSeshTypeList().first!
+        let strain = Common.share.getStrainTypeList().first!
+        let utensil = Common.share.getUtensilTypeList().first!
+        let gram = Common.share.getGramTypeList().first!
+        let points = Common.share.getPointsTypeList().first!
+        let reason = Common.share.getReasonsTypeList().first!
+        
+        
+        shmokeSessionHandler.selectedSeshType = firstSesh
+        shmokeSessionHandler.selectedStrainType = strain
+        shmokeSessionHandler.selectedUtensilType = utensil
+        
+        matchSessionHandler.selectedStrainType = strain
+        matchSessionHandler.selectedSeshType = firstSesh
+        matchSessionHandler.selectedUtensilType = utensil
+        matchSessionHandler.selectedGramType = gram
+        
+        
+        dropSessionHandler.selectedStrainType = strain
+        dropSessionHandler.selectedUtensilType = utensil
+        dropSessionHandler.selectedPointType = points
+        dropSessionHandler.selectedSeshType = firstSesh
+        
+        
+        smoSessionHandler.selectedSeshType = firstSesh
+        smoSessionHandler.selectedReasonsType = reason
+        
+        
+        
+        
         self.homeTableView.registerCellFrom(homeButtonTableViewCell)
         self.homeTableView.registerCellFrom(homeButtonTableViewCell, identifier: shmokeIdentifier)
         self.homeTableView.registerCellFrom(homeButtonTableViewCell, identifier: matchIdentifier)
@@ -429,12 +459,14 @@ extension HomeViewController: UITableViewDataSource {
              sessionTypeCell.sessionTextField.inputAccessoryView = nil
              sessionTypeCell.sessionTextField.inputView = nil
              sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
+             sessionTypeCell.sessionTextField.text = ""
              sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
              return sessionTypeCell
         case .buddiesList:
             sessionTypeCell.sessionTextField.inputAccessoryView = nil
             sessionTypeCell.sessionTextField.inputView = nil
             updateTableViewHeight()
+            sessionTypeCell.sessionTextField.text = ""
             sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
             sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
             return sessionTypeCell
@@ -451,13 +483,13 @@ extension HomeViewController: UITableViewDataSource {
     }
     func updateTableViewHeight(){
         let contentHeight = homeTableView.contentSize.height
-        let totalHeight = screenHeight - CGFloat(navigationBarHeight)
+        let totalHeight = screenHeight - (1 * CGFloat(navigationBarHeight))
         if contentHeight >= totalHeight {
             self.bottomTableViewConstraint.constant = 0
-            self.topConstraintTableView.constant = 0
+            self.topConstraintTableView.constant = CGFloat(navigationBarHeight)
             self.tableViewHeightConstraint.constant = totalHeight
         } else {
-            let margin = ((totalHeight) - contentHeight)/2
+            let margin = ((screenHeight) - contentHeight)/2
             self.bottomTableViewConstraint.constant = margin
             self.topConstraintTableView.constant = margin
             self.tableViewHeightConstraint.constant = contentHeight
@@ -560,17 +592,230 @@ extension HomeViewController: UITableViewDataSource {
     }
     @objc func doneButtonAction(sender: UIBarButtonItem) {
         self.view.endEditing(true)
+        
+        let dateFormatter = DateFormatter()
+        guard let enumVal = HomeViewSections.init(rawValue: sender.tag) else {
+            return
+        }
+        switch enumVal {
+        case .date:
+            var selectedDate = ""
+            dateFormatter.dateFormat = "MMMM dd, yyyy"//"MMMM dd yyyy"
+            // let orderDateString = dateFormatter.string(from: datePicker.date)
+            
+            if isShmokeSelected == true {
+                selectedDate = self.shmokeSessionHandler.selectedDate
+            } else if isMatchSelected == true {
+                selectedDate = self.matchSessionHandler.selectedDate
+            } else if isDropSelected == true {
+                selectedDate = self.dropSessionHandler.selectedDate
+            } else if isSMOSelected == true {
+                selectedDate = self.smoSessionHandler.selectedDate
+            }
+            
+            if selectedDate.isEmpty {
+                let orderDateString  = dateFormatter.string(from: Date())
+                if isShmokeSelected == true {
+                     self.shmokeSessionHandler.selectedDate = orderDateString
+                } else if isMatchSelected == true {
+                     self.matchSessionHandler.selectedDate = orderDateString
+                } else if isDropSelected == true {
+                     self.dropSessionHandler.selectedDate = orderDateString
+                } else if isSMOSelected == true {
+                     self.smoSessionHandler.selectedDate = orderDateString
+                }
+            }
+            
+        case .time:
+            dateFormatter.dateFormat = "hh:mm a"
+            dateFormatter.timeStyle = .long//"MMMM dd yyyy"
+            var selectedTime = ""
+            if isShmokeSelected == true {
+                selectedTime = self.shmokeSessionHandler.selectedTime
+            } else if isMatchSelected == true {
+                selectedTime = self.matchSessionHandler.selectedTime
+            } else if isDropSelected == true {
+                selectedTime = self.dropSessionHandler.selectedTime
+            } else if isSMOSelected == true {
+                selectedTime = self.smoSessionHandler.selectedTime
+            }
+            
+            if selectedTime.isEmpty {
+                let orderDateString  = dateFormatter.string(from: Date())
+                if isShmokeSelected == true {
+                    self.shmokeSessionHandler.selectedTime = orderDateString
+                } else if isMatchSelected == true {
+                    self.matchSessionHandler.selectedTime = orderDateString
+                } else if isDropSelected == true {
+                    self.dropSessionHandler.selectedTime = orderDateString
+                } else if isSMOSelected == true {
+                    self.smoSessionHandler.selectedTime = orderDateString
+                }
+            }
+        case .seshType:
+            
+            var selectedSess = ""
+            if isShmokeSelected == true {
+                selectedSess = self.shmokeSessionHandler.selectedSeshType
+            } else if isMatchSelected == true {
+                selectedSess = self.matchSessionHandler.selectedSeshType
+            } else if isDropSelected == true {
+                selectedSess = self.dropSessionHandler.selectedSeshType
+            } else if isSMOSelected == true {
+                selectedSess = self.smoSessionHandler.selectedSeshType
+            }
+            
+            if selectedSess.isEmpty, !Common.share.getSeshTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getSeshTypeList().first!
+                if isShmokeSelected == true {
+                    self.shmokeSessionHandler.selectedSeshType = orderDateString
+                } else if isMatchSelected == true {
+                    self.matchSessionHandler.selectedSeshType = orderDateString
+                } else if isDropSelected == true {
+                    self.dropSessionHandler.selectedSeshType = orderDateString
+                } else if isSMOSelected == true {
+                    self.smoSessionHandler.selectedSeshType = orderDateString
+                }
+            }
+        case .strain:
+            var selectedSess = ""
+            if isShmokeSelected == true {
+                selectedSess = self.shmokeSessionHandler.selectedStrainType
+            } else if isMatchSelected == true {
+                selectedSess = self.matchSessionHandler.selectedStrainType
+            } else if isDropSelected == true {
+                selectedSess = self.dropSessionHandler.selectedStrainType
+            }
+            
+            if selectedSess.isEmpty, !Common.share.getStrainTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getStrainTypeList().first!
+                if isShmokeSelected == true {
+                    self.shmokeSessionHandler.selectedStrainType = orderDateString
+                } else if isMatchSelected == true {
+                    self.matchSessionHandler.selectedStrainType = orderDateString
+                } else if isDropSelected == true {
+                    self.dropSessionHandler.selectedStrainType = orderDateString
+                }
+            }
+        case .gram:
+            var selectedSess = ""
+            if isMatchSelected == true {
+                selectedSess = self.matchSessionHandler.selectedGramType
+            }
+            
+            if selectedSess.isEmpty, !Common.share.getGramTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getGramTypeList().first!
+                 if isMatchSelected == true {
+                    self.matchSessionHandler.selectedGramType = orderDateString
+                }
+            }
+        case .utensils:
+            var selectedSess = ""
+            if isShmokeSelected == true {
+                selectedSess = self.shmokeSessionHandler.selectedUtensilType
+            } else if isMatchSelected == true {
+                selectedSess = self.matchSessionHandler.selectedUtensilType
+            } else if isDropSelected == true {
+                selectedSess = self.dropSessionHandler.selectedUtensilType
+            }
+            
+            if selectedSess.isEmpty, !Common.share.getUtensilTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getUtensilTypeList().first!
+                if isShmokeSelected == true {
+                    self.shmokeSessionHandler.selectedUtensilType = orderDateString
+                } else if isMatchSelected == true {
+                    self.matchSessionHandler.selectedUtensilType = orderDateString
+                } else if isDropSelected == true {
+                    self.dropSessionHandler.selectedUtensilType = orderDateString
+                }
+            }
+        case .point:
+            var selectedSess = ""
+              if isDropSelected == true {
+                selectedSess = self.dropSessionHandler.selectedPointType
+            }
+            if selectedSess.isEmpty, !Common.share.getPointsTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getPointsTypeList().first!
+                 if isDropSelected == true {
+                    self.dropSessionHandler.selectedPointType = orderDateString
+                }
+            }
+        case .reason:
+            var selectedSess = ""
+             if isSMOSelected == true {
+                selectedSess = self.smoSessionHandler.selectedReasonsType
+            }
+            
+            if selectedSess.isEmpty, !Common.share.getReasonsTypeList().first!.isEmpty {
+                let orderDateString  = Common.share.getReasonsTypeList().first!
+                 if isSMOSelected == true {
+                    self.smoSessionHandler.selectedReasonsType = orderDateString
+                }
+            }
+        default:
+            break
+        }
         self.homeTableView.reloadData()
     }
-    func getMinimumDateToBeSelect() -> Date {
+    func getMinimumDateToBeSelect(forType: Int) -> Date {
         let currentDate = Date()
-        //var returnedDate = Date()
-       // returnedDate =  Calendar.current.date(byAdding: .year, value: -70, to: currentDate)!
-        return currentDate
+        let dateFormatter = DateFormatter()
+        guard let enumVal = HomeViewSections.init(rawValue: forType) else {
+            return currentDate
+        }
+        var selectedDate = ""
+        
+        switch enumVal {
+        case .date:
+            dateFormatter.dateFormat = "MMMM dd, yyyy"//"MMMM dd yyyy"
+           // let orderDateString = dateFormatter.string(from: datePicker.date)
+
+            if isShmokeSelected == true {
+               selectedDate = self.shmokeSessionHandler.selectedDate
+            } else if isMatchSelected == true {
+               selectedDate = self.matchSessionHandler.selectedDate
+            } else if isDropSelected == true {
+               selectedDate = self.dropSessionHandler.selectedDate
+            } else if isSMOSelected == true {
+               selectedDate = self.smoSessionHandler.selectedDate
+            }
+
+            if !selectedDate.isEmpty {
+                let selectedMinimumDate = selectedDate.convertDateFormater(format: "MMMM dd, yyyy", utcToLocal: false, fromFormat: "MMMM dd, yyyy", localToutc: false)
+                return selectedMinimumDate
+            }else {
+                return currentDate
+            }
+
+        case .time:
+            dateFormatter.dateFormat = "hh:mm a"
+            dateFormatter.timeStyle = .long//"MMMM dd yyyy"
+            var selectedTime = ""
+            if isShmokeSelected == true {
+                selectedTime = self.shmokeSessionHandler.selectedTime
+            } else if isMatchSelected == true {
+               selectedTime = self.matchSessionHandler.selectedTime
+            } else if isDropSelected == true {
+                selectedTime = self.dropSessionHandler.selectedTime
+            } else if isSMOSelected == true {
+                selectedTime = self.smoSessionHandler.selectedTime
+            }
+
+            if !selectedTime.isEmpty {
+                let selectedMinimumDate = selectedTime.convertTimeFormater(format: "hh:mm a", utcToLocal: false, fromFormat: "hh:mm a", localToutc: false)
+                return selectedMinimumDate
+            }else {
+                return currentDate
+            }
+
+        default:
+            break
+        }
+return currentDate
     }
     @objc func datePickerDidChange(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        
+
         guard let enumVal = HomeViewSections.init(rawValue: datePicker.tag) else {
             return
         }
@@ -591,7 +836,8 @@ extension HomeViewController: UITableViewDataSource {
                 self.smoSessionHandler.selectedDate = orderDateString
             }
         case .time:
-            dateFormatter.dateFormat = "HH : mm"//"MMMM dd yyyy"
+            dateFormatter.dateFormat = "hh:mm a"
+            dateFormatter.timeStyle = .long//"MMMM dd yyyy"
             let orderDateString = dateFormatter.string(from: datePicker.date)
             if orderDateString.count > 0 {
                 print(orderDateString)
@@ -614,9 +860,10 @@ extension HomeViewController: UITableViewDataSource {
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: screenHeight, width: screenWidth, height: 216.0))
         datePicker.tag = textfield.tag
         if mode == .date {
-            let minimumOrderDate = self.getMinimumDateToBeSelect()
+            let minimumOrderDate = Date()//self.getMinimumDateToBeSelect(forType: datePicker.tag)
             datePicker.minimumDate = minimumOrderDate
         }
+        datePicker.date = self.getMinimumDateToBeSelect(forType: datePicker.tag)
         datePicker.datePickerMode = mode
         datePicker.addTarget(self, action: #selector(self.datePickerDidChange(datePicker:)), for: .valueChanged)
         datePicker.backgroundColor = UIColor.backgroundGrey
@@ -731,5 +978,10 @@ extension HomeViewController: UIPickerViewDataSource {
         default:
             return ""
         }
+    }
+}
+extension HomeViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
     }
 }

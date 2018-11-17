@@ -39,10 +39,8 @@ class EditProfileInputTableViewCell: UITableViewCell {
             profileTextField.text = "World"
         case .dateOfBirth:
             headerLabel.text = "Date Of Birth:"
-            profileTextField.text = "08/09/1978"
         case .gender:
             headerLabel.text = "Gender:"
-            profileTextField.text = "Male"
         default:
             break
         }

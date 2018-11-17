@@ -27,7 +27,7 @@ class CurrentSessionTableViewCell: UITableViewCell {
     }
     func setSessionDetails(type: SessionType, text: String) {
         
-        let firstString = text + " "
+        let firstString = text
         var secondString = ""
         let thirdString = " " + "in Sesh"
         
@@ -47,6 +47,7 @@ class CurrentSessionTableViewCell: UITableViewCell {
         default:
             break
         }
+        secondString = " " +  secondString
         let firstAttributtedString = NSMutableAttributedString(string: firstString)
     firstAttributtedString.font(Fonts.mavenProRegular.getFont(13)).underline().color(UIColor.white)
         

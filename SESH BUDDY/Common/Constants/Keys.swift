@@ -14,6 +14,11 @@ var screenSize : CGRect     = UIScreen.main.bounds
 var screenWidth             = screenSize.size.width
 var screenHeight            = screenSize.size.height
 var navigationBarHeight     = 44
+
+//----------------------------------------USER DEFAULT--------------------------------------------//
+let kFBDetailInfo          = "facebookUserDetail"
+//----------------------------------------APP KEYS--------------------------------------------//
+let kFacebookAppID         = "370114566895189"
 //----------------------------------------STORYBOARDS---------------------------------------------------------------//
 
 enum Storyboards: String {

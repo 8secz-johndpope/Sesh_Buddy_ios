@@ -139,9 +139,19 @@
 		5219F5FF215F8EA100F1DC13 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */; };
 		5219F603215F93FF00F1DC13 /* HomeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */; };
 		5219F604215F93FF00F1DC13 /* HomeButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */; };
+		521A6BA8219DEFC300617711 /* SeshStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A6BA6219DEFC300617711 /* SeshStatusViewController.swift */; };
+		521A6BA9219DEFC300617711 /* SeshStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521A6BA7219DEFC300617711 /* SeshStatusViewController.xib */; };
+		521AD24A219C860200F7EEEB /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521AD248219C860100F7EEEB /* VPImageCropperViewController.m */; };
+		521AD24E219C883800F7EEEB /* SelectImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AD24D219C883800F7EEEB /* SelectImage.swift */; };
+		521B74BA219FCF6A002FB21E /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */; };
+		521B74BB219FCF6A002FB21E /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */; };
+		521B74BF219FCFD5002FB21E /* SeshReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B74BD219FCFD5002FB21E /* SeshReviewViewController.swift */; };
+		521B74C0219FCFD5002FB21E /* SeshReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */; };
 		521BA63321721E7A006AFFD4 /* BuddyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */; };
 		521BA63421721E7A006AFFD4 /* BuddyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */; };
 		521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63721723917006AFFD4 /* FloatRatingView.swift */; };
+		521C05EF219B338400880E59 /* LoginWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C05ED219B338400880E59 /* LoginWithEmailViewController.swift */; };
+		521C05F0219B338400880E59 /* LoginWithEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */; };
 		524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FB21730F98007086ED /* RatingProtocols.swift */; };
 		524ABA0921730F98007086ED /* RatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FD21730F98007086ED /* RatingItem.swift */; };
 		524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FE21730F98007086ED /* RatingInteractor.swift */; };
@@ -296,9 +306,21 @@
 		5219F5FB215F8EA100F1DC13 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		5219F601215F93FF00F1DC13 /* HomeButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonTableViewCell.swift; sourceTree = "<group>"; };
 		5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeButtonTableViewCell.xib; sourceTree = "<group>"; };
+		521A6BA6219DEFC300617711 /* SeshStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeshStatusViewController.swift; sourceTree = "<group>"; };
+		521A6BA7219DEFC300617711 /* SeshStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeshStatusViewController.xib; sourceTree = "<group>"; };
+		521AD248219C860100F7EEEB /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		521AD249219C860100F7EEEB /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		521AD24B219C868A00F7EEEB /* SESH BUDDY-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SESH BUDDY-Bridging-Header.h"; sourceTree = "<group>"; };
+		521AD24D219C883800F7EEEB /* SelectImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectImage.swift; sourceTree = "<group>"; };
+		521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
+		521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
+		521B74BD219FCFD5002FB21E /* SeshReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeshReviewViewController.swift; sourceTree = "<group>"; };
+		521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeshReviewViewController.xib; sourceTree = "<group>"; };
 		521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		521BA63721723917006AFFD4 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		521C05ED219B338400880E59 /* LoginWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmailViewController.swift; sourceTree = "<group>"; };
+		521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginWithEmailViewController.xib; sourceTree = "<group>"; };
 		524AB9FB21730F98007086ED /* RatingProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProtocols.swift; sourceTree = "<group>"; };
 		524AB9FD21730F98007086ED /* RatingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingItem.swift; sourceTree = "<group>"; };
 		524AB9FE21730F98007086ED /* RatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingInteractor.swift; sourceTree = "<group>"; };
@@ -606,6 +628,7 @@
 		210351D9213D9A6500ADCEAB = {
 			isa = PBXGroup;
 			children = (
+				521AD24B219C868A00F7EEEB /* SESH BUDDY-Bridging-Header.h */,
 				210351E4213D9A6500ADCEAB /* SESH BUDDY */,
 				210351E3213D9A6500ADCEAB /* Products */,
 				63726AAE732216A74C2F5E7B /* Pods */,
@@ -684,6 +707,7 @@
 				52184D7F216A1FFC0002E800 /* History */,
 				52184DA0216A7C260002E800 /* Sessions */,
 				52184DBB216A837D0002E800 /* Buddies */,
+				521B74B6219E7664002FB21E /* CommonPopUp */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -709,6 +733,7 @@
 		21035203213DB30800ADCEAB /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
+				521AD247219C860100F7EEEB /* VPImageCropper */,
 				21035200213DB30300ADCEAB /* Language */,
 			);
 			path = Wrappers;
@@ -802,6 +827,7 @@
 			isa = PBXGroup;
 			children = (
 				210351FD213DAFE900ADCEAB /* LoginOptionsViewController.swift */,
+				521C05F1219B33B700880E59 /* LoginWithEmail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1310,6 +1336,60 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		521AD247219C860100F7EEEB /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				521AD248219C860100F7EEEB /* VPImageCropperViewController.m */,
+				521AD249219C860100F7EEEB /* VPImageCropperViewController.h */,
+			);
+			path = VPImageCropper;
+			sourceTree = "<group>";
+		};
+		521AD24C219C883800F7EEEB /* Image Picker */ = {
+			isa = PBXGroup;
+			children = (
+				521AD24D219C883800F7EEEB /* SelectImage.swift */,
+			);
+			path = "Image Picker";
+			sourceTree = "<group>";
+		};
+		521B74B6219E7664002FB21E /* CommonPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				521B74B7219E767E002FB21E /* StatusPopUP */,
+				521B74BC219FCF72002FB21E /* SessionDetailsPopUp */,
+				521B74C1219FCFDB002FB21E /* SessionReviewPopUp */,
+			);
+			path = CommonPopUp;
+			sourceTree = "<group>";
+		};
+		521B74B7219E767E002FB21E /* StatusPopUP */ = {
+			isa = PBXGroup;
+			children = (
+				521A6BA6219DEFC300617711 /* SeshStatusViewController.swift */,
+				521A6BA7219DEFC300617711 /* SeshStatusViewController.xib */,
+			);
+			path = StatusPopUP;
+			sourceTree = "<group>";
+		};
+		521B74BC219FCF72002FB21E /* SessionDetailsPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */,
+				521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */,
+			);
+			path = SessionDetailsPopUp;
+			sourceTree = "<group>";
+		};
+		521B74C1219FCFDB002FB21E /* SessionReviewPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				521B74BD219FCFD5002FB21E /* SeshReviewViewController.swift */,
+				521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */,
+			);
+			path = SessionReviewPopUp;
+			sourceTree = "<group>";
+		};
 		521BA63521721E81006AFFD4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1330,9 +1410,19 @@
 		521BA6392172391E006AFFD4 /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
+				521AD24C219C883800F7EEEB /* Image Picker */,
 				521BA63621723917006AFFD4 /* FloatRatingView */,
 			);
 			path = Wrapper;
+			sourceTree = "<group>";
+		};
+		521C05F1219B33B700880E59 /* LoginWithEmail */ = {
+			isa = PBXGroup;
+			children = (
+				521C05ED219B338400880E59 /* LoginWithEmailViewController.swift */,
+				521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */,
+			);
+			path = LoginWithEmail;
 			sourceTree = "<group>";
 		};
 		524AB9F921730F98007086ED /* Rating */ = {
@@ -1552,6 +1642,7 @@
 				210351ED213D9A6B00ADCEAB /* Assets.xcassets in Resources */,
 				219407CF2140510E0020FAA9 /* Lato-Semibold.ttf in Resources */,
 				524ABA1221730FC6007086ED /* RatingViewController.xib in Resources */,
+				521A6BA9219DEFC300617711 /* SeshStatusViewController.xib in Resources */,
 				219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */,
 				219407D02140510E0020FAA9 /* MavenPro-Bold.ttf in Resources */,
 				2142EB77214192730044D60C /* CreateUserViewController.xib in Resources */,
@@ -1564,6 +1655,7 @@
 				18E8888C2142F0190050ECCF /* SettingsViewController.xib in Resources */,
 				219407CD2140510E0020FAA9 /* Lato-Light.ttf in Resources */,
 				52184D9F216A7C210002E800 /* SessionsViewController.xib in Resources */,
+				521C05F0219B338400880E59 /* LoginWithEmailViewController.xib in Resources */,
 				2142EB9D2141AFDC0044D60C /* LabelTableViewCell.xib in Resources */,
 				52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */,
 				526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */,
@@ -1578,8 +1670,10 @@
 				0031CB51213E6ECE00FCE6BF /* AuthTokenVerifierViewController.xib in Resources */,
 				1884ACCD214841DB0012666F /* NotificationsViewController.xib in Resources */,
 				219407CE2140510E0020FAA9 /* Lato-Regular.ttf in Resources */,
+				521B74C0219FCFD5002FB21E /* SeshReviewViewController.xib in Resources */,
 				210351EB213D9A6500ADCEAB /* Authorization.storyboard in Resources */,
 				52184D7E216A1FF60002E800 /* HistoryViewController.xib in Resources */,
+				521B74BB219FCF6A002FB21E /* SessionDetailViewController.xib in Resources */,
 				1884ACD221484B4B0012666F /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1596,23 +1690,49 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
 				"${BUILT_PRODUCTS_DIR}/PPTopMostController/PPTopMostController.framework",
 				"${BUILT_PRODUCTS_DIR}/REFrostedViewController/REFrostedViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/RMessage/RMessage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapchatKit/SnapchatKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PPTopMostController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/REFrostedViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RMessage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapchatKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1644,6 +1764,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				521C05EF219B338400880E59 /* LoginWithEmailViewController.swift in Sources */,
 				526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */,
 				1884ACD721484D680012666F /* EditProfileHeaderCellTableViewCell.swift in Sources */,
 				52184DD0216A85420002E800 /* BuddiesAPIDataManager.swift in Sources */,
@@ -1666,9 +1787,11 @@
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
 				1884ACF4214866F00012666F /* EditProfileProtocol.swift in Sources */,
 				18E8889A2142F1F80050ECCF /* SettingsProtocol.swift in Sources */,
+				521A6BA8219DEFC300617711 /* SeshStatusViewController.swift in Sources */,
 				0031CB4F213E6ECE00FCE6BF /* AuthTokenVerifierProtocol.swift in Sources */,
 				1884ACF6214866F00012666F /* EditProfileInteractor.swift in Sources */,
 				18E888982142F1F80050ECCF /* SettingsPresenter.swift in Sources */,
+				521B74BF219FCFD5002FB21E /* SeshReviewViewController.swift in Sources */,
 				5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */,
 				1884ACD121484B4B0012666F /* ProfileViewController.swift in Sources */,
 				521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */,
@@ -1749,14 +1872,17 @@
 				0031CB4E213E6ECE00FCE6BF /* AuthTokenVerifierWireframe.swift in Sources */,
 				2142EB76214192730044D60C /* CreateUserViewController.swift in Sources */,
 				52184DCE216A85420002E800 /* BuddiesInteractor.swift in Sources */,
+				521AD24A219C860200F7EEEB /* VPImageCropperViewController.m in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
+				521AD24E219C883800F7EEEB /* SelectImage.swift in Sources */,
 				524ABA0D21730F98007086ED /* RatingWireFrame.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,
 				18E888992142F1F80050ECCF /* SettingsWireframe.swift in Sources */,
 				524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */,
 				52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */,
 				21035202213DB30300ADCEAB /* L102Language.swift in Sources */,
+				521B74BA219FCF6A002FB21E /* SessionDetailViewController.swift in Sources */,
 				52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */,
 				210351E6213D9A6500ADCEAB /* AppDelegate.swift in Sources */,
 				18E8888B2142F0190050ECCF /* SettingsViewController.swift in Sources */,
@@ -1839,6 +1965,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1892,6 +2019,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1907,13 +2035,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SESH BUDDY-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1927,13 +2056,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SESH BUDDY-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

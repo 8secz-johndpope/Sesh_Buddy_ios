@@ -5,7 +5,11 @@
 //  Created by Apple on 12/09/18.
 //  Copyright © 2018 Baljeet Kaur. All rights reserved.
 //
-
+enum ImageType {
+    case profile
+    case backgroundProfile
+    case none
+}
 import UIKit
 enum ProfileSections:Int {
     case profileInfo
@@ -35,8 +39,9 @@ enum AccountDetailsSection: Int {
     case count
 }
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate  {
+    
+    
     @IBOutlet weak var profileTableView: UITableView!
      var presenter: EditProfilePresenterProtocol?
     
@@ -50,8 +55,15 @@ class ProfileViewController: UIViewController {
     let kTagaboutMeTextView = 201
     let kTagprofileTextView = 202
     
+    var selectedDateNTime = ""
+    var selectedDate: Date!
+    var selectedGender = ""
+    var profileImage: UIImage!
+    var backgroundProfileImage: UIImage!
+    var selectedImageType = ImageType.none
     override func viewDidLoad() {
         super.viewDidLoad()
+         SelectImage.sharedInstance.delegate = self
         self.changeStyle(.default)
         self.setNavBarRightButton(type: .save)
         self.showMenuBarButton(true)
@@ -84,6 +96,16 @@ class ProfileViewController: UIViewController {
         self.frostedViewController.hideMenuViewController()
         let loginModule = LoginWireFrame.createLoginWithOTPModuleWithoutNav()
         appDelegate.changeVisibleRootController(loginModule)
+    }
+    
+    @objc func editProfileImageButtonAction() {
+        selectedImageType = ImageType.profile
+        SelectImage.sharedInstance.selectImage(self, folderPath: "", fileName: "")
+    }
+    
+    @objc func editProfileBackgroundButtonAction() {
+        selectedImageType = ImageType.backgroundProfile
+        SelectImage.sharedInstance.selectImage(self, folderPath: "", fileName: "")
     }
 }
 extension ProfileViewController: EditProfileViewProtocol {
@@ -128,6 +150,18 @@ extension ProfileViewController: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: profileInfoTableViewCell) as? ProfileInfoTableViewCell else {
                 return UITableViewCell()
             }
+            if self.profileImage != nil {
+                cell.profileImageView.image = self.profileImage
+            } else {
+                cell.profileImageView.image = Icons.profilePlaceHolder
+            }
+            if self.backgroundProfileImage != nil {
+                cell.bgImageView.image = self.backgroundProfileImage
+            } else {
+                cell.bgImageView.image = Icons.splash
+            }
+            cell.editProfileImageButton.addTarget(self, action: #selector(self.editProfileImageButtonAction), for: .touchUpInside)
+            cell.editDescriptionButton.addTarget(self, action: #selector(self.editProfileBackgroundButtonAction), for: .touchUpInside)
             return cell
         case .personalInfo:
             guard let rowVal = PersonalInfoSection.init(rawValue: indexPath.row) else {
@@ -152,12 +186,14 @@ extension ProfileViewController: UITableViewDataSource {
                 }
                 cell.profileTextField.tag = indexPath.row
                 self.setDatePickerToTextFieldInputAccessoryView(textfield: cell.profileTextField)
+                 cell.profileTextField.text = self.selectedDateNTime
                  cell.setCellValue(type: .dateOfBirth)
                 return cell
             case .gender:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: editProfileInputTableViewCell) as? EditProfileInputTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.profileTextField.text = self.selectedGender
                 cell.profileTextField.tag = indexPath.row
                 self.setGenderPickerToTextfieldInputAccessoryView(textfield: cell.profileTextField)
                  cell.setCellValue(type: .gender)
@@ -217,31 +253,58 @@ extension ProfileViewController: UITableViewDataSource {
     func getMaximumDateToBeSelect() -> Date {
         
         let currentDate = Date()
-        var returnedDate = Date()
-        returnedDate =  Calendar.current.date(byAdding: .year, value: -18, to: currentDate)!
+//        var returnedDate = Date()
+//        returnedDate =  Calendar.current.date(byAdding: .year, value: 0, to: currentDate)!
         
-        return returnedDate
+        return currentDate
     }
     
     @objc func datePickerDidChange(datePicker: UIDatePicker) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM yyyy, h:mm a"//"MMMM dd yyyy"
-        let orderDateString = dateFormatter.string(from: datePicker.date)
+        dateFormatter.dateFormat = "MMMM dd, yyyy"//"MMMM dd yyyy"
+        let orderDateString = self.getDateString(from: datePicker.date)
         if orderDateString.count > 0 {
             print(orderDateString)
-//            self.selectedDateNTime =  orderDateString
-//            selectedDate = datePicker.date
+            self.selectedDateNTime =  orderDateString
+            selectedDate = datePicker.date
         }
+    }
+    func getDateString(from: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"//"MMMM dd yyyy"
+        let orderDateString = dateFormatter.string(from: from)
+        return orderDateString
     }
      @objc func doneButtonAction(sender: UIBarButtonItem) {
         self.view.endEditing(true)
+        guard let rowVal = PersonalInfoSection.init(rawValue: sender.tag) else {
+            return
+        }
+        if rowVal == .dateOfBirth {
+            if self.selectedDateNTime.isEmpty {
+                self.selectedDate = self.getMaximumDateToBeSelect()
+                self.selectedDateNTime = self.getDateString(from: self.selectedDate)
+            }
+        }else {
+            if self.selectedGender.isEmpty {
+                selectedGender = "Male"
+            }
+        }
+       
+        self.profileTableView.reloadData()
     }
     func setDatePickerToTextFieldInputAccessoryView(textfield: UITextField){
         let datePicker = UIDatePicker(frame: CGRect(x: 0, y: screenHeight, width: screenWidth, height: 216.0))
         datePicker.datePickerMode = .date
         let minimumOrderDate = self.getMinimumDateToBeSelect()
-        datePicker.minimumDate = minimumOrderDate
         datePicker.maximumDate = self.getMaximumDateToBeSelect()
+        datePicker.minimumDate = minimumOrderDate
+        if self.selectedDate != nil {
+            datePicker.date = self.selectedDate
+        } else {
+            datePicker.date = datePicker.maximumDate!
+        }
+        
         datePicker.addTarget(self, action: #selector(self.datePickerDidChange(datePicker:)), for: .valueChanged)
         datePicker.backgroundColor = UIColor.backgroundGrey
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -278,7 +341,13 @@ extension ProfileViewController: UITableViewDataSource {
 }
 
 extension ProfileViewController: UIPickerViewDelegate {
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row == Gender.male.rawValue {
+            self.selectedGender = "Male"
+        } else {
+            self.selectedGender =  "Female"
+        }
+    }
 }
 extension ProfileViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -432,5 +501,15 @@ extension ProfileViewController: UITextViewDelegate {
     }
     func textViewDidChange(_ textView: UITextView) {
         self.updateHeightOfTextView(textview: textView)
+    }
+}
+extension ProfileViewController: SavedImageDelegate {
+    func imageSelectedSuccesfully(_ filePath: String, image: UIImage) {
+        if selectedImageType == .profile {
+            self.profileImage = image
+        } else {
+            self.backgroundProfileImage = image
+        }
+        self.profileTableView.reloadData()
     }
 }

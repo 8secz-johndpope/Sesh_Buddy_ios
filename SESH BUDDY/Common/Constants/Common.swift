@@ -36,4 +36,10 @@ class Common: NSObject {
         let seshType = ["Reason 1", "Reason 2"]
         return seshType
     }
+    
+    func getValideString(from: String) -> String {
+        var stringVal = from
+        stringVal = stringVal.trimeString()
+        return stringVal
+    }
 }

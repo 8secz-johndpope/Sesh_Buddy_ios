@@ -23,7 +23,7 @@ extension UIViewController {
       navController.navigationBar.setBackgroundImage(UIImage(), for: .default)
       navController.navigationBar.shadowImage = UIImage()
       navController.navigationBar.backgroundColor = .clear
-      navController.navigationBar.isTranslucent = true
+      navController.navigationBar.isTranslucent = false
     default:
       navController.navigationBar.setBackgroundImage(nil, for: .default)
       navController.navigationBar.shadowImage = nil

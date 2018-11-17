@@ -12,5 +12,11 @@ pod 'SVProgressHUD', '~> 2.2.5'
 pod 'REFrostedViewController', '~> 2.4'
 pod 'AlamofireImage', '~> 3.3'
 pod 'RMessage'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'SnapchatKit'
+pod 'SnapSDK'
+
 
 end

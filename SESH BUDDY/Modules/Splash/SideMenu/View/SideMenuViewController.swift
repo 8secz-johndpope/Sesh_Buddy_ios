@@ -59,10 +59,17 @@ class SideMenuViewController: UIViewController {
         guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
             return
         }
-        self.frostedViewController.hideMenuViewController()
-        DispatchQueue.main.async {
-            nav.setViewControllers([editProfileViewController], animated: true)
+        let navChild = nav.viewControllers
+        if navChild.last is ProfileViewController  {
+            self.frostedViewController.hideMenuViewController()
+        } else {
+            self.frostedViewController.hideMenuViewController()
+            DispatchQueue.main.async {
+                nav.setViewControllers([editProfileViewController], animated: true)
+            }
         }
+        
+       
     }
 }
 

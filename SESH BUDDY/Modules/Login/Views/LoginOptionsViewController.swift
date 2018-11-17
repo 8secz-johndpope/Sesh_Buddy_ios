@@ -96,6 +96,7 @@ class LoginOptionsViewController: UIViewController {
         super.viewDidLayoutSubviews()
     }
     @IBAction func loginWithEmailButtonAction(_ sender: Any) {
+        self.presenter?.moveToLoginWithEmail()
     }
     
     @IBAction func loginWithFacebookButtonclicked(_ sender: Any) {

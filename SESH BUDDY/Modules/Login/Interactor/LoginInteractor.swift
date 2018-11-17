@@ -9,20 +9,28 @@
 import Foundation
 
 class LoginInteractor: LoginInteractorInputProtocol {
+    
+    
   var presenter: LoginInteractorOutputProtocol?
   var dataManager: LoginDataManagerInputProtocol?
   
   func generateOtpWith(_ params: [String: Any]) {
     dataManager?.generateOtpWith(params)
   }
+    func fetchFacebookProfile() {
+        self.dataManager?.fetchFacebookProfile()
+    }
   
 }
 
 extension LoginInteractor: LoginDataManagerOutputProtocol {
+    func generateFetchFacebookProfile(_ value: [String: Any]) {
+        
+    }
+    
   func onError(value: String) {
     
   }
-  
   func generatedOtpWith(_ value: ServerResponseModal) {
     presenter?.generatedOtpWith(value)
   }

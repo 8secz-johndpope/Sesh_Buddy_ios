@@ -73,7 +73,17 @@ extension String {
         trimStr = trimStr.replacingOccurrences(of: "\n", with: "")
         return trimStr
     }
-    
+    func getFormattedLocalDate(_ actualformat: String, requiredFormat: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = actualformat
+        let dateFormed = dateFormatter.date(from: self)
+        if dateFormed != nil {
+            dateFormatter.dateFormat = requiredFormat
+            return dateFormatter.string(from: dateFormed!)
+        } else {
+            return ""
+        }
+    }
     // MARK: CONVERT DATE TIME
     func convertDateFormater( format: String = "MMM dd yyyy", utcToLocal: Bool = false, fromFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", localToutc: Bool = false ) -> Date {
         
@@ -82,6 +92,7 @@ extension String {
         }
         let dateFormatter = DateFormatter()
         dateFormatter.locale = NSLocale.current
+        
         dateFormatter.dateFormat = fromFormat
         
         dateFormatter.locale = NSLocale(localeIdentifier: "en-US") as Locale!
@@ -118,10 +129,52 @@ extension String {
             dateString = ""
             return Date()
         }
-        
-        
     }
-  
+    func convertTimeFormater( format: String = "MMM dd yyyy", utcToLocal: Bool = false, fromFormat: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", localToutc: Bool = false ) -> Date {
+        
+        if self == "" {
+            return Date()
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = fromFormat
+        dateFormatter.timeStyle = .long
+        
+//        dateFormatter.locale = NSLocale(localeIdentifier: "en-US") as Locale!
+//        if localToutc {
+//            dateFormatter.timeZone = NSTimeZone.local
+//        } else if utcToLocal {
+//            dateFormatter.timeZone = NSTimeZone(name: "IST") as TimeZone!
+//        } else {
+//            // dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+//            // dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+//        }
+//
+        let dateTime = dateFormatter.date(from: self)
+        let formatter = DateFormatter()
+        
+        formatter.locale = NSLocale.current
+        
+//        formatter.locale = NSLocale(localeIdentifier: "en-US") as Locale!
+//        if localToutc {
+//            formatter.timeZone = NSTimeZone(name: "IST") as TimeZone!
+//        } else if utcToLocal {
+//            dateFormatter.timeZone = NSTimeZone.local
+//        } else {
+//            // formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+//            // formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+//        }
+        
+        formatter.dateFormat = format
+        var dateString = ""
+        if dateTime != nil {
+            dateString = formatter.string(from: dateTime!)
+            return dateTime!
+        } else {
+            dateString = ""
+            return Date()
+        }
+    }
   func getFormattedLocalDate(_ actualformat: String, requiredFormat: String, Locale: Locale? = nil) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = actualformat

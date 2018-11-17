@@ -10,6 +10,10 @@ import Foundation
 import Alamofire
 
 class LoginDataManager:LoginDataManagerInputProtocol {
+    func fetchFacebookProfile() {
+        
+    }
+    
   var remoteRequestHandler: LoginDataManagerOutputProtocol?
   
   func generateOtpWith(_ params: [String: Any]) {

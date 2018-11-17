@@ -18,7 +18,9 @@ protocol LoginViewProtocol: class {
 
 protocol LoginWireFrameProtocol: class {
   static func createLoginWithOTPModule() -> UIViewController
-  func moveToCreateUserScreen(_ fromView: LoginViewProtocol)
+    func moveToCreateUserScreen(_ fromView: LoginViewProtocol, type: SignUpType)
+  func moveToHomeScreen(_ fromView: LoginViewProtocol)
+  func createLoginWithEmail(_ fromView: LoginViewProtocol)
   // PRESENTER -> WIREFRAME
 }
 
@@ -30,10 +32,13 @@ protocol LoginPresenterProtocol: class {
   func didTapAtRegisterButton()
   func didTapAtLoginWithFacebook()
   func didTapAtLoginWithSnapChat()
+  func didTapAtLoginWithEmail()
+  func moveToLoginWithEmail()
 }
 
 protocol LoginInteractorOutputProtocol: class {
   func generatedOtpWith(_ value: ServerResponseModal)
+ func generateFetchFacebookProfile(_ value: [String: Any])
   func onError(value: String)
   // INTERACTOR -> PRESENTER
  
@@ -42,18 +47,21 @@ protocol LoginInteractorOutputProtocol: class {
 protocol LoginInteractorInputProtocol: class {
   var presenter: LoginInteractorOutputProtocol? { get set }
   var dataManager: LoginDataManagerInputProtocol? { get set }
-  func generateOtpWith(_ params: [String: Any]) 
+  func generateOtpWith(_ params: [String: Any])
+  func fetchFacebookProfile()
   // PRESENTER -> INTERACTOR
 }
 
 protocol LoginDataManagerInputProtocol: class {
   var remoteRequestHandler: LoginDataManagerOutputProtocol? { get set }
-  func generateOtpWith(_ params: [String: Any]) 
+  func generateOtpWith(_ params: [String: Any])
+    func fetchFacebookProfile()
   // INTERACTOR -> DATAMANAGER
 }
 
 protocol LoginDataManagerOutputProtocol: class {
   func generatedOtpWith(_ value: ServerResponseModal)
+  func generateFetchFacebookProfile(_ value: [String: Any])
   func onError(value: String)
   // REMOTEDATAMANAGER -> INTERACTOR
  

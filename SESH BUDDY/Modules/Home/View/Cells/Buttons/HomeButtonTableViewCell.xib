@@ -29,13 +29,21 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAX 5 PER MONTH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1NA-ua-iPd">
+                                <rect key="frame" x="107" y="146.5" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1NA-ua-iPd" firstAttribute="trailing" secondItem="SBA-AZ-uZJ" secondAttribute="trailing" constant="-5" id="2lF-T7-eAq"/>
                             <constraint firstAttribute="trailing" secondItem="SBA-AZ-uZJ" secondAttribute="trailing" constant="55" id="Ig3-zp-Il0"/>
                             <constraint firstItem="SBA-AZ-uZJ" firstAttribute="top" secondItem="ka2-Ad-qBG" secondAttribute="top" constant="15" id="OBh-ls-xuW"/>
                             <constraint firstAttribute="bottom" secondItem="SBA-AZ-uZJ" secondAttribute="bottom" constant="15" id="Snd-cb-BqE"/>
                             <constraint firstItem="SBA-AZ-uZJ" firstAttribute="leading" secondItem="ka2-Ad-qBG" secondAttribute="leading" constant="55" id="bXa-cM-DSD"/>
+                            <constraint firstItem="1NA-ua-iPd" firstAttribute="bottom" secondItem="SBA-AZ-uZJ" secondAttribute="bottom" constant="-5" id="k8l-Yk-NvY"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -50,6 +58,7 @@
             <connections>
                 <outlet property="bgView" destination="ka2-Ad-qBG" id="2g7-IW-sdh"/>
                 <outlet property="button" destination="SBA-AZ-uZJ" id="ia1-Vo-l9n"/>
+                <outlet property="subTitleLabel" destination="1NA-ua-iPd" id="5xS-Hb-V9K"/>
             </connections>
             <point key="canvasLocation" x="72" y="90.854572713643179"/>
         </tableViewCell>
