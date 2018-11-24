@@ -13,10 +13,10 @@ enum StatusTypes {
     case holding
     case dry
 }
-enum SessionType {
-    case SHMOKE
-    case MATCH
-    case DROP
-    case SMO
+enum SessionType: Int {
+    case SHMOKE = 1
+    case MATCH = 2
+    case DROP = 3
+    case SMO = 4
     case none
 }

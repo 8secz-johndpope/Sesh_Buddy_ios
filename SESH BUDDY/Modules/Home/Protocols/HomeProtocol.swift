@@ -26,7 +26,10 @@ protocol HomePresenterProtocol: class {
   var view: HomeViewProtocol? { get set }
   var interactor: HomeInteractorInputProtocol? { get set }
   var wireFrame: HomeWireFrameProtocol? { get set }
-    
+    func buddyUpWith(matchHandler: MatchSessionHandler) -> Session?
+    func buddyUpWith(shmokeHandler: SHMOKSessionHandler) -> Session?
+    func buddyUpWith(dropHandler: DropSessionHandler) -> Session?
+    func buddyUpWith(smoHandler: SMOSssionHandler) -> Session?
     func didTapAtNotifications()
 }
 

@@ -49,12 +49,15 @@ class EditProfileInputTableViewCell: UITableViewCell {
     func setAccountDetails(type: AccountDetailsSection) {
         switch type {
         case .userName:
+            profileTextField.isUserInteractionEnabled = true
             headerLabel.text = "Username:"
             profileTextField.text = "90805fish"
         case .favoritShope:
+            profileTextField.isUserInteractionEnabled = true
             headerLabel.text = "Favourit Strain:"
             profileTextField.text = "Elchpoog"
         case .emailAddress:
+            profileTextField.isUserInteractionEnabled = false
             headerLabel.text = "Email Address:"
             profileTextField.text = "sesh@seshbuddies.com"
         default:

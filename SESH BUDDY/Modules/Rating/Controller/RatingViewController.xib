@@ -17,7 +17,7 @@
                 <outlet property="averageQualityLabel" destination="Urh-vf-u8r" id="pfC-Te-CGS"/>
                 <outlet property="averageQuantityFloatRatingView" destination="o0d-Lz-6Qh" id="Aa3-Eg-I5y"/>
                 <outlet property="averageQuantityLabel" destination="Nda-d3-0HG" id="ovN-4e-gkf"/>
-                <outlet property="averageRatingCommentLabel" destination="Sb2-fL-wXd" id="Cm2-PC-qWk"/>
+                <outlet property="averageRatingCommentLabel" destination="Sb2-fL-wXd" id="TbC-pI-Rds"/>
                 <outlet property="averageRatingLabel" destination="dHg-z5-3ea" id="dpL-iR-zUd"/>
                 <outlet property="averageRatingView" destination="02M-ZO-njG" id="4BK-iD-9YN"/>
                 <outlet property="averageRollsFloatRatingView" destination="tyj-ua-J8x" id="4ek-9L-ql1"/>

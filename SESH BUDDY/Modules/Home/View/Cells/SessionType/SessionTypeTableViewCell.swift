@@ -76,21 +76,13 @@ class SessionTypeTableViewCell: UITableViewCell {
             sessionTextField.isHidden = false
             sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = false
-        case .addBuddies:
+        case .buddiesList:
             headerTileLabel.text = AppStrings.buddies.localized
             sessionTextField.isHidden = false
             sessionTypeButton.isHidden = true
             dropDownImageView.isHidden = true
             addOrRemoveButton.isHidden = false
-            addOrRemoveButton.setImage(Icons.plusRound, for: .normal)
-        case .buddiesList:
-            headerTileLabel.text = ""
-            sessionTextField.isHidden = false
-            sessionTypeButton.isHidden = true
-            dropDownImageView.isHidden = true
-            addOrRemoveButton.isHidden = false
-            headerTileLabel.isHidden = true
-            headeLabelBottomConstraint.constant = 0
+            headerTileLabel.isHidden = false
             addOrRemoveButton.setImage(Icons.delete, for: .normal)
         case .gram:
             headerTileLabel.text = AppStrings.gram.localized

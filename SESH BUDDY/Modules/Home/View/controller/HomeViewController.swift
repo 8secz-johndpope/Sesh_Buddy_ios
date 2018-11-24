@@ -23,7 +23,6 @@ enum HomeViewSections:Int {
     case time
     case location
     case utensils
-    case addBuddies
     case buddiesList
     case buddyUpButton
     case count
@@ -50,6 +49,12 @@ class HomeViewController: UIViewController {
     var dropSessionHandler = DropSessionHandler()
     var smoSessionHandler = SMOSssionHandler()
     
+    let addBuddyBaseTag = 60000
+    let kLocationTag = 5000
+    var sessionStatusPopUPVC : SeshStatusViewController!
+    var sessionDetailsPopUPVc: SessionDetailViewController!
+    var transparentView: UIView!
+    
     let homeButtonTableViewCell = "HomeButtonTableViewCell"
     let sessionTypeTableViewCell = "SessionTypeTableViewCell"
     let currentSessionTableViewCell = "CurrentSessionTableViewCell"
@@ -59,6 +64,7 @@ class HomeViewController: UIViewController {
     let dropIdentifier = "DROPHomeButtonTableViewCell"
     let smoIdentifier = "SMOHomeButtonTableViewCell"
     
+    var sessionsData = Common.share.getSessionsArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +73,12 @@ class HomeViewController: UIViewController {
         self.changeStyle(.default)
         self.showMenuBarButton(true)
         self.setNavBarTitleView(image: ThemeImages.appLogo)
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavBarRightButton(type: .plus)
+        presentAcceptSessionPopUP(sessionDetailType: .acceptSession, session: sessionsData[0])
     }
     func setUPTableView() {
         let firstSesh = Common.share.getSeshTypeList().first!
@@ -160,7 +168,31 @@ class HomeViewController: UIViewController {
          self.homeTableView.reloadData()
     }
     @objc func buddyUpButtonClicked(_ sender: Any) {
-        
+        switch self.selectedSessionType {
+        case .SHMOKE:
+           let sessionToBeAdded =  self.presenter?.buddyUpWith(shmokeHandler: shmokeSessionHandler)
+           if sessionToBeAdded != nil {
+            self.openSeshUPSession(sessionType: .addSession, session: sessionToBeAdded!)
+            }
+            
+        case .DROP:
+           let sessionToBeAdded = self.presenter?.buddyUpWith(dropHandler: dropSessionHandler)
+            if sessionToBeAdded != nil {
+                self.openSeshUPSession(sessionType: .addSession, session: sessionToBeAdded!)
+            }
+        case .MATCH:
+           let sessionToBeAdded = self.presenter?.buddyUpWith(matchHandler: matchSessionHandler)
+            if sessionToBeAdded != nil {
+                self.openSeshUPSession(sessionType: .addSession, session: sessionToBeAdded!)
+}
+        case .SMO:
+           let sessionToBeAdded = self.presenter?.buddyUpWith(smoHandler: smoSessionHandler)
+            if sessionToBeAdded != nil {
+                self.openSeshUPSession(sessionType: .addSession, session: sessionToBeAdded!)
+            }
+        default:
+            break
+        }
     }
     @objc func dropButtonClicked(_ sender: Any) {
         self.isMatchSelected = false
@@ -195,16 +227,55 @@ class HomeViewController: UIViewController {
             shmokeSessionHandler.buddiesList = currentBuddyList
         case .MATCH:
             var currentBuddyList = matchSessionHandler.buddiesList
-            currentBuddyList.append([:])
+            currentBuddyList.append("")
             matchSessionHandler.buddiesList = currentBuddyList
         case .DROP:
             var currentBuddyList = dropSessionHandler.buddiesList
-            currentBuddyList.append([:])
+            currentBuddyList.append("")
             dropSessionHandler.buddiesList = currentBuddyList
         case .SMO:
             var currentBuddyList = smoSessionHandler.buddiesList
-            currentBuddyList.append([:])
+            currentBuddyList.append("")
             smoSessionHandler.buddiesList = currentBuddyList
+        default:
+            break
+        }
+        self.homeTableView.reloadData()
+    }
+    
+    func addBuddy(with: String, at: Int) {
+        switch selectedSessionType {
+        case .SHMOKE:
+            var currentBuddyList = shmokeSessionHandler.buddiesList
+            currentBuddyList[at] = with
+            shmokeSessionHandler.buddiesList = currentBuddyList
+        case .MATCH:
+            var currentBuddyList = matchSessionHandler.buddiesList
+            currentBuddyList[at] = with
+            matchSessionHandler.buddiesList = currentBuddyList
+        case .DROP:
+            var currentBuddyList = dropSessionHandler.buddiesList
+            currentBuddyList[at] = with
+            dropSessionHandler.buddiesList = currentBuddyList
+        case .SMO:
+            var currentBuddyList = smoSessionHandler.buddiesList
+            currentBuddyList[at] = with
+            smoSessionHandler.buddiesList = currentBuddyList
+        default:
+            break
+        }
+        self.homeTableView.reloadData()
+    }
+    func addLocation(with: String) {
+        switch selectedSessionType {
+        case .SHMOKE:
+            shmokeSessionHandler.selectedLocation = with
+        case .MATCH:
+            matchSessionHandler.selectedLocation = with
+        case .DROP:
+            dropSessionHandler.selectedLocation = with
+        case .SMO:
+            smoSessionHandler.selectedLocation = with
         default:
             break
         }
@@ -239,6 +310,10 @@ extension HomeViewController: HomeViewProtocol {
     func onError(value: String) {
     }
     func showAlert(_ string: String) {
+        DispatchQueue.main.async {
+            UIAlertController.presentAlert(title: nil, message: string, style: UIAlertControllerStyle.alert).action(title: AppStrings.Ok.localized, style: UIAlertActionStyle.default, handler: nil)
+        }
+        
     }
 }
 extension HomeViewController: UITableViewDelegate {
@@ -299,21 +374,29 @@ extension HomeViewController: UITableViewDataSource {
                 return 0
             }
             return 1
-        case .addBuddies:
-            if self.selectedSessionType == .none {
-                return 0
-            }
-            return 1
+        
         case .buddiesList:
             if self.selectedSessionType == .none {
                 return 0
             } else if selectedSessionType == .SHMOKE {
+                if shmokeSessionHandler.buddiesList.count == 0 {
+                    return 1
+                }
                 return shmokeSessionHandler.buddiesList.count
             } else if selectedSessionType == .MATCH {
+                if matchSessionHandler.buddiesList.count == 0 {
+                    return 1
+                }
                 return matchSessionHandler.buddiesList.count
             } else if selectedSessionType == .DROP {
+                if dropSessionHandler.buddiesList.count == 0 {
+                    return 1
+                }
                 return dropSessionHandler.buddiesList.count
             } else if selectedSessionType == .SMO {
+                if smoSessionHandler.buddiesList.count == 0 {
+                    return 1
+                }
                 return smoSessionHandler.buddiesList.count
             }
         case .point:
@@ -366,6 +449,7 @@ extension HomeViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         self.setUPSessionTypeCell(at: indexPath.section, cell: sessionTypeCell)
+        
         sessionTypeCell.setHeader(type: enumVal)
         sessionTypeCell.addOrRemoveButton.tag = indexPath.row
         switch enumVal {
@@ -446,6 +530,7 @@ extension HomeViewController: UITableViewDataSource {
             return sessionTypeCell
         case .location:
              updateTableViewHeight()
+             sessionTypeCell.sessionTextField.tag = kLocationTag
              sessionTypeCell.sessionTextField.inputAccessoryView = nil
              sessionTypeCell.sessionTextField.inputView = nil
             return sessionTypeCell
@@ -454,21 +539,35 @@ extension HomeViewController: UITableViewDataSource {
              sessionTypeCell.sessionTextField.tag = indexPath.section
              self.setPickerToTextfieldInputAccessoryView(textfield: sessionTypeCell.sessionTextField)
             return sessionTypeCell
-        case .addBuddies:
-             updateTableViewHeight()
-             sessionTypeCell.sessionTextField.inputAccessoryView = nil
-             sessionTypeCell.sessionTextField.inputView = nil
-             sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
-             sessionTypeCell.sessionTextField.text = ""
-             sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
-             return sessionTypeCell
+//        case .addBuddies:
+//             updateTableViewHeight()
+//             sessionTypeCell.sessionTextField.inputAccessoryView = nil
+//             sessionTypeCell.sessionTextField.inputView = nil
+//             sessionTypeCell.sessionTextField.tag = addBuddyBaseTag + indexPath.row
+//             sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
+//             sessionTypeCell.sessionTextField.text = ""
+//             sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
+//             return sessionTypeCell
         case .buddiesList:
+            self.setBuddyData(at:  indexPath.row, cell: sessionTypeCell)
+            sessionTypeCell.sessionTextField.tag =  addBuddyBaseTag + indexPath.row
             sessionTypeCell.sessionTextField.inputAccessoryView = nil
             sessionTypeCell.sessionTextField.inputView = nil
             updateTableViewHeight()
-            sessionTypeCell.sessionTextField.text = ""
-            sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
-            sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
+            if indexPath.row == 0 {
+                sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
+                 sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
+                sessionTypeCell.addOrRemoveButton.setImage(Icons.plusRound, for: .normal)
+            } else {
+                
+                sessionTypeCell.addOrRemoveButton.removeTarget(self, action: #selector(self.addBuddyButtonAction(_sender:)), for: .touchUpInside)
+                sessionTypeCell.addOrRemoveButton.addTarget(self, action: #selector(self.removeBuddyButtonAction(_sender:)), for: .touchUpInside)
+                
+                sessionTypeCell.addOrRemoveButton.setImage(Icons.delete, for: .normal)
+            }
+            
+            
+            
             return sessionTypeCell
         case .buddyUpButton:
             updateTableViewHeight()
@@ -500,6 +599,44 @@ extension HomeViewController: UITableViewDataSource {
         button.removeTarget(nil, action: #selector(self.shmokeButtonClicked(_:)), for: .touchUpInside)
         button.removeTarget(nil, action: #selector(self.smoButtonClicked(_:)), for: .touchUpInside)
         button.removeTarget(nil, action: #selector(self.dropButtonClicked(_:)), for: .touchUpInside)
+    }
+    func setBuddyData(at:  Int, cell: SessionTypeTableViewCell) {
+        cell.sessionTextField.delegate = self
+        if at == 0 {
+            cell.headeLabelBottomConstraint.constant = 20
+            cell.headerTileLabel.text = AppStrings.buddies.localized
+            cell.headerTileLabel.isHidden = false
+        } else {
+            cell.headeLabelBottomConstraint.constant = 0
+            cell.headerTileLabel.text = ""
+            cell.headerTileLabel.isHidden = true
+        }
+        if isShmokeSelected == true {
+            if at <  self.shmokeSessionHandler.buddiesList.count, !self.shmokeSessionHandler.buddiesList[at].isEmpty {
+                cell.sessionTextField.text =  self.shmokeSessionHandler.buddiesList[at]
+            } else {
+                cell.sessionTextField.text =  ""
+            }
+            
+        } else if isMatchSelected == true {
+            if at <  self.matchSessionHandler.buddiesList.count, !self.matchSessionHandler.buddiesList[at].isEmpty {
+                cell.sessionTextField.text =  self.matchSessionHandler.buddiesList[at]
+            } else {
+                cell.sessionTextField.text =  ""
+            }
+        } else if isDropSelected == true {
+            if at <  self.dropSessionHandler.buddiesList.count, !self.dropSessionHandler.buddiesList[at].isEmpty {
+                cell.sessionTextField.text =  self.dropSessionHandler.buddiesList[at]
+            } else {
+                cell.sessionTextField.text =  ""
+            }
+        } else if isSMOSelected == true {
+            if at <  self.smoSessionHandler.buddiesList.count, !self.smoSessionHandler.buddiesList[at].isEmpty {
+                cell.sessionTextField.text =  self.smoSessionHandler.buddiesList[at]
+            } else {
+                cell.sessionTextField.text =  ""
+            }
+        }
     }
     func setUPSessionTypeCell(at: Int, cell: SessionTypeTableViewCell) {
         guard let enumVal = HomeViewSections.init(rawValue: at) else {
@@ -561,9 +698,16 @@ extension HomeViewController: UITableViewDataSource {
                 cell.sessionTextField.text =  self.smoSessionHandler.selectedTime
             }
         case .location:
-            cell.sessionTextField.text = ""
-        case .buddiesList:
-            cell.sessionTextField.text = ""
+            cell.sessionTextField.delegate = self
+            if isShmokeSelected == true {
+                cell.sessionTextField.text =  self.shmokeSessionHandler.selectedLocation
+            } else if isMatchSelected == true {
+                cell.sessionTextField.text = self.matchSessionHandler.selectedLocation
+            } else if isDropSelected == true {
+                cell.sessionTextField.text = self.dropSessionHandler.selectedLocation
+            } else if isSMOSelected == true {
+                cell.sessionTextField.text =  self.smoSessionHandler.selectedLocation
+            }
         case .gram:
             if isMatchSelected == true {
                 cell.sessionTextField.text =  self.matchSessionHandler.selectedGramType
@@ -983,5 +1127,172 @@ extension HomeViewController: UIPickerViewDataSource {
 extension HomeViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag >= addBuddyBaseTag {
+            if !textField.text!.isEmpty  {
+                self.addBuddy(with: textField.text!, at: textField.tag)
+            }
+        } else if textField.tag == kLocationTag {
+            if !textField.text!.isEmpty  {
+                self.addLocation(with: textField.text!)
+            }
+        }
+       
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let current = (textField.text ?? "") as NSString
+        let modified = current.replacingCharacters(in: range, with: string)
+        print(modified)
+        if modified == "" {
+            // User presses backspace
+            textField.deleteBackward()
+            return false
+        } else {
+            // User presses a key or pastes
+            textField.insertText(string.capitalized)
+        }
+        textField.text = modified
+        return true
+    }
+}
+extension HomeViewController: AcceptSessionViewProtocol {
+    func crossButtonClicked() {
+        self.removeSessionStatusPopUPVC(sessionType: .none, session: nil)
+    }
+    func viewSessionClicked(session: Session) {
+        self.removeSessionStatusPopUPVC(sessionType: .addSession, session: session)
+    }
+    func seshDetailsButtonClick(session: Session) {
+        self.removeSessionStatusPopUPVC(sessionType: .viewSession, session: session)
+    }
+}
+extension HomeViewController: SessionDetailsViewProtocols{
+    func seshUPButtonClicked(session: Session, type: SessionStatusDetailType) {
+        if type != .addSession {
+            self.removeSessionUPC(sessionDetailType: .approvedSession, session: session)
+        } else {
+             self.removeSessionUPC(sessionDetailType: .none,  session: nil)
+        }
+        
+    }
+    func crossSeshUPButtonClicked() {
+        self.removeSessionUPC(sessionDetailType: .none,  session: nil)
+    }
+}
+extension HomeViewController {
+    
+    func presentAcceptSessionPopUP(sessionDetailType: SessionStatusType, session: Session) {
+        sessionStatusPopUPVC = SeshStatusViewController(nibName: "SeshStatusViewController", bundle: nil)
+        sessionStatusPopUPVC?.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        sessionStatusPopUPVC?.view.alpha = 0.1
+        sessionStatusPopUPVC?.modalPresentationStyle = .overCurrentContext
+        self.present((sessionStatusPopUPVC)!, animated: false
+            , completion: {
+        })
+        sessionStatusPopUPVC?.session = session
+        sessionStatusPopUPVC?.setUPUI()
+        sessionStatusPopUPVC.setSessionUPUI(sessionDetailType: sessionDetailType)
+        sessionStatusPopUPVC?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.transparentView = UIView()
+        transparentView?.frame = self.view.frame
+        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.3)
+        transparentView?.alpha = 0.1
+        self.view.addSubview(transparentView!)
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        self.sessionStatusPopUPVC?.view.alpha = 1.0
+                        self.transparentView?.alpha = 1.0
+                        self.sessionStatusPopUPVC?.delegate = self
+                        self.sessionStatusPopUPVC?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+        }
+        )
+    }
+    
+    func removeSessionStatusPopUPVC(sessionType: SessionStatusDetailType, session: Session?) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        self.sessionStatusPopUPVC?.view.alpha = 0.1
+                        self.transparentView?.alpha = 0.1
+        },
+                       completion: { finished in
+                        self.dismiss(animated: false, completion: {
+                            self.transparentView?.removeFromSuperview()
+                            if sessionType != .none {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    self.openSeshUPSession(sessionType: sessionType, session: session!)
+                                }
+                            }
+                        })
+        }
+        )
+        
+    }
+    
+    func openSeshUPSession(sessionType: SessionStatusDetailType, session: Session) {
+        sessionDetailsPopUPVc = SessionDetailViewController(nibName: "SessionDetailViewController", bundle: nil)
+        sessionDetailsPopUPVc?.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        sessionDetailsPopUPVc?.view.alpha = 0.1
+        sessionDetailsPopUPVc?.modalPresentationStyle = .overCurrentContext
+        
+        sessionDetailsPopUPVc.session = session
+        sessionDetailsPopUPVc?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.transparentView = UIView()
+        transparentView?.frame = self.view.frame
+        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.3)
+        transparentView?.alpha = 0.1
+        sessionDetailsPopUPVc?.sessionDetailType = sessionType
+        sessionDetailsPopUPVc.setUPUI()
+        self.present((sessionDetailsPopUPVc)!, animated: false
+            , completion: {
+                self.sessionDetailsPopUPVc.reloadView()
+        })
+        
+        
+        self.view.addSubview(transparentView!)
+        self.sessionDetailsPopUPVc.reloadView()
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        
+                        self.sessionDetailsPopUPVc?.view.alpha = 1.0
+                        self.transparentView?.alpha = 1.0
+                        self.sessionDetailsPopUPVc?.delegate = self
+                        self.sessionDetailsPopUPVc?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+                        
+        }
+        )
+    }
+    
+    func removeSessionUPC(sessionDetailType: SessionStatusType, session: Session?) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        self.sessionStatusPopUPVC?.view.alpha = 0.1
+                        self.transparentView?.alpha = 0.1
+        },
+                       completion: { finished in
+                        self.dismiss(animated: false, completion: {
+                            self.transparentView?.removeFromSuperview()
+                            if sessionDetailType != .none {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    self.presentAcceptSessionPopUP(sessionDetailType: sessionDetailType, session: session!)
+                                }
+                            }
+                        })
+        }
+        )
+        
     }
 }

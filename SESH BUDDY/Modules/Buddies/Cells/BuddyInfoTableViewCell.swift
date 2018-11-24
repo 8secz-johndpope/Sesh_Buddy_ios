@@ -24,12 +24,19 @@ class BuddyInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var quantityRatingView: FloatRatingView!
     @IBOutlet weak var rollsLabel: UILabel!
     @IBOutlet weak var rollsRatingView: FloatRatingView!
-    @IBOutlet weak var buddyCommentLabel: UILabel!
+    @IBOutlet weak var heightConstraintOfCommentTextView: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet weak var buddyCommentTextView: UITextView!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setUPUI()
-        setUPStarRating()
+        setUPStarRating(isEditable: false)
     }
     func setUPUI(){
         buddyImageView.layer.borderColor = UIColor.backgroundHeaderGrey.cgColor
@@ -41,24 +48,24 @@ class BuddyInfoTableViewCell: UITableViewCell {
         buddyTitileLabel.font = font
         quantityLabel.font = font
         rollsLabel.font = font
-        buddyCommentLabel.font = font
+        buddyCommentTextView.font = font
         
         qualityLabel.textColor = color
         buddyTitileLabel.textColor = color
         quantityLabel.textColor = color
         rollsLabel.textColor = color
-        buddyCommentLabel.textColor = color
+        buddyCommentTextView.textColor = color
         
         buddyImageView.layer.cornerRadius = buddyImageView.frame.size.height / 2
         buddyImageView.layer.masksToBounds = true
     }
-    func setUPStarRating() {
+    func setUPStarRating(isEditable:Bool) {
         
         self.qualityRatingView.contentMode = UIViewContentMode.scaleAspectFit
         self.qualityRatingView.maxRating = 4
-        self.qualityRatingView.minRating = 1
+        self.qualityRatingView.minRating = 0
         self.qualityRatingView.rating = 3
-        self.qualityRatingView.editable = true
+        self.qualityRatingView.editable = isEditable
         self.qualityRatingView.halfRatings = false
         self.qualityRatingView.floatRatings = false
         self.qualityRatingView.fullImage = Icons.starGreen
@@ -66,9 +73,9 @@ class BuddyInfoTableViewCell: UITableViewCell {
         
         self.quantityRatingView.contentMode = UIViewContentMode.scaleAspectFit
         self.quantityRatingView.maxRating = 4
-        self.quantityRatingView.minRating = 1
+        self.quantityRatingView.minRating = 0
         self.quantityRatingView.rating = 2
-        self.quantityRatingView.editable = true
+        self.quantityRatingView.editable = isEditable
         self.quantityRatingView.halfRatings = false
         self.quantityRatingView.floatRatings = false
         self.quantityRatingView.fullImage = Icons.starGreen
@@ -76,9 +83,9 @@ class BuddyInfoTableViewCell: UITableViewCell {
         
         self.rollsRatingView.contentMode = UIViewContentMode.scaleAspectFit
         self.rollsRatingView.maxRating = 4
-        self.rollsRatingView.minRating = 1
+        self.rollsRatingView.minRating = 0
         self.rollsRatingView.rating = 4
-        self.rollsRatingView.editable = true
+        self.rollsRatingView.editable = isEditable
         self.rollsRatingView.halfRatings = false
         self.rollsRatingView.floatRatings = false
         self.rollsRatingView.fullImage = Icons.starGreen

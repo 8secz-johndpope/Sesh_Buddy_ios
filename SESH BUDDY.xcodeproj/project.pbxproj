@@ -147,6 +147,8 @@
 		521B74BB219FCF6A002FB21E /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */; };
 		521B74BF219FCFD5002FB21E /* SeshReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B74BD219FCFD5002FB21E /* SeshReviewViewController.swift */; };
 		521B74C0219FCFD5002FB21E /* SeshReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */; };
+		521B74CA21A40275002FB21E /* SessionDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B74C821A40275002FB21E /* SessionDetailsTableViewCell.swift */; };
+		521B74CB21A40275002FB21E /* SessionDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521B74C921A40275002FB21E /* SessionDetailsTableViewCell.xib */; };
 		521BA63321721E7A006AFFD4 /* BuddyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */; };
 		521BA63421721E7A006AFFD4 /* BuddyInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */; };
 		521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63721723917006AFFD4 /* FloatRatingView.swift */; };
@@ -168,6 +170,10 @@
 		526A623D21609FF900573815 /* NewSessionNotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A623B21609FF900573815 /* NewSessionNotificationVC.swift */; };
 		526A623E21609FF900573815 /* NewSessionNotificationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A623C21609FF900573815 /* NewSessionNotificationVC.xib */; };
 		529EF63C214CF82600402FD5 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529EF63B214CF82600402FD5 /* Enums.swift */; };
+		52EFA78921A5C6DC00D04995 /* SeshData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78521A5C6DB00D04995 /* SeshData.swift */; };
+		52EFA78A21A5C6DC00D04995 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78621A5C6DC00D04995 /* Session.swift */; };
+		52EFA78B21A5C6DC00D04995 /* SeshBuddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78721A5C6DC00D04995 /* SeshBuddies.swift */; };
+		52EFA78C21A5C6DC00D04995 /* Buddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78821A5C6DC00D04995 /* Buddies.swift */; };
 		E9D0A30A46EA5EC6C4435E77 /* Pods_SESH_BUDDY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */; };
 /* End PBXBuildFile section */
 
@@ -316,6 +322,8 @@
 		521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
 		521B74BD219FCFD5002FB21E /* SeshReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeshReviewViewController.swift; sourceTree = "<group>"; };
 		521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeshReviewViewController.xib; sourceTree = "<group>"; };
+		521B74C821A40275002FB21E /* SessionDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		521B74C921A40275002FB21E /* SessionDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		521BA63121721E7A006AFFD4 /* BuddyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		521BA63221721E7A006AFFD4 /* BuddyInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddyInfoTableViewCell.xib; sourceTree = "<group>"; };
 		521BA63721723917006AFFD4 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
@@ -337,6 +345,10 @@
 		526A623B21609FF900573815 /* NewSessionNotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionNotificationVC.swift; sourceTree = "<group>"; };
 		526A623C21609FF900573815 /* NewSessionNotificationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewSessionNotificationVC.xib; sourceTree = "<group>"; };
 		529EF63B214CF82600402FD5 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		52EFA78521A5C6DB00D04995 /* SeshData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeshData.swift; sourceTree = "<group>"; };
+		52EFA78621A5C6DC00D04995 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		52EFA78721A5C6DC00D04995 /* SeshBuddies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeshBuddies.swift; sourceTree = "<group>"; };
+		52EFA78821A5C6DC00D04995 /* Buddies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buddies.swift; sourceTree = "<group>"; };
 		717A799CC1731EEF7B1E94CD /* Pods-SESH BUDDY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.release.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.release.xcconfig"; sourceTree = "<group>"; };
 		88544D65EB3353306B80539A /* Pods-SESH BUDDY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.debug.xcconfig"; sourceTree = "<group>"; };
 		DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SESH_BUDDY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -650,6 +662,7 @@
 				521BA6392172391E006AFFD4 /* Wrapper */,
 				210351F9213DAEDC00ADCEAB /* Common */,
 				210351E5213D9A6500ADCEAB /* AppDelegate.swift */,
+				52EFA78D21A5C6E600D04995 /* Entity */,
 				210351FB213DAF1F00ADCEAB /* Modules */,
 				210351EC213D9A6B00ADCEAB /* Assets.xcassets */,
 				210351EE213D9A6B00ADCEAB /* LaunchScreen.storyboard */,
@@ -1375,8 +1388,8 @@
 		521B74BC219FCF72002FB21E /* SessionDetailsPopUp */ = {
 			isa = PBXGroup;
 			children = (
-				521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */,
-				521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */,
+				521B74C721A3C438002FB21E /* Viewcontroller */,
+				521B74C621A3C402002FB21E /* SessionDetailsCell */,
 			);
 			path = SessionDetailsPopUp;
 			sourceTree = "<group>";
@@ -1388,6 +1401,24 @@
 				521B74BE219FCFD5002FB21E /* SeshReviewViewController.xib */,
 			);
 			path = SessionReviewPopUp;
+			sourceTree = "<group>";
+		};
+		521B74C621A3C402002FB21E /* SessionDetailsCell */ = {
+			isa = PBXGroup;
+			children = (
+				521B74C821A40275002FB21E /* SessionDetailsTableViewCell.swift */,
+				521B74C921A40275002FB21E /* SessionDetailsTableViewCell.xib */,
+			);
+			path = SessionDetailsCell;
+			sourceTree = "<group>";
+		};
+		521B74C721A3C438002FB21E /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */,
+				521B74B9219FCF6A002FB21E /* SessionDetailViewController.xib */,
+			);
+			path = Viewcontroller;
 			sourceTree = "<group>";
 		};
 		521BA63521721E81006AFFD4 /* Cells */ = {
@@ -1567,6 +1598,17 @@
 			path = StatusPopUp;
 			sourceTree = "<group>";
 		};
+		52EFA78D21A5C6E600D04995 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				52EFA78821A5C6DC00D04995 /* Buddies.swift */,
+				52EFA78721A5C6DC00D04995 /* SeshBuddies.swift */,
+				52EFA78521A5C6DB00D04995 /* SeshData.swift */,
+				52EFA78621A5C6DC00D04995 /* Session.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		63726AAE732216A74C2F5E7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1657,6 +1699,7 @@
 				52184D9F216A7C210002E800 /* SessionsViewController.xib in Resources */,
 				521C05F0219B338400880E59 /* LoginWithEmailViewController.xib in Resources */,
 				2142EB9D2141AFDC0044D60C /* LabelTableViewCell.xib in Resources */,
+				521B74CB21A40275002FB21E /* SessionDetailsTableViewCell.xib in Resources */,
 				52184D9A216A23D60002E800 /* HistoryCollectionViewCell.xib in Resources */,
 				526A6239215FAB2500573815 /* SessionTypeTableViewCell.xib in Resources */,
 				219407D22140510E0020FAA9 /* MavenPro-Regular.ttf in Resources */,
@@ -1808,6 +1851,7 @@
 				21035217213DB40500ADCEAB /* Objects+Extension.swift in Sources */,
 				219407D72140663B0020FAA9 /* SideMenuFieldTableViewCell.swift in Sources */,
 				52184DB1216A7D560002E800 /* SessionsItem.swift in Sources */,
+				521B74CA21A40275002FB21E /* SessionDetailsTableViewCell.swift in Sources */,
 				52184DCD216A85420002E800 /* BuddiesItem.swift in Sources */,
 				52184DCB216A85420002E800 /* BuddiesProtocols.swift in Sources */,
 				524ABA0C21730F98007086ED /* RatingAPIDataManager.swift in Sources */,
@@ -1848,6 +1892,7 @@
 				1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */,
 				52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */,
 				213CDA45213EE6CD00B1C874 /* LoginWireframe.swift in Sources */,
+				52EFA78A21A5C6DC00D04995 /* Session.swift in Sources */,
 				52184DB3216A7D560002E800 /* SessionsAPIDataManager.swift in Sources */,
 				2103522A213DBBF900ADCEAB /* AppColors.swift in Sources */,
 				524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */,
@@ -1875,16 +1920,19 @@
 				521AD24A219C860200F7EEEB /* VPImageCropperViewController.m in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
+				52EFA78C21A5C6DC00D04995 /* Buddies.swift in Sources */,
 				521AD24E219C883800F7EEEB /* SelectImage.swift in Sources */,
 				524ABA0D21730F98007086ED /* RatingWireFrame.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,
 				18E888992142F1F80050ECCF /* SettingsWireframe.swift in Sources */,
 				524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */,
 				52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */,
+				52EFA78B21A5C6DC00D04995 /* SeshBuddies.swift in Sources */,
 				21035202213DB30300ADCEAB /* L102Language.swift in Sources */,
 				521B74BA219FCF6A002FB21E /* SessionDetailViewController.swift in Sources */,
 				52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */,
 				210351E6213D9A6500ADCEAB /* AppDelegate.swift in Sources */,
+				52EFA78921A5C6DC00D04995 /* SeshData.swift in Sources */,
 				18E8888B2142F0190050ECCF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

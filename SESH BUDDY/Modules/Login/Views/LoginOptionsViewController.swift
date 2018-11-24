@@ -53,8 +53,8 @@ class LoginOptionsViewController: UIViewController {
         signUpEmailButton.layer.cornerRadius = buttonRadius
         loginWithEmailButton.layer.cornerRadius = buttonRadius
         
-        signUpEmailButton.backgroundColor = UIColor.themeNavBarColor
-        loginWithEmailButton.backgroundColor = UIColor.themeNavBarColor
+        signUpEmailButton.backgroundColor = UIColor.buttonColor
+        loginWithEmailButton.backgroundColor = UIColor.buttonColor
         facebookLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Facebook ", image: Icons.facebook, type: .facebook), for: .normal)
         snapchatLoginButton.setAttributedTitle(self.getAttributedString(withFirst: "Login with", withSecond: " Snapchat ", image: Icons.snapchat, type: .snapchat), for: .normal)
         loginInfoLabel.font = Fonts.mavenProRegular.getFont(12)

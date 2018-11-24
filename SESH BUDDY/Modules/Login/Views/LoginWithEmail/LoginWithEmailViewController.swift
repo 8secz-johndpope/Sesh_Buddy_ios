@@ -66,7 +66,7 @@ class LoginWithEmailViewController: UIViewController {
         self.passwordTextField.delegate = self
         self.emailTextField.delegate = self
         
-        loginWithEmailButton.backgroundColor = UIColor.themeNavBarColor
+        loginWithEmailButton.backgroundColor = UIColor.buttonColor
     }
     
     @IBAction func loginWithEmailButtonAction(_ sender: Any) {

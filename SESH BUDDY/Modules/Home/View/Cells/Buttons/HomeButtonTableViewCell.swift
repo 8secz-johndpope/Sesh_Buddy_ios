@@ -57,7 +57,7 @@ class HomeButtonTableViewCell: UITableViewCell {
         } else {
             button.layer.borderColor = UIColor.clear.cgColor
             button.layer.borderWidth = 0
-            button.backgroundColor = UIColor.themeNavBarColor
+            button.backgroundColor = UIColor.buttonColor
         }
         
     

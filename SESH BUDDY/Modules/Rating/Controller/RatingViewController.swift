@@ -9,8 +9,10 @@
 import UIKit
 
 class RatingViewController: UIViewController, RatingViewProtocol {
-    
+//    @IBOutlet weak var averageRatingTextViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var averageRatingCommentLabel: UILabel!
+    
+   // @IBOutlet weak var averageRatingCommentTextView: UITextView!
     @IBOutlet weak var averageRollsFloatRatingView: FloatRatingView!
     @IBOutlet weak var averageRollsLabel: UILabel!
     @IBOutlet weak var averageQuantityFloatRatingView: FloatRatingView!
@@ -33,7 +35,7 @@ class RatingViewController: UIViewController, RatingViewProtocol {
         self.setNavBarTitleView(image: ThemeImages.appLogo)
         registerNib()
         setUPUI()
-        setUPStarRating()
+        setUPStarRating(isEditable: false)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -64,14 +66,14 @@ class RatingViewController: UIViewController, RatingViewProtocol {
         self.averageRatingLabel.textColor = color
         
     }
-    func setUPStarRating() {
+    func setUPStarRating(isEditable: Bool) {
         self.averageRatingView.addShadow(0)
         self.averageRatingView.backgroundColor = UIColor.backgroundGrey
         self.averageFloatRatingView.contentMode = UIViewContentMode.scaleAspectFit
         self.averageFloatRatingView.maxRating = 4
         self.averageFloatRatingView.minRating = 1
         self.averageFloatRatingView.rating = 3
-        self.averageFloatRatingView.editable = true
+        self.averageFloatRatingView.editable = isEditable
         self.averageFloatRatingView.halfRatings = false
         self.averageFloatRatingView.floatRatings = false
         self.averageFloatRatingView.fullImage = Icons.starGreen
@@ -82,7 +84,7 @@ class RatingViewController: UIViewController, RatingViewProtocol {
         self.averageQualityFloatRatingView.maxRating = 4
         self.averageQualityFloatRatingView.minRating = 1
         self.averageQualityFloatRatingView.rating = 3
-        self.averageQualityFloatRatingView.editable = true
+        self.averageQualityFloatRatingView.editable = isEditable
         self.averageQualityFloatRatingView.halfRatings = false
         self.averageQualityFloatRatingView.floatRatings = false
         self.averageQualityFloatRatingView.fullImage = Icons.starGreen
@@ -92,7 +94,7 @@ class RatingViewController: UIViewController, RatingViewProtocol {
         self.averageQuantityFloatRatingView.maxRating = 4
         self.averageQuantityFloatRatingView.minRating = 1
         self.averageQuantityFloatRatingView.rating = 2
-        self.averageQuantityFloatRatingView.editable = true
+        self.averageQuantityFloatRatingView.editable = isEditable
         self.averageQuantityFloatRatingView.halfRatings = false
         self.averageQuantityFloatRatingView.floatRatings = false
         self.averageQuantityFloatRatingView.fullImage = Icons.starGreen
@@ -102,7 +104,7 @@ class RatingViewController: UIViewController, RatingViewProtocol {
         self.averageRollsFloatRatingView.maxRating = 4
         self.averageRollsFloatRatingView.minRating = 1
         self.averageRollsFloatRatingView.rating = 4
-        self.averageRollsFloatRatingView.editable = true
+        self.averageRollsFloatRatingView.editable = isEditable
         self.averageRollsFloatRatingView.halfRatings = false
         self.averageRollsFloatRatingView.floatRatings = false
         self.averageRollsFloatRatingView.fullImage = Icons.starGreen
@@ -124,6 +126,13 @@ extension RatingViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: buddyInfoTableViewCell) as? BuddyInfoTableViewCell else {
             return UITableViewCell()
         }
+        let startHeight = cell.buddyCommentTextView.frame.size.height
+        let calcHeight = cell.buddyCommentTextView.sizeThatFits(cell.buddyCommentTextView.frame.size).height  //iOS 8+ only
+        
+//        if startHeight != calcHeight {
+//            cell.heightConstraintOfCommentTextView.constant = calcHeight
+     //   }
+            
         return cell
     }
     

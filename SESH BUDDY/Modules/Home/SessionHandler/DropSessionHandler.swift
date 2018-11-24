@@ -10,11 +10,12 @@ import Foundation
 
 class DropSessionHandler: NSObject {
     var currentSessions = [String]()
-    var buddiesList = [[String: Any]]()
+    var buddiesList = [String]()
     var selectedSeshType = ""
     var selectedPointType = ""
     var selectedStrainType = ""
     var selectedUtensilType = ""
+    var selectedLocation = ""
     var selectedTime = ""
     var selectedDate = ""
     override init() {

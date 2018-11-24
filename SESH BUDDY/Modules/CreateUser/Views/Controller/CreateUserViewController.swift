@@ -158,7 +158,7 @@ class CreateUserViewController: UIViewController, UITextViewDelegate {
         self.passwordTextField.tag = kTagpassword
         self.emailTextField.tag = kTagEmail
         
-        joinNowButton.backgroundColor = UIColor.themeNavBarColor
+        joinNowButton.backgroundColor = UIColor.buttonColor
         
         switch signUPType {
         case .facebook:

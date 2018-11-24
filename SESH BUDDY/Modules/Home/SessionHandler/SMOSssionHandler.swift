@@ -10,11 +10,12 @@ import Foundation
 
 class SMOSssionHandler: NSObject {
     var currentSessions = [String]()
-    var buddiesList = [[String: Any]]()
+    var buddiesList = [String]()
     var selectedSeshType = ""
     var selectedReasonsType = ""
     var selectedTime = ""
     var selectedDate = ""
+    var selectedLocation = ""
     override init() {
         currentSessions.append("90803fish")
     }

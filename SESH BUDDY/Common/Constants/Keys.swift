@@ -100,3 +100,11 @@ struct AppInfo {
         return ""
     }
 }
+//----------------------------------------SESH TYPE --------------------------------------------//
+let SHMOKE =  "SHMOKE"
+let DROP =  "DROP"
+let SMO =  "SMO"
+let MATCH =  "MATCH"
+//----------------------------------------DATE FORMATTER --------------------------------------------//
+let sessionDateFormate  =   "MMMM dd, yyyy"
+
