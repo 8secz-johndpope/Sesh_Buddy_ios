@@ -21,4 +21,13 @@ class DropSessionHandler: NSObject {
     override init() {
         currentSessions.append("90801fish")
     }
+    func clearSession() {
+         selectedSeshType = ""
+         selectedPointType = ""
+         selectedStrainType = ""
+         selectedUtensilType = ""
+         selectedLocation = ""
+         selectedTime = ""
+         selectedDate = ""
+    }
 }

@@ -9,6 +9,8 @@
 
 
 import UIKit
+import AlamofireImage
+import Alamofire
 enum SideMenuSections:Int {
     case home
     case deals
@@ -21,7 +23,8 @@ enum SideMenuSections:Int {
 }
 class SideMenuViewController: UIViewController {
     
-    @IBOutlet weak var versionButton: UIButton!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var buddyProfileButton: UIButton!
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var editProfileButton: UIButton!
     @IBOutlet weak var sideMenuTableView: UITableView!
@@ -34,15 +37,18 @@ class SideMenuViewController: UIViewController {
         setUPUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setUPUI()
+    }
     func setUPUI() {
         self.userView.backgroundColor = .orange
-        let font = Fonts.mavenProRegular.getFont(11)
+        let font = Fonts.mavenProRegular.getFont(13)
         editProfileButton.titleLabel?.font = font
-        versionButton.titleLabel?.font = font
+        userNameLabel.font = font
+        userNameLabel.numberOfLines = 0
         editProfileButton.setTitleColor(.white, for: .normal)
         editProfileButton.setTitle("Edit Profile", for: .normal)
-        versionButton.setTitle("9080fish", for: .normal)
-        versionButton.setTitleColor(.white, for: .normal)
         userImageView.layer.cornerRadius =  userImageView.bounds.height / 2
         userImageView.image = Icons.profilePlaceHolder
         
@@ -50,8 +56,36 @@ class SideMenuViewController: UIViewController {
         sideMenuTableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         sideMenuTableView.delegate = self
         sideMenuTableView.dataSource = self
+        guard ApplicationData.shared.checkLoginData(),  let userName = ApplicationData.shared.getLoginData().userName else {
+            return
+        }
+        userNameLabel.text = userName
+        if ApplicationData.shared.checkLoginData(), ApplicationData.shared.getLoginData().profilePic.count > 0 {
+            let profilePic = ApplicationData.shared.getLoginData().profilePic
+            let url = URL(string: profilePic!)
+            userImageView.af_setImage(withURL: url!, placeholderImage: Icons.profilePlaceHolder, filter: nil, progress: nil, progressQueue: .main, imageTransition: .crossDissolve(0.1), runImageTransitionIfCached: true) { (nil) in
+            }
+        } else {
+            userImageView.image = Icons.profilePlaceHolder
+        }
     }
     
+    
+    @IBAction func buddyProfileButtonAction(_ sender: Any) {
+        let editProfileViewController = BuddyProfileWireFrame.presentBuddyProfileModule()
+        guard let nav = self.frostedViewController.contentViewController as? UINavigationController else {
+            return
+        }
+        let navChild = nav.viewControllers
+        if navChild.last is BuddyProfileViewController  {
+            self.frostedViewController.hideMenuViewController()
+        } else {
+            self.frostedViewController.hideMenuViewController()
+            DispatchQueue.main.async {
+                nav.setViewControllers([editProfileViewController], animated: true)
+            }
+        }
+    }
     @IBAction func userViewClicked(_ sender: Any) {
     }
     @IBAction func editProfileButtonAction(_ sender: Any) {

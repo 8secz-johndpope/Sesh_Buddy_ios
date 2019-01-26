@@ -18,14 +18,22 @@ protocol CreateUserPresenterProtocol: class {
     var view: CreateUserViewProtocol? { get set }
     var interactor: CreateUserInteractorInputProtocol? { get set }
     var wireFrame: CreateUserWireFrameProtocol? { get set }
-    
-    func createUserNuttonClicked()
+    var firstName: String! { get set }
+    var lastName: String! { get set }
+    var userName: String! { get set }
+    var email: String! { get set }
+    var password: String! { get set }
+    var createUserType: LoginType! { get set }
+    func registerUserButtonClicked()
+    func createUserButtonClicked()
 }
 protocol CreateUserInteractorInputProtocol: class{
     var presenter: CreateUserInteractorOutputProtocol? { get set }
+    func registerUser(with: [String: Any])
     func createUser(with: [String: Any])
 }
 protocol CreateUserInteractorOutputProtocol: class {
+    func registerUserGenerate(_ value: ServerResponseModal)
     func createUserGenerate(_ value: ServerResponseModal)
 }
 protocol CreateUserWireFrameProtocol: class {

@@ -126,12 +126,8 @@ extension RatingViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: buddyInfoTableViewCell) as? BuddyInfoTableViewCell else {
             return UITableViewCell()
         }
-        let startHeight = cell.buddyCommentTextView.frame.size.height
-        let calcHeight = cell.buddyCommentTextView.sizeThatFits(cell.buddyCommentTextView.frame.size).height  //iOS 8+ only
         
-//        if startHeight != calcHeight {
-//            cell.heightConstraintOfCommentTextView.constant = calcHeight
-     //   }
+        cell.setUPStarRating(isEditable: false)
             
         return cell
     }

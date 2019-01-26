@@ -203,7 +203,7 @@ class HTTPRequest {
   //Public
   //var language: String?
   class var baseURLString: String {
-    return ""//appDelegate.baseURL
+    return appDelegate.baseURL
   }
   private var baseURL: URL?
   private var urlString: String?
@@ -391,14 +391,14 @@ class HTTPRequest {
       fatalError("HTTPRequest:- URL string is not exist")
     }
     
-    if self.parameters != nil {
-      var dict = AppInfo.getDefaultParams()
-      dict.appendDictionary(other: self.parameters ?? [:])
-      self.parameters = dict
-//      self.parameters?.appendDictionary(other: AppInfo.getDefaultParams())
-    } else {
-      self.parameters = AppInfo.getDefaultParams()
-    }
+//    if self.parameters != nil {
+//      var dict = AppInfo.getDefaultParams()
+//      dict.appendDictionary(other: self.parameters ?? [:])
+//      self.parameters = dict
+////      self.parameters?.appendDictionary(other: AppInfo.getDefaultParams())
+//    } else {
+//      self.parameters = AppInfo.getDefaultParams()
+//    }
     
     print("PARAMS-------------> \(self.parameters ?? [:])")
     
@@ -511,15 +511,15 @@ class HTTPRequest {
       fatalError("HTTPRequest:- URL is not exist")
     }
     
-    if self.parameters != nil {
-      var dict = AppInfo.getDefaultParams()
-      dict.appendDictionary(other: self.parameters ?? [:])
-      self.parameters = dict
-      //      self.parameters?.appendDictionary(other: AppInfo.getDefaultParams())
-    } else {
-      self.parameters = AppInfo.getDefaultParams()
-    }
-    
+//    if self.parameters != nil {
+//      var dict = AppInfo.getDefaultParams()
+//      dict.appendDictionary(other: self.parameters ?? [:])
+//      self.parameters = dict
+//      //      self.parameters?.appendDictionary(other: AppInfo.getDefaultParams())
+//    } else {
+//      self.parameters = AppInfo.getDefaultParams()
+//    }
+//    
     print("PARAMS-------------> \(self.parameters ?? [:])")
     
     self.showIndicator()

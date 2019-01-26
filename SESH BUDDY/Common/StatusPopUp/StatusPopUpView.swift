@@ -38,7 +38,7 @@ class StatusPopUpView: UIView {
     let redUPRightString = "SMOKE OR MATCH WITH BUDDIES"
     let holdingRightString = "DROP INS WITH BUDDIES"
     let dryRightString = "ASK BUDDIES TO SMO"
-    
+    let presenter = StatusPopUpPresenter()
     override func awakeFromNib() {
         super.awakeFromNib()
         setUPUI()
@@ -73,15 +73,48 @@ class StatusPopUpView: UIView {
         dryRightLabel.textColor = UIColor.profileBlackTextColor
         dryLeftLabel.textColor = UIColor.profileBlackTextColor
     }
-    
+    func showAlert(_ string: String) {
+        DispatchQueue.main.async {
+            UIAlertController.presentAlert(title: nil, message: string, style: UIAlertControllerStyle.alert).action(title: AppStrings.Ok.localized, style: UIAlertActionStyle.default, handler: nil)
+        }
+        
+    }
     @IBAction func dryButtonAction(_ sender: Any) {
-       source?.changerightNavBarButton(type: .dry)
+        
+        self.presenter.changeUserStatus(.dry) { (value) in
+            if value.status == RESPONSE_STATUS.success {
+              var loginData =  ApplicationData.shared.getLoginData()
+                loginData.userStatus = .dry
+                ApplicationData.shared.setLoginData(loginData)
+                self.source?.changerightNavBarButton(type: .dry)
+            } else if value.error != nil, value.error.count > 0 {
+                self.showAlert(value.error.first!)
+            }
+        }
     }
     @IBAction func holdingButtonAction(_ sender: Any) {
-        source?.changerightNavBarButton(type: .holding)
+        self.presenter.changeUserStatus(.holding) { (value) in
+            if value.status == RESPONSE_STATUS.success {
+                var loginData =  ApplicationData.shared.getLoginData()
+                loginData.userStatus = .holding
+                ApplicationData.shared.setLoginData(loginData)
+                self.source?.changerightNavBarButton(type: .holding)
+            } else if value.error != nil, value.error.count > 0 {
+                 self.showAlert(value.error.first!)
+            }
+        }
     }
     @IBAction func redUPButtonAction(_ sender: Any) {
-      source?.changerightNavBarButton(type: .redUP)
+        self.presenter.changeUserStatus(.redUP) { (value) in
+            if value.status == RESPONSE_STATUS.success {
+                var loginData =  ApplicationData.shared.getLoginData()
+                loginData.userStatus = .redUP
+                ApplicationData.shared.setLoginData(loginData)
+                self.source?.changerightNavBarButton(type: .redUP)
+            } else if value.error != nil, value.error.count > 0 {
+                 self.showAlert(value.error.first!)
+            }
+        }
     }
     
 

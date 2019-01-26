@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 
 class SettingsPresenter: SettingsPresenterProtocol {
+    var isSHMOKeEnabled: Bool! = false
+    var isMATCHEnabled: Bool! = false
+    var isDROPEnabled: Bool! = false
+    var isSMOEnabled: Bool! = false
+    var isDEALSEnabled: Bool! = false
+    var isSMOIOUEnabled: Bool! = false
+    
   weak var view: SettingsViewProtocol?
   var interactor: SettingsInteractorInputProtocol?
   var wireFrame: SettingsWireFrameProtocol?
@@ -19,13 +26,36 @@ class SettingsPresenter: SettingsPresenterProtocol {
     func didTapAtNotifications() {
         self.wireFrame?.moveToNavigations(fromView: self.view!)
     }
+    func updateNotificationSettings() {
+        let params = [ParametersKeys.shmoke : self.isSHMOKeEnabled!,
+                      ParametersKeys.Deals: self.isDEALSEnabled!,
+                      ParametersKeys.match: self.isMATCHEnabled!,
+                      ParametersKeys.smo: self.isSMOEnabled!,
+                      ParametersKeys.smo_iou: self.isSMOIOUEnabled!,
+                      ParametersKeys.drop: self.isDROPEnabled!]
+        self.interactor?.updateNotificationSettings(params as [String : Any])
+    }
+    func getNotificationSetting() {
+        self.interactor?.getNotificationSetting()
+    }
 }
 
 extension SettingsPresenter: SettingsInteractorOutputProtocol {
   func onError(value: String) {
-    
+    self.view?.onError(value: value)
   }
-  
+    func getNotificationSetting(_ value: ServerResponseModal) {
+        if value.status != nil {
+            if value.status == RESPONSE_STATUS.success {
+                let notificationData = NotificationSetting(fromDictionary: value.response )
+                self.view?.reloadView(notificationData)
+            } else if value.error.count > 0 {
+                self.view?.showAlert(value.error.first!)
+            }
+        } else {
+            self.view?.onError(value: "nodata")
+        }
+    }
   func generatedOtpWith(_ value: ServerResponseModal) {
     
 //      guard let data = value.response, let flag = value.flag  else {

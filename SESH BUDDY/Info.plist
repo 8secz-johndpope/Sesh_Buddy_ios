@@ -32,9 +32,12 @@
 	<key>FacebookAppID</key>
 	<string>370114566895189</string>
 	<key>FacebookDisplayName</key>
-	<string>Sesh's first app</string>
+	<string>Sesh&apos;s first app</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>itms-apps</string>
+		<string>snapchat</string>
+		<string>bitmoji-sdk</string>
 		<string>fbapi</string>
 		<string>fb-messenger-share-api</string>
 		<string>fbauth2</string>
@@ -45,7 +48,15 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This will enable you to update your Profile Picture</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>This will enable you to update your Profile Picture</string>
+	<key>SCSDKClientId</key>
+	<string>4620359d-b325-475f-8ac3-63b60a72a8b1</string>
+	<key>SCSDKScopes</key>
+	<array>
+		<string>https://auth.snapchat.com/oauth2/api/user.external_id</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MavenPro-Bold.ttf</string>
@@ -77,5 +88,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>SCSDKRedirectUrl</key>
+	<string>myapp://snap-kit/526a91cc-8033-4a18-9479-0f6fb6edd9b3</string>
+	<key>NSAppTransportSecurity</key>
+	<dict/>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 </dict>
 </plist>

@@ -21,6 +21,7 @@ class NotificationsViewController: UIViewController {
     @IBOutlet weak var notificationsTableView: UITableView!
     var presenter: SettingsPresenterProtocol?
     let  labelTableViewCell = "LabelTableViewCell"
+    var notificationSettings: NotificationSetting!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeStyle(.default)
@@ -31,6 +32,7 @@ class NotificationsViewController: UIViewController {
         self.notificationsTableView.delegate = self
         self.notificationsTableView.dataSource = self
         self.navigationItem.title = "Notifications"
+        self.presenter?.getNotificationSetting()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,9 +44,51 @@ class NotificationsViewController: UIViewController {
         self.setNavBarTitleView(image: ThemeImages.appLogo)
         self.changeNavBarColor(.themeNavBarColor)
     }
+    @objc func notificationToggleChange(_ sender: UISwitch) {
+        guard let enumValu = Notifications.init(rawValue: sender.tag) else {
+            return
+        }
+        switch enumValu {
+        case .shmoke:
+            self.presenter?.isSHMOKeEnabled = !self.presenter!.isSHMOKeEnabled!
+        case .motch:
+             self.presenter?.isMATCHEnabled = !self.presenter!.isMATCHEnabled!
+        case .smo:
+             self.presenter?.isSMOEnabled = !self.presenter!.isSMOEnabled!
+        case .smoIous:
+             self.presenter?.isSMOIOUEnabled = !self.presenter!.isSMOIOUEnabled!
+        case .drop:
+             self.presenter?.isDROPEnabled = !self.presenter!.isDROPEnabled!
+        case .deals:
+             self.presenter?.isDEALSEnabled = !self.presenter!.isDEALSEnabled!
+        default:
+            break
+        }
+        self.presenter?.updateNotificationSettings()
+    }
 }
 extension NotificationsViewController: SettingsViewProtocol {
+    func reloadView(_ with: NotificationSetting) {
+        self.notificationSettings = with
+        self.presenter?.isSHMOKeEnabled = with.data.seshShmoke
+        self.presenter?.isMATCHEnabled = with.data.seshMatch
+        self.presenter?.isDEALSEnabled = with.data.seshDeals
+        self.presenter?.isSMOEnabled = with.data.seshSmo
+        self.presenter?.isSMOIOUEnabled = with.data.seshSmoIou
+        self.presenter?.isDROPEnabled = with.data.seshDrop
+        self.notificationsTableView.reloadData()
+    }
     func onError(value: String) {
+        if self.notificationSettings != nil {
+            let with = self.notificationSettings!
+            self.presenter?.isSHMOKeEnabled = with.data.seshShmoke
+            self.presenter?.isMATCHEnabled = with.data.seshMatch
+            self.presenter?.isDEALSEnabled = with.data.seshDeals
+            self.presenter?.isSMOEnabled = with.data.seshSmo
+            self.presenter?.isSMOIOUEnabled = with.data.seshSmoIou
+            self.presenter?.isDROPEnabled = with.data.seshDrop
+            self.notificationsTableView.reloadData()
+        }
     }
     func showAlert(_ string: String) {
     }
@@ -70,7 +114,7 @@ extension NotificationsViewController: UITableViewDataSource {
         case .shmoke: 
         cell.descLabel.text = "Shmoke"
         case .motch:
-            cell.descLabel.text = "Motch"
+            cell.descLabel.text = "Match"
         case .drop:
             cell.descLabel.text = "Drop"
         case .smo:
@@ -82,7 +126,10 @@ extension NotificationsViewController: UITableViewDataSource {
         default:
             break
         }
+        cell.setUPToggle(with: self.notificationSettings, type: enumValue)
         cell.hideToogleButton(value: false)
+        cell.toggleSwitch.tag = indexPath.section
+        cell.toggleSwitch.addTarget(self, action: #selector(notificationToggleChange(_:)), for: .valueChanged)
         return cell
     }
     

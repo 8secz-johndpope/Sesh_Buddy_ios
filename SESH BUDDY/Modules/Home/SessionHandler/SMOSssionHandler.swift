@@ -19,4 +19,10 @@ class SMOSssionHandler: NSObject {
     override init() {
         currentSessions.append("90803fish")
     }
+    func clearSession() {
+         selectedSeshType = ""
+         selectedReasonsType = ""
+         selectedTime = ""
+         selectedDate = ""
+    }
 }

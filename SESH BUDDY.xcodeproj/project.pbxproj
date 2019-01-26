@@ -15,12 +15,6 @@
 		0031CB52213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB4C213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift */; };
 		0031CB56213E73B200FCE6BF /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031CB54213E73B100FCE6BF /* Entry.storyboard */; };
 		0031CB57213E73B200FCE6BF /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB55213E73B100FCE6BF /* EntryViewController.swift */; };
-		0031CB5F213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB59213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift */; };
-		0031CB60213E74AA00FCE6BF /* CLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5A213E74AA00FCE6BF /* CLProgressHUD.swift */; };
-		0031CB61213E74AA00FCE6BF /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5B213E74AA00FCE6BF /* HTTPRequest.swift */; };
-		0031CB62213E74AA00FCE6BF /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5C213E74AA00FCE6BF /* HTTPStatusCodes.swift */; };
-		0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5D213E74AA00FCE6BF /* Reachability.swift */; };
-		0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB5E213E74AA00FCE6BF /* ServerResponseModal.swift */; };
 		0031CB67213E799F00FCE6BF /* AuthNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031CB66213E799F00FCE6BF /* AuthNavigationViewController.swift */; };
 		186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BCFE2214AD852001D397F /* StatusPopUpView.swift */; };
 		186BCFE5214AD870001D397F /* StatusPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186BCFE4214AD870001D397F /* StatusPopUpView.xib */; };
@@ -141,6 +135,10 @@
 		5219F604215F93FF00F1DC13 /* HomeButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */; };
 		521A6BA8219DEFC300617711 /* SeshStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A6BA6219DEFC300617711 /* SeshStatusViewController.swift */; };
 		521A6BA9219DEFC300617711 /* SeshStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521A6BA7219DEFC300617711 /* SeshStatusViewController.xib */; };
+		521A9CA921B70951009F7256 /* TopSeshBuddiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9CA721B70951009F7256 /* TopSeshBuddiesViewController.swift */; };
+		521A9CAA21B70951009F7256 /* TopSeshBuddiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521A9CA821B70951009F7256 /* TopSeshBuddiesViewController.xib */; };
+		521A9CB021B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A9CAE21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.swift */; };
+		521A9CB121B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521A9CAF21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.xib */; };
 		521AD24A219C860200F7EEEB /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521AD248219C860100F7EEEB /* VPImageCropperViewController.m */; };
 		521AD24E219C883800F7EEEB /* SelectImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AD24D219C883800F7EEEB /* SelectImage.swift */; };
 		521B74BA219FCF6A002FB21E /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521B74B8219FCF6A002FB21E /* SessionDetailViewController.swift */; };
@@ -154,6 +152,34 @@
 		521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521BA63721723917006AFFD4 /* FloatRatingView.swift */; };
 		521C05EF219B338400880E59 /* LoginWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C05ED219B338400880E59 /* LoginWithEmailViewController.swift */; };
 		521C05F0219B338400880E59 /* LoginWithEmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */; };
+		521DC55221BBA0BC00CBBFDB /* BuddyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC55021BBA0BC00CBBFDB /* BuddyProfileViewController.swift */; };
+		521DC55321BBA0BC00CBBFDB /* BuddyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521DC55121BBA0BC00CBBFDB /* BuddyProfileViewController.xib */; };
+		521DC55921BBEC8D00CBBFDB /* AverageRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC55721BBEC8D00CBBFDB /* AverageRatingTableViewCell.swift */; };
+		521DC55A21BBEC8D00CBBFDB /* AverageRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 521DC55821BBEC8D00CBBFDB /* AverageRatingTableViewCell.xib */; };
+		521DC56A21BD004C00CBBFDB /* TopBuddyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC55D21BD004C00CBBFDB /* TopBuddyProtocols.swift */; };
+		521DC56B21BD004C00CBBFDB /* TopBuddyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC55F21BD004C00CBBFDB /* TopBuddyItem.swift */; };
+		521DC56C21BD004C00CBBFDB /* TopBuddyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC56021BD004C00CBBFDB /* TopBuddyInteractor.swift */; };
+		521DC56D21BD004C00CBBFDB /* TopBuddyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC56221BD004C00CBBFDB /* TopBuddyPresenter.swift */; };
+		521DC56E21BD004C00CBBFDB /* TopBuddyWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC56421BD004C00CBBFDB /* TopBuddyWireFrame.swift */; };
+		521DC56F21BD004C00CBBFDB /* TopBuddyLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC56721BD004C00CBBFDB /* TopBuddyLocalDataManager.swift */; };
+		521DC57021BD004C00CBBFDB /* TopBuddyAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC56921BD004C00CBBFDB /* TopBuddyAPIDataManager.swift */; };
+		521DC57F21BD017400CBBFDB /* BuddyProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57221BD017300CBBFDB /* BuddyProfilePresenter.swift */; };
+		521DC58021BD017400CBBFDB /* BuddyProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57421BD017300CBBFDB /* BuddyProfileProtocols.swift */; };
+		521DC58121BD017400CBBFDB /* BuddyProfileWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57621BD017300CBBFDB /* BuddyProfileWireFrame.swift */; };
+		521DC58221BD017400CBBFDB /* BuddyProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57921BD017400CBBFDB /* BuddyProfileDataManager.swift */; };
+		521DC58321BD017400CBBFDB /* BuddyProfileAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57B21BD017400CBBFDB /* BuddyProfileAPIDataManager.swift */; };
+		521DC58421BD017400CBBFDB /* BuddyProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57D21BD017400CBBFDB /* BuddyProfileInteractor.swift */; };
+		521DC58521BD017400CBBFDB /* BuddyProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC57E21BD017400CBBFDB /* BuddyProfileItem.swift */; };
+		521DF6E521C4C73600E81D5A /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6E421C4C73600E81D5A /* ApplicationData.swift */; };
+		521DF6EF21C4CDFC00E81D5A /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6E721C4CDFB00E81D5A /* Keychain.swift */; };
+		521DF6F021C4CDFC00E81D5A /* HTTPStatusCodes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6E921C4CDFC00E81D5A /* HTTPStatusCodes+Extensions.swift */; };
+		521DF6F121C4CDFC00E81D5A /* CLProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6EA21C4CDFC00E81D5A /* CLProgressHUD.swift */; };
+		521DF6F221C4CDFC00E81D5A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6EB21C4CDFC00E81D5A /* HTTPRequest.swift */; };
+		521DF6F321C4CDFC00E81D5A /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6EC21C4CDFC00E81D5A /* HTTPStatusCodes.swift */; };
+		521DF6F421C4CDFC00E81D5A /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6ED21C4CDFC00E81D5A /* Reachability.swift */; };
+		521DF6F521C4CDFC00E81D5A /* ServerResponseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6EE21C4CDFC00E81D5A /* ServerResponseModal.swift */; };
+		521DF6F721C51C3000E81D5A /* StatusPopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DF6F621C51C3000E81D5A /* StatusPopUpPresenter.swift */; };
+		522C4D5121C3E50B00848524 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522C4D5021C3E50B00848524 /* Login.swift */; };
 		524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FB21730F98007086ED /* RatingProtocols.swift */; };
 		524ABA0921730F98007086ED /* RatingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FD21730F98007086ED /* RatingItem.swift */; };
 		524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AB9FE21730F98007086ED /* RatingInteractor.swift */; };
@@ -175,6 +201,8 @@
 		52EFA78B21A5C6DC00D04995 /* SeshBuddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78721A5C6DC00D04995 /* SeshBuddies.swift */; };
 		52EFA78C21A5C6DC00D04995 /* Buddies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EFA78821A5C6DC00D04995 /* Buddies.swift */; };
 		E9D0A30A46EA5EC6C4435E77 /* Pods_SESH_BUDDY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */; };
+		EEB3A6F721D75BB3002F2292 /* NotificationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3A6F621D75BB3002F2292 /* NotificationSetting.swift */; };
+		EEB3A6F921D75C37002F2292 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB3A6F821D75C36002F2292 /* NotificationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,12 +214,6 @@
 		0031CB4C213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenVerifierInteractor.swift; sourceTree = "<group>"; };
 		0031CB54213E73B100FCE6BF /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
 		0031CB55213E73B100FCE6BF /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
-		0031CB59213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPStatusCodes+Extensions.swift"; sourceTree = "<group>"; };
-		0031CB5A213E74AA00FCE6BF /* CLProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLProgressHUD.swift; sourceTree = "<group>"; };
-		0031CB5B213E74AA00FCE6BF /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
-		0031CB5C213E74AA00FCE6BF /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
-		0031CB5D213E74AA00FCE6BF /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		0031CB5E213E74AA00FCE6BF /* ServerResponseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseModal.swift; sourceTree = "<group>"; };
 		0031CB66213E799F00FCE6BF /* AuthNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthNavigationViewController.swift; sourceTree = "<group>"; };
 		186BCFE2214AD852001D397F /* StatusPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPopUpView.swift; sourceTree = "<group>"; };
 		186BCFE4214AD870001D397F /* StatusPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusPopUpView.xib; sourceTree = "<group>"; };
@@ -314,6 +336,10 @@
 		5219F602215F93FF00F1DC13 /* HomeButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeButtonTableViewCell.xib; sourceTree = "<group>"; };
 		521A6BA6219DEFC300617711 /* SeshStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeshStatusViewController.swift; sourceTree = "<group>"; };
 		521A6BA7219DEFC300617711 /* SeshStatusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeshStatusViewController.xib; sourceTree = "<group>"; };
+		521A9CA721B70951009F7256 /* TopSeshBuddiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSeshBuddiesViewController.swift; sourceTree = "<group>"; };
+		521A9CA821B70951009F7256 /* TopSeshBuddiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSeshBuddiesViewController.xib; sourceTree = "<group>"; };
+		521A9CAE21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSeshBuddiesCollectionViewCell.swift; sourceTree = "<group>"; };
+		521A9CAF21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopSeshBuddiesCollectionViewCell.xib; sourceTree = "<group>"; };
 		521AD248219C860100F7EEEB /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
 		521AD249219C860100F7EEEB /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
 		521AD24B219C868A00F7EEEB /* SESH BUDDY-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SESH BUDDY-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -329,6 +355,34 @@
 		521BA63721723917006AFFD4 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		521C05ED219B338400880E59 /* LoginWithEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmailViewController.swift; sourceTree = "<group>"; };
 		521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginWithEmailViewController.xib; sourceTree = "<group>"; };
+		521DC55021BBA0BC00CBBFDB /* BuddyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyProfileViewController.swift; sourceTree = "<group>"; };
+		521DC55121BBA0BC00CBBFDB /* BuddyProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddyProfileViewController.xib; sourceTree = "<group>"; };
+		521DC55721BBEC8D00CBBFDB /* AverageRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageRatingTableViewCell.swift; sourceTree = "<group>"; };
+		521DC55821BBEC8D00CBBFDB /* AverageRatingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AverageRatingTableViewCell.xib; sourceTree = "<group>"; };
+		521DC55D21BD004C00CBBFDB /* TopBuddyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyProtocols.swift; sourceTree = "<group>"; };
+		521DC55F21BD004C00CBBFDB /* TopBuddyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyItem.swift; sourceTree = "<group>"; };
+		521DC56021BD004C00CBBFDB /* TopBuddyInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyInteractor.swift; sourceTree = "<group>"; };
+		521DC56221BD004C00CBBFDB /* TopBuddyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyPresenter.swift; sourceTree = "<group>"; };
+		521DC56421BD004C00CBBFDB /* TopBuddyWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyWireFrame.swift; sourceTree = "<group>"; };
+		521DC56721BD004C00CBBFDB /* TopBuddyLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyLocalDataManager.swift; sourceTree = "<group>"; };
+		521DC56921BD004C00CBBFDB /* TopBuddyAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopBuddyAPIDataManager.swift; sourceTree = "<group>"; };
+		521DC57221BD017300CBBFDB /* BuddyProfilePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfilePresenter.swift; sourceTree = "<group>"; };
+		521DC57421BD017300CBBFDB /* BuddyProfileProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileProtocols.swift; sourceTree = "<group>"; };
+		521DC57621BD017300CBBFDB /* BuddyProfileWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileWireFrame.swift; sourceTree = "<group>"; };
+		521DC57921BD017400CBBFDB /* BuddyProfileDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileDataManager.swift; sourceTree = "<group>"; };
+		521DC57B21BD017400CBBFDB /* BuddyProfileAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileAPIDataManager.swift; sourceTree = "<group>"; };
+		521DC57D21BD017400CBBFDB /* BuddyProfileInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileInteractor.swift; sourceTree = "<group>"; };
+		521DC57E21BD017400CBBFDB /* BuddyProfileItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddyProfileItem.swift; sourceTree = "<group>"; };
+		521DF6E421C4C73600E81D5A /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		521DF6E721C4CDFB00E81D5A /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		521DF6E921C4CDFC00E81D5A /* HTTPStatusCodes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPStatusCodes+Extensions.swift"; sourceTree = "<group>"; };
+		521DF6EA21C4CDFC00E81D5A /* CLProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLProgressHUD.swift; sourceTree = "<group>"; };
+		521DF6EB21C4CDFC00E81D5A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		521DF6EC21C4CDFC00E81D5A /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		521DF6ED21C4CDFC00E81D5A /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		521DF6EE21C4CDFC00E81D5A /* ServerResponseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerResponseModal.swift; sourceTree = "<group>"; };
+		521DF6F621C51C3000E81D5A /* StatusPopUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusPopUpPresenter.swift; sourceTree = "<group>"; };
+		522C4D5021C3E50B00848524 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		524AB9FB21730F98007086ED /* RatingProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingProtocols.swift; sourceTree = "<group>"; };
 		524AB9FD21730F98007086ED /* RatingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingItem.swift; sourceTree = "<group>"; };
 		524AB9FE21730F98007086ED /* RatingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingInteractor.swift; sourceTree = "<group>"; };
@@ -352,6 +406,8 @@
 		717A799CC1731EEF7B1E94CD /* Pods-SESH BUDDY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.release.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.release.xcconfig"; sourceTree = "<group>"; };
 		88544D65EB3353306B80539A /* Pods-SESH BUDDY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SESH BUDDY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SESH BUDDY/Pods-SESH BUDDY.debug.xcconfig"; sourceTree = "<group>"; };
 		DA080BE7E105EC8A50E68539 /* Pods_SESH_BUDDY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SESH_BUDDY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEB3A6F621D75BB3002F2292 /* NotificationSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSetting.swift; sourceTree = "<group>"; };
+		EEB3A6F821D75C36002F2292 /* NotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,19 +483,6 @@
 				0031CB55213E73B100FCE6BF /* EntryViewController.swift */,
 			);
 			path = "Single View For Whole App";
-			sourceTree = "<group>";
-		};
-		0031CB58213E74AA00FCE6BF /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				0031CB59213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift */,
-				0031CB5A213E74AA00FCE6BF /* CLProgressHUD.swift */,
-				0031CB5B213E74AA00FCE6BF /* HTTPRequest.swift */,
-				0031CB5C213E74AA00FCE6BF /* HTTPStatusCodes.swift */,
-				0031CB5D213E74AA00FCE6BF /* Reachability.swift */,
-				0031CB5E213E74AA00FCE6BF /* ServerResponseModal.swift */,
-			);
-			path = Networking;
 			sourceTree = "<group>";
 		};
 		0031CB65213E799F00FCE6BF /* Navigation Controller */ = {
@@ -675,7 +718,6 @@
 			isa = PBXGroup;
 			children = (
 				219407C02140510D0020FAA9 /* Resources */,
-				0031CB58213E74AA00FCE6BF /* Networking */,
 				0031CB53213E73B100FCE6BF /* Single View For Whole App */,
 				21035203213DB30800ADCEAB /* Wrappers */,
 				210351FA213DAEF100ADCEAB /* Extension */,
@@ -721,6 +763,8 @@
 				52184DA0216A7C260002E800 /* Sessions */,
 				52184DBB216A837D0002E800 /* Buddies */,
 				521B74B6219E7664002FB21E /* CommonPopUp */,
+				521A9CAB21B70969009F7256 /* TopSeshBuddies */,
+				521DC55421BBA19500CBBFDB /* BuddyProfile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -746,6 +790,8 @@
 		21035203213DB30800ADCEAB /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
+				521DF6E621C4CDFB00E81D5A /* Keychain */,
+				521DF6E821C4CDFC00E81D5A /* Networking */,
 				521AD247219C860100F7EEEB /* VPImageCropper */,
 				21035200213DB30300ADCEAB /* Language */,
 			);
@@ -1349,6 +1395,46 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		521A9CAB21B70969009F7256 /* TopSeshBuddies */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55E21BD004C00CBBFDB /* TopBuddyInteractor */,
+				521DC56521BD004C00CBBFDB /* TopBuddyManager */,
+				521DC56121BD004C00CBBFDB /* TopBuddyPresenter */,
+				521DC55C21BD004C00CBBFDB /* TopBuddyProtocols */,
+				521DC56321BD004C00CBBFDB /* TopBuddyWireFrame */,
+				521A9CAC21B70986009F7256 /* Views */,
+			);
+			path = TopSeshBuddies;
+			sourceTree = "<group>";
+		};
+		521A9CAC21B70986009F7256 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				521A9CAD21B70997009F7256 /* Controller */,
+				521A9CB221B709D7009F7256 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		521A9CAD21B70997009F7256 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521A9CA721B70951009F7256 /* TopSeshBuddiesViewController.swift */,
+				521A9CA821B70951009F7256 /* TopSeshBuddiesViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		521A9CB221B709D7009F7256 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				521A9CAE21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.swift */,
+				521A9CAF21B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		521AD247219C860100F7EEEB /* VPImageCropper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1454,6 +1540,183 @@
 				521C05EE219B338400880E59 /* LoginWithEmailViewController.xib */,
 			);
 			path = LoginWithEmail;
+			sourceTree = "<group>";
+		};
+		521DC55421BBA19500CBBFDB /* BuddyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57C21BD017400CBBFDB /* BuddyProfileInteractor */,
+				521DC57721BD017400CBBFDB /* BuddyProfileManager */,
+				521DC57121BD017300CBBFDB /* BuddyProfilePresenter */,
+				521DC57321BD017300CBBFDB /* BuddyProfileProtocols */,
+				521DC57521BD017300CBBFDB /* BuddyProfileWireFrame */,
+				521DC55521BBA1A900CBBFDB /* Views */,
+			);
+			path = BuddyProfile;
+			sourceTree = "<group>";
+		};
+		521DC55521BBA1A900CBBFDB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55621BBE6D300CBBFDB /* Controller */,
+				521DC55B21BBEC9600CBBFDB /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		521DC55621BBE6D300CBBFDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55021BBA0BC00CBBFDB /* BuddyProfileViewController.swift */,
+				521DC55121BBA0BC00CBBFDB /* BuddyProfileViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		521DC55B21BBEC9600CBBFDB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55721BBEC8D00CBBFDB /* AverageRatingTableViewCell.swift */,
+				521DC55821BBEC8D00CBBFDB /* AverageRatingTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		521DC55C21BD004C00CBBFDB /* TopBuddyProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55D21BD004C00CBBFDB /* TopBuddyProtocols.swift */,
+			);
+			path = TopBuddyProtocols;
+			sourceTree = "<group>";
+		};
+		521DC55E21BD004C00CBBFDB /* TopBuddyInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				521DC55F21BD004C00CBBFDB /* TopBuddyItem.swift */,
+				521DC56021BD004C00CBBFDB /* TopBuddyInteractor.swift */,
+			);
+			path = TopBuddyInteractor;
+			sourceTree = "<group>";
+		};
+		521DC56121BD004C00CBBFDB /* TopBuddyPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				521DC56221BD004C00CBBFDB /* TopBuddyPresenter.swift */,
+			);
+			path = TopBuddyPresenter;
+			sourceTree = "<group>";
+		};
+		521DC56321BD004C00CBBFDB /* TopBuddyWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				521DC56421BD004C00CBBFDB /* TopBuddyWireFrame.swift */,
+			);
+			path = TopBuddyWireFrame;
+			sourceTree = "<group>";
+		};
+		521DC56521BD004C00CBBFDB /* TopBuddyManager */ = {
+			isa = PBXGroup;
+			children = (
+				521DC56621BD004C00CBBFDB /* Local */,
+				521DC56821BD004C00CBBFDB /* API */,
+			);
+			path = TopBuddyManager;
+			sourceTree = "<group>";
+		};
+		521DC56621BD004C00CBBFDB /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				521DC56721BD004C00CBBFDB /* TopBuddyLocalDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		521DC56821BD004C00CBBFDB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				521DC56921BD004C00CBBFDB /* TopBuddyAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		521DC57121BD017300CBBFDB /* BuddyProfilePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57221BD017300CBBFDB /* BuddyProfilePresenter.swift */,
+			);
+			path = BuddyProfilePresenter;
+			sourceTree = "<group>";
+		};
+		521DC57321BD017300CBBFDB /* BuddyProfileProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57421BD017300CBBFDB /* BuddyProfileProtocols.swift */,
+			);
+			path = BuddyProfileProtocols;
+			sourceTree = "<group>";
+		};
+		521DC57521BD017300CBBFDB /* BuddyProfileWireFrame */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57621BD017300CBBFDB /* BuddyProfileWireFrame.swift */,
+			);
+			path = BuddyProfileWireFrame;
+			sourceTree = "<group>";
+		};
+		521DC57721BD017400CBBFDB /* BuddyProfileManager */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57821BD017400CBBFDB /* Local */,
+				521DC57A21BD017400CBBFDB /* API */,
+			);
+			path = BuddyProfileManager;
+			sourceTree = "<group>";
+		};
+		521DC57821BD017400CBBFDB /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57921BD017400CBBFDB /* BuddyProfileDataManager.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		521DC57A21BD017400CBBFDB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57B21BD017400CBBFDB /* BuddyProfileAPIDataManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		521DC57C21BD017400CBBFDB /* BuddyProfileInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				521DC57D21BD017400CBBFDB /* BuddyProfileInteractor.swift */,
+				521DC57E21BD017400CBBFDB /* BuddyProfileItem.swift */,
+			);
+			path = BuddyProfileInteractor;
+			sourceTree = "<group>";
+		};
+		521DF6E621C4CDFB00E81D5A /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				521DF6E721C4CDFB00E81D5A /* Keychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		521DF6E821C4CDFC00E81D5A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				521DF6E921C4CDFC00E81D5A /* HTTPStatusCodes+Extensions.swift */,
+				521DF6EA21C4CDFC00E81D5A /* CLProgressHUD.swift */,
+				521DF6EB21C4CDFC00E81D5A /* HTTPRequest.swift */,
+				521DF6EC21C4CDFC00E81D5A /* HTTPStatusCodes.swift */,
+				521DF6ED21C4CDFC00E81D5A /* Reachability.swift */,
+				521DF6EE21C4CDFC00E81D5A /* ServerResponseModal.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		524AB9F921730F98007086ED /* Rating */ = {
@@ -1594,6 +1857,7 @@
 			children = (
 				186BCFE2214AD852001D397F /* StatusPopUpView.swift */,
 				186BCFE4214AD870001D397F /* StatusPopUpView.xib */,
+				521DF6F621C51C3000E81D5A /* StatusPopUpPresenter.swift */,
 			);
 			path = StatusPopUp;
 			sourceTree = "<group>";
@@ -1601,10 +1865,14 @@
 		52EFA78D21A5C6E600D04995 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				EEB3A6F821D75C36002F2292 /* NotificationData.swift */,
+				EEB3A6F621D75BB3002F2292 /* NotificationSetting.swift */,
 				52EFA78821A5C6DC00D04995 /* Buddies.swift */,
 				52EFA78721A5C6DC00D04995 /* SeshBuddies.swift */,
 				52EFA78521A5C6DB00D04995 /* SeshData.swift */,
 				52EFA78621A5C6DC00D04995 /* Session.swift */,
+				522C4D5021C3E50B00848524 /* Login.swift */,
+				521DF6E421C4C73600E81D5A /* ApplicationData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -1684,6 +1952,9 @@
 				210351ED213D9A6B00ADCEAB /* Assets.xcassets in Resources */,
 				219407CF2140510E0020FAA9 /* Lato-Semibold.ttf in Resources */,
 				524ABA1221730FC6007086ED /* RatingViewController.xib in Resources */,
+				521DC55A21BBEC8D00CBBFDB /* AverageRatingTableViewCell.xib in Resources */,
+				521DC55321BBA0BC00CBBFDB /* BuddyProfileViewController.xib in Resources */,
+				521A9CAA21B70951009F7256 /* TopSeshBuddiesViewController.xib in Resources */,
 				521A6BA9219DEFC300617711 /* SeshStatusViewController.xib in Resources */,
 				219407D82140663B0020FAA9 /* SideMenuFieldTableViewCell.xib in Resources */,
 				219407D02140510E0020FAA9 /* MavenPro-Bold.ttf in Resources */,
@@ -1717,6 +1988,7 @@
 				210351EB213D9A6500ADCEAB /* Authorization.storyboard in Resources */,
 				52184D7E216A1FF60002E800 /* HistoryViewController.xib in Resources */,
 				521B74BB219FCF6A002FB21E /* SessionDetailViewController.xib in Resources */,
+				521A9CB121B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.xib in Resources */,
 				1884ACD221484B4B0012666F /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1810,38 +2082,44 @@
 				521C05EF219B338400880E59 /* LoginWithEmailViewController.swift in Sources */,
 				526A6238215FAB2500573815 /* SessionTypeTableViewCell.swift in Sources */,
 				1884ACD721484D680012666F /* EditProfileHeaderCellTableViewCell.swift in Sources */,
+				521DF6E521C4C73600E81D5A /* ApplicationData.swift in Sources */,
+				522C4D5121C3E50B00848524 /* Login.swift in Sources */,
 				52184DD0216A85420002E800 /* BuddiesAPIDataManager.swift in Sources */,
 				21035212213DB40500ADCEAB /* UICollectionView+Extension.swift in Sources */,
 				52184D99216A23D60002E800 /* HistoryCollectionViewCell.swift in Sources */,
 				52184D91216A210C0002E800 /* HistoryPresenter.swift in Sources */,
 				52184D6E2169C6F20002E800 /* MatchSessionHandler.swift in Sources */,
-				0031CB64213E74AA00FCE6BF /* ServerResponseModal.swift in Sources */,
 				2142EB7D214198B40044D60C /* CreateUserInteracter.swift in Sources */,
+				521DC56A21BD004C00CBBFDB /* TopBuddyProtocols.swift in Sources */,
 				524ABA0E21730F98007086ED /* RatingPresenter.swift in Sources */,
 				2103521F213DB40500ADCEAB /* NSNumber+Extension.swift in Sources */,
 				186BCFE3214AD852001D397F /* StatusPopUpView.swift in Sources */,
 				52175825219544F6002A370D /* Common.swift in Sources */,
+				521DC56E21BD004C00CBBFDB /* TopBuddyWireFrame.swift in Sources */,
 				52184DCC216A85420002E800 /* BuddiesWireFrame.swift in Sources */,
 				2103521A213DB40500ADCEAB /* UIImage+Extension.swift in Sources */,
 				52184DB6216A7D560002E800 /* SessionsWireFrame.swift in Sources */,
 				524ABA1121730FC6007086ED /* RatingViewController.swift in Sources */,
 				52184D93216A210C0002E800 /* HistoryLocalDataManager.swift in Sources */,
+				521DF6F421C4CDFC00E81D5A /* Reachability.swift in Sources */,
 				52184DB2216A7D560002E800 /* SessionsLocalDataManager.swift in Sources */,
+				521A9CB021B709D1009F7256 /* TopSeshBuddiesCollectionViewCell.swift in Sources */,
+				521DF6EF21C4CDFC00E81D5A /* Keychain.swift in Sources */,
 				219407BB214037B10020FAA9 /* SideMenuViewController.swift in Sources */,
 				1884ACF4214866F00012666F /* EditProfileProtocol.swift in Sources */,
 				18E8889A2142F1F80050ECCF /* SettingsProtocol.swift in Sources */,
 				521A6BA8219DEFC300617711 /* SeshStatusViewController.swift in Sources */,
+				521DC58421BD017400CBBFDB /* BuddyProfileInteractor.swift in Sources */,
 				0031CB4F213E6ECE00FCE6BF /* AuthTokenVerifierProtocol.swift in Sources */,
+				521DC58021BD017400CBBFDB /* BuddyProfileProtocols.swift in Sources */,
 				1884ACF6214866F00012666F /* EditProfileInteractor.swift in Sources */,
 				18E888982142F1F80050ECCF /* SettingsPresenter.swift in Sources */,
 				521B74BF219FCFD5002FB21E /* SeshReviewViewController.swift in Sources */,
 				5219F5FE215F8EA100F1DC13 /* HomeInteractor.swift in Sources */,
 				1884ACD121484B4B0012666F /* ProfileViewController.swift in Sources */,
 				521BA63821723917006AFFD4 /* FloatRatingView.swift in Sources */,
-				0031CB60213E74AA00FCE6BF /* CLProgressHUD.swift in Sources */,
 				52184D9E216A7C210002E800 /* SessionsViewController.swift in Sources */,
 				524ABA1621731B78007086ED /* AppInfoTableViewCell.swift in Sources */,
-				0031CB63213E74AA00FCE6BF /* Reachability.swift in Sources */,
 				2103521D213DB40500ADCEAB /* UIButton+Extension.swift in Sources */,
 				2103521B213DB40500ADCEAB /* UIView+Extension.swift in Sources */,
 				52184DB9216A83680002E800 /* BuddiesViewController.swift in Sources */,
@@ -1857,7 +2135,6 @@
 				524ABA0C21730F98007086ED /* RatingAPIDataManager.swift in Sources */,
 				52184D782169CBD70002E800 /* CurrentSessionTableViewCell.swift in Sources */,
 				0031CB57213E73B200FCE6BF /* EntryViewController.swift in Sources */,
-				0031CB5F213E74AA00FCE6BF /* HTTPStatusCodes+Extensions.swift in Sources */,
 				5219F603215F93FF00F1DC13 /* HomeButtonTableViewCell.swift in Sources */,
 				0031CB67213E799F00FCE6BF /* AuthNavigationViewController.swift in Sources */,
 				529EF63C214CF82600402FD5 /* Enums.swift in Sources */,
@@ -1878,13 +2155,18 @@
 				52184DB4216A7D560002E800 /* SessionsPresenter.swift in Sources */,
 				52184DB0216A7D560002E800 /* SessionsInteractor.swift in Sources */,
 				0031CB4D213E6ECE00FCE6BF /* AuthTokenVerifierPresenter.swift in Sources */,
+				521DC57F21BD017400CBBFDB /* BuddyProfilePresenter.swift in Sources */,
+				521DC58221BD017400CBBFDB /* BuddyProfileDataManager.swift in Sources */,
 				210351FE213DAFE900ADCEAB /* LoginOptionsViewController.swift in Sources */,
-				0031CB62213E74AA00FCE6BF /* HTTPStatusCodes.swift in Sources */,
 				2103521C213DB40500ADCEAB /* UIDevice+Extension.swift in Sources */,
+				521DF6F521C4CDFC00E81D5A /* ServerResponseModal.swift in Sources */,
+				521A9CA921B70951009F7256 /* TopSeshBuddiesViewController.swift in Sources */,
 				1884ACDD2148559B0012666F /* TextViewTableViewCell.swift in Sources */,
+				521DC58121BD017400CBBFDB /* BuddyProfileWireFrame.swift in Sources */,
 				2103521E213DB40500ADCEAB /* UITableView+Extension.swift in Sources */,
+				EEB3A6F921D75C37002F2292 /* NotificationData.swift in Sources */,
 				219407BF214049E50020FAA9 /* Images.swift in Sources */,
-				0031CB61213E74AA00FCE6BF /* HTTPRequest.swift in Sources */,
+				521DF6F121C4CDFC00E81D5A /* CLProgressHUD.swift in Sources */,
 				0031CB52213E6ECE00FCE6BF /* AuthTokenVerifierInteractor.swift in Sources */,
 				21035213213DB40500ADCEAB /* UIViewController+Extension.swift in Sources */,
 				52184D702169C7000002E800 /* DropSessionHandler.swift in Sources */,
@@ -1892,17 +2174,26 @@
 				1884ACC82148397A0012666F /* SettingsInteractor.swift in Sources */,
 				52184D90216A210C0002E800 /* HistoryProtocols.swift in Sources */,
 				213CDA45213EE6CD00B1C874 /* LoginWireframe.swift in Sources */,
+				521DF6F021C4CDFC00E81D5A /* HTTPStatusCodes+Extensions.swift in Sources */,
+				521DF6F221C4CDFC00E81D5A /* HTTPRequest.swift in Sources */,
 				52EFA78A21A5C6DC00D04995 /* Session.swift in Sources */,
 				52184DB3216A7D560002E800 /* SessionsAPIDataManager.swift in Sources */,
+				521DC58321BD017400CBBFDB /* BuddyProfileAPIDataManager.swift in Sources */,
 				2103522A213DBBF900ADCEAB /* AppColors.swift in Sources */,
 				524ABA0821730F98007086ED /* RatingProtocols.swift in Sources */,
 				524ABA0921730F98007086ED /* RatingItem.swift in Sources */,
+				521DF6F321C4CDFC00E81D5A /* HTTPStatusCodes.swift in Sources */,
+				521DC55221BBA0BC00CBBFDB /* BuddyProfileViewController.swift in Sources */,
+				521DC58521BD017400CBBFDB /* BuddyProfileItem.swift in Sources */,
 				52184D92216A210C0002E800 /* HistoryWireFrame.swift in Sources */,
 				21035216213DB40500ADCEAB /* UIAlertController+Extension.swift in Sources */,
 				1884ACF5214866F00012666F /* EditProfileWireframe.swift in Sources */,
 				2142EB7B2141989B0044D60C /* CreateUserProtocols.swift in Sources */,
+				521DC56D21BD004C00CBBFDB /* TopBuddyPresenter.swift in Sources */,
 				524ABA0B21730F98007086ED /* RatingDataManager.swift in Sources */,
+				521DF6F721C51C3000E81D5A /* StatusPopUpPresenter.swift in Sources */,
 				52184DB5216A7D560002E800 /* SessionsProtocols.swift in Sources */,
+				521DC56F21BD004C00CBBFDB /* TopBuddyLocalDataManager.swift in Sources */,
 				52184DD1216A85420002E800 /* BuddiesPresenter.swift in Sources */,
 				213CDA40213EE6CD00B1C874 /* LoginDataManager.swift in Sources */,
 				5219F5FD215F8EA100F1DC13 /* HomeWireframe.swift in Sources */,
@@ -1919,16 +2210,21 @@
 				52184DCE216A85420002E800 /* BuddiesInteractor.swift in Sources */,
 				521AD24A219C860200F7EEEB /* VPImageCropperViewController.m in Sources */,
 				1884ACF3214866F00012666F /* EditProfilePresenter.swift in Sources */,
+				521DC57021BD004C00CBBFDB /* TopBuddyAPIDataManager.swift in Sources */,
+				EEB3A6F721D75BB3002F2292 /* NotificationSetting.swift in Sources */,
 				1884ACE8214860400012666F /* ProfileInfoTableViewCell.swift in Sources */,
 				52EFA78C21A5C6DC00D04995 /* Buddies.swift in Sources */,
+				521DC55921BBEC8D00CBBFDB /* AverageRatingTableViewCell.swift in Sources */,
 				521AD24E219C883800F7EEEB /* SelectImage.swift in Sources */,
 				524ABA0D21730F98007086ED /* RatingWireFrame.swift in Sources */,
 				21035229213DBBF900ADCEAB /* AppStrings.swift in Sources */,
 				18E888992142F1F80050ECCF /* SettingsWireframe.swift in Sources */,
 				524ABA0A21730F98007086ED /* RatingInteractor.swift in Sources */,
 				52184D95216A210C0002E800 /* HistoryInteractor.swift in Sources */,
+				521DC56C21BD004C00CBBFDB /* TopBuddyInteractor.swift in Sources */,
 				52EFA78B21A5C6DC00D04995 /* SeshBuddies.swift in Sources */,
 				21035202213DB30300ADCEAB /* L102Language.swift in Sources */,
+				521DC56B21BD004C00CBBFDB /* TopBuddyItem.swift in Sources */,
 				521B74BA219FCF6A002FB21E /* SessionDetailViewController.swift in Sources */,
 				52184D742169C7270002E800 /* SMOSssionHandler.swift in Sources */,
 				210351E6213D9A6500ADCEAB /* AppDelegate.swift in Sources */,
@@ -2080,7 +2376,8 @@
 			baseConfigurationReference = 88544D65EB3353306B80539A /* Pods-SESH BUDDY.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2090,6 +2387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = sesh_ad_hoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "SESH BUDDY-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2101,7 +2399,8 @@
 			baseConfigurationReference = 717A799CC1731EEF7B1E94CD /* Pods-SESH BUDDY.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = GZL378975P;
 				INFOPLIST_FILE = "SESH BUDDY/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2111,6 +2410,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seshbuddies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = sesh_ad_hoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "SESH BUDDY-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

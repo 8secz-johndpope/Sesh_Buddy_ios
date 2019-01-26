@@ -48,11 +48,7 @@ extension BuddiesViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: buddyInfoTableViewCell) as? BuddyInfoTableViewCell else {
             return UITableViewCell()
         }
-        cell.buddyCommentTextView.layoutIfNeeded()
-        let sizeThatShouldFitTheConten = cell.buddyCommentTextView.sizeThatFits(cell.buddyCommentTextView.frame.size)
-        var frame = cell.buddyCommentTextView.frame
-        frame.size = sizeThatShouldFitTheConten
-        cell.buddyCommentTextView.frame = frame
+        cell.setUPStarRating(isEditable: false)
         return cell
     }
     

@@ -53,6 +53,7 @@ class HomeViewController: UIViewController {
     let kLocationTag = 5000
     var sessionStatusPopUPVC : SeshStatusViewController!
     var sessionDetailsPopUPVc: SessionDetailViewController!
+    var seshReviewViewController: SeshReviewViewController!
     var transparentView: UIView!
     
     let homeButtonTableViewCell = "HomeButtonTableViewCell"
@@ -68,12 +69,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ApplicationData.shared.removeAllData()
         self.initializePresenter()
         self.setUPTableView()
         self.changeStyle(.default)
         self.showMenuBarButton(true)
         self.setNavBarTitleView(image: ThemeImages.appLogo)
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,7 +89,6 @@ class HomeViewController: UIViewController {
         let points = Common.share.getPointsTypeList().first!
         let reason = Common.share.getReasonsTypeList().first!
         
-        
         shmokeSessionHandler.selectedSeshType = firstSesh
         shmokeSessionHandler.selectedStrainType = strain
         shmokeSessionHandler.selectedUtensilType = utensil
@@ -98,18 +98,13 @@ class HomeViewController: UIViewController {
         matchSessionHandler.selectedUtensilType = utensil
         matchSessionHandler.selectedGramType = gram
         
-        
         dropSessionHandler.selectedStrainType = strain
         dropSessionHandler.selectedUtensilType = utensil
         dropSessionHandler.selectedPointType = points
         dropSessionHandler.selectedSeshType = firstSesh
         
-        
         smoSessionHandler.selectedSeshType = firstSesh
         smoSessionHandler.selectedReasonsType = reason
-        
-        
-        
         
         self.homeTableView.registerCellFrom(homeButtonTableViewCell)
         self.homeTableView.registerCellFrom(homeButtonTableViewCell, identifier: shmokeIdentifier)
@@ -247,19 +242,19 @@ class HomeViewController: UIViewController {
         switch selectedSessionType {
         case .SHMOKE:
             var currentBuddyList = shmokeSessionHandler.buddiesList
-            currentBuddyList[at] = with
+            currentBuddyList.insert(with, at: at)
             shmokeSessionHandler.buddiesList = currentBuddyList
         case .MATCH:
             var currentBuddyList = matchSessionHandler.buddiesList
-            currentBuddyList[at] = with
+            currentBuddyList.insert(with, at: at)
             matchSessionHandler.buddiesList = currentBuddyList
         case .DROP:
             var currentBuddyList = dropSessionHandler.buddiesList
-            currentBuddyList[at] = with
+            currentBuddyList.insert(with, at: at)
             dropSessionHandler.buddiesList = currentBuddyList
         case .SMO:
             var currentBuddyList = smoSessionHandler.buddiesList
-            currentBuddyList[at] = with
+            currentBuddyList.insert(with, at: at)
             smoSessionHandler.buddiesList = currentBuddyList
         default:
             break
@@ -448,8 +443,8 @@ extension HomeViewController: UITableViewDataSource {
         guard let currentSessionCell = tableView.dequeueReusableCell(withIdentifier: currentSessionTableViewCell) as? CurrentSessionTableViewCell else {
             return UITableViewCell()
         }
+        currentSessionCell.sessionEndButton.addTarget(self, action: #selector(self.endSessionButtonAction), for: .touchUpInside)
         self.setUPSessionTypeCell(at: indexPath.section, cell: sessionTypeCell)
-        
         sessionTypeCell.setHeader(type: enumVal)
         sessionTypeCell.addOrRemoveButton.tag = indexPath.row
         switch enumVal {
@@ -462,6 +457,7 @@ extension HomeViewController: UITableViewDataSource {
         case .shmokeCurrentSessions:
             let sessionName = self.shmokeSessionHandler.currentSessions[indexPath.row]
             currentSessionCell.setSessionDetails(type: .SHMOKE, text: sessionName)
+            
             return currentSessionCell
         case .dropButton:
              dropButtonCell.setUPUI(isButtonSelected: self.isDropSelected, type: .dropButton)
@@ -581,6 +577,7 @@ extension HomeViewController: UITableViewDataSource {
         }
     }
     func updateTableViewHeight(){
+        homeTableView.layoutIfNeeded()
         let contentHeight = homeTableView.contentSize.height
         let totalHeight = screenHeight - (1 * CGFloat(navigationBarHeight))
         if contentHeight >= totalHeight {
@@ -1131,7 +1128,7 @@ extension HomeViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag >= addBuddyBaseTag {
             if !textField.text!.isEmpty  {
-                self.addBuddy(with: textField.text!, at: textField.tag)
+                self.addBuddy(with: textField.text!, at: textField.tag % addBuddyBaseTag)
             }
         } else if textField.tag == kLocationTag {
             if !textField.text!.isEmpty  {
@@ -1157,29 +1154,53 @@ extension HomeViewController: UITextFieldDelegate {
         return true
     }
 }
-extension HomeViewController: AcceptSessionViewProtocol {
+extension HomeViewController: SessionStatusViewProtocol {
     func crossButtonClicked() {
         self.removeSessionStatusPopUPVC(sessionType: .none, session: nil)
     }
     func viewSessionClicked(session: Session) {
-        self.removeSessionStatusPopUPVC(sessionType: .addSession, session: session)
+        self.removeSessionStatusPopUPVC(sessionType: .acceptSession, session: session)
     }
     func seshDetailsButtonClick(session: Session) {
         self.removeSessionStatusPopUPVC(sessionType: .viewSession, session: session)
     }
 }
 extension HomeViewController: SessionDetailsViewProtocols{
+    func cancelSeshButtonClicked(session: Session) {
+    }
+    func clearSession() {
+        shmokeSessionHandler.clearSession()
+        dropSessionHandler.clearSession()
+        matchSessionHandler.clearSession()
+        smoSessionHandler.clearSession()
+        self.selectedSessionType = .none
+        self.isShmokeSelected = false
+        self.isMatchSelected = false
+        self.isDropSelected = false
+        self.isSMOSelected = false
+        self.homeTableView.reloadData()
+        self.updateTableViewHeight()
+        
+    }
     func seshUPButtonClicked(session: Session, type: SessionStatusDetailType) {
-        if type != .addSession {
+        if type == .addSession {
+            self.removeSessionUPC(sessionDetailType: .none,  session: nil)
+            clearSession()
+        } else if type == .acceptSession {
             self.removeSessionUPC(sessionDetailType: .approvedSession, session: session)
-        } else {
-             self.removeSessionUPC(sessionDetailType: .none,  session: nil)
         }
         
     }
     func crossSeshUPButtonClicked() {
         self.removeSessionUPC(sessionDetailType: .none,  session: nil)
     }
+}
+extension HomeViewController: SeshReviewProtocols {
+    func saveReviewButtonClicked(with: Session) {
+        self.removeEndSessionPop(session: with)
+    }
+    
+    
 }
 extension HomeViewController {
     
@@ -1197,7 +1218,7 @@ extension HomeViewController {
         sessionStatusPopUPVC?.view.transform = CGAffineTransform(translationX: 0, y: 0)
         self.transparentView = UIView()
         transparentView?.frame = self.view.frame
-        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.3)
+        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
         transparentView?.alpha = 0.1
         self.view.addSubview(transparentView!)
         UIView.animate(withDuration: 0.5,
@@ -1246,7 +1267,7 @@ extension HomeViewController {
         sessionDetailsPopUPVc?.view.transform = CGAffineTransform(translationX: 0, y: 0)
         self.transparentView = UIView()
         transparentView?.frame = self.view.frame
-        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.3)
+        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
         transparentView?.alpha = 0.1
         sessionDetailsPopUPVc?.sessionDetailType = sessionType
         sessionDetailsPopUPVc.setUPUI()
@@ -1279,7 +1300,7 @@ extension HomeViewController {
                        delay: 0.0,
                        options: UIViewAnimationOptions.transitionCrossDissolve,
                        animations: {
-                        self.sessionStatusPopUPVC?.view.alpha = 0.1
+                        self.sessionDetailsPopUPVc?.view.alpha = 0.1
                         self.transparentView?.alpha = 0.1
         },
                        completion: { finished in
@@ -1293,6 +1314,55 @@ extension HomeViewController {
                         })
         }
         )
+    }
+    @objc func endSessionButtonAction() {
+        seshReviewViewController = SeshReviewViewController(nibName: "SeshReviewViewController", bundle: nil)
+        seshReviewViewController?.view.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+        seshReviewViewController?.view.alpha = 0.1
+        seshReviewViewController?.modalPresentationStyle = .overCurrentContext
+        seshReviewViewController?.session = self.sessionsData[0]
+        seshReviewViewController?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        self.transparentView = UIView()
+        transparentView?.frame = self.view.frame
+        transparentView?.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
+        transparentView?.alpha = 0.1
+        seshReviewViewController.setUPUI()
+        self.present((seshReviewViewController)!, animated: false
+            , completion: {
+                self.seshReviewViewController.reloadView()
+        })
         
+        
+        self.view.addSubview(transparentView!)
+        self.seshReviewViewController.reloadView()
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        
+                        self.seshReviewViewController?.view.alpha = 1.0
+                        self.transparentView?.alpha = 1.0
+                        self.seshReviewViewController?.delegate = self
+                        self.seshReviewViewController?.view.transform = CGAffineTransform(translationX: 0, y: 0)
+        },
+                       completion: { finished in
+                       
+        }
+        )
+    }
+    func removeEndSessionPop(session: Session) {
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        self.seshReviewViewController?.view.alpha = 0.1
+                        self.transparentView?.alpha = 0.1
+        },
+                       completion: { finished in
+                        self.dismiss(animated: false, completion: {
+                            self.transparentView?.removeFromSuperview()
+                        })
+        }
+        )
     }
 }

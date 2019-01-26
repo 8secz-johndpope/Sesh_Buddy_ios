@@ -9,6 +9,7 @@ enum SignUpType {
     case facebook
     case snapchat
     case email
+    case signUP
     case none
 }
 import UIKit
@@ -80,22 +81,31 @@ class CreateUserViewController: UIViewController, UITextViewDelegate {
             }
             if let fbFirstName = fbProfile["first_name"] as? String, !fbFirstName.isEmpty {
                 self.firstName = fbFirstName
+                self.presenter?.firstName = fbFirstName
                 self.firstNameTextField.text = self.firstName.capitalized
                 
             }
             if let fbFirstName = fbProfile["last_name"] as? String, !fbFirstName.isEmpty {
                 self.lastName = fbFirstName
+                self.presenter?.lastName = fbFirstName
                 self.lastNameTextField.text = self.lastName.capitalized
             }
             if let fbFirstName = fbProfile["username"] as? String, !fbFirstName.isEmpty {
                 self.userName = fbFirstName
+                self.presenter?.userName = fbFirstName
                 self.userNameTextField.text = self.userName.capitalized
             }
             
         } else if signUPType == .snapchat {
             
-        } else {
-            
+        } else if signUPType == .email {
+            guard ApplicationData.shared.checkLoginData() else {
+                return
+            }
+            self.presenter?.firstName = ApplicationData.shared.getLoginData().firstName
+            self.presenter?.lastName = ApplicationData.shared.getLoginData().lastName
+            self.firstNameTextField.text = ApplicationData.shared.getLoginData().firstName
+            self.lastNameTextField.text = ApplicationData.shared.getLoginData().lastName
         }
         
         
@@ -170,6 +180,10 @@ class CreateUserViewController: UIViewController, UITextViewDelegate {
             self.emailView.isHidden = true
             self.headerLabel.text = "CREATE USER"
         case .email:
+            self.passwordView.isHidden = true
+            self.emailView.isHidden = true
+            self.headerLabel.text = "CREATE USER"
+        case .signUP:
             self.passwordView.isHidden = false
             self.emailView.isHidden = false
             self.headerLabel.text = "SIGN UP"
@@ -223,7 +237,51 @@ class CreateUserViewController: UIViewController, UITextViewDelegate {
         
     }
     @IBAction func joinNowButtonClicked(_ sender: Any) {
-        self.presenter?.createUserNuttonClicked()
+        
+        guard self.presenter?.firstName != nil, self.presenter!.firstName!.count > 0 else {
+            self.showAlert("Please enter first name")
+            return
+        }
+        guard self.presenter?.lastName != nil, self.presenter!.lastName!.count > 0 else {
+            self.showAlert("Please enter last name")
+            return
+        }
+        guard self.presenter?.userName != nil, self.presenter!.userName!.count > 0 else {
+            self.showAlert("Please enter user name")
+            return
+        }
+        
+        if self.signUPType == .signUP {
+            guard self.signUPType == .signUP, self.presenter?.email != nil, self.presenter!.email!.count > 0, Regex.email.validate(self.presenter!.email!) else {
+                self.showAlert("Please enter correct email")
+                return
+            }
+            guard self.signUPType == .signUP, self.presenter?.password != nil, self.presenter!.password!.count  > 0, Regex.password.validatePassword(self.presenter!.password!) else {
+                self.showAlert("Please enter correct password")
+                return
+            }
+            self.presenter?.createUserType =  .signupOrLoginWithEmail
+            self.presenter?.registerUserButtonClicked()
+        } else {
+            
+            switch self.signUPType {
+            case .email:
+                self.presenter?.createUserType =  .signupOrLoginWithEmail
+            case .facebook:
+                self.presenter?.createUserType =  .facebook
+            case .snapchat:
+                self.presenter?.createUserType =  .snapchat
+            case .signUP:
+                self.presenter?.createUserType =  .signupOrLoginWithEmail
+            case .none:
+                return
+            }
+            
+            
+            self.presenter?.createUserButtonClicked()
+        }
+        
+        
     }
     
 }
@@ -232,10 +290,31 @@ extension CreateUserViewController: CreateUserViewProtocol {
         
     }
     func showAlert(_ string: String) {
-        
+        DispatchQueue.main.async {
+            UIAlertController.presentAlert(title: nil, message: string, style: UIAlertControllerStyle.alert).action(title: AppStrings.Ok.localized, style: UIAlertActionStyle.default, handler: nil)
+        }
     }
 }
 extension CreateUserViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+       
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == self.kTagFirstName {
+            self.lastNameTextField.becomeFirstResponder()
+        } else if textField.tag == self.kTagLastName {
+            self.userNameTextField.becomeFirstResponder()
+        } else if textField.tag == self.kTagUserName {
+            self.emailTextField.becomeFirstResponder()
+        } else if textField.tag == self.kTagEmail {
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            self.view.endEditing(true)
+        }
+        return true
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let current = (textField.text ?? "") as NSString
         let modified = current.replacingCharacters(in: range, with: string)
@@ -244,18 +323,17 @@ extension CreateUserViewController: UITextFieldDelegate {
             // User presses backspace
             textField.deleteBackward()
             return false
-        } else {
-            // User presses a key or pastes
-            textField.insertText(string.capitalized)
         }
         if textField.tag == self.kTagFirstName {
-            self.firstName = modified
-        } else if textField.tag == self.kTagFirstName {
-            self.lastName = modified
+            self.presenter?.firstName = modified
+        } else if textField.tag == self.kTagLastName {
+            self.presenter?.lastName = modified
         } else if textField.tag == self.kTagUserName {
-            self.userName = modified
+            self.presenter?.userName = modified
         } else if textField.tag == self.kTagEmail {
-            self.lastName = modified
+            self.presenter?.email = modified
+        } else {
+            self.presenter?.password = modified
         }
         
         return true

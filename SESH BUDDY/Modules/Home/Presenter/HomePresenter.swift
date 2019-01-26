@@ -24,21 +24,21 @@ class HomePresenter: HomePresenterProtocol {
             self.view?.showAlert("Please select Sesh Type")
             return nil
         } else {
-            let dict = ["key" : "SESH TYPE:", shmokeHandler.selectedSeshType]
+            let dict = ["key" : "SESH TYPE:", "value": shmokeHandler.selectedSeshType]
             seshDataArray.append(dict)
         }
         if shmokeHandler.selectedStrainType.count == 0 {
             self.view?.showAlert("Please select Strain")
             return nil
         } else {
-            let dict = ["STRAIN:": shmokeHandler.selectedStrainType]
+            let dict = ["key" : "STRAIN:", "value" :  shmokeHandler.selectedStrainType]
             seshDataArray.append(dict)
         }
         if shmokeHandler.selectedDate.count == 0 {
             self.view?.showAlert("Please select Date")
             return nil
         } else {
-            let dict = ["DATE:": shmokeHandler.selectedDate]
+            let dict = ["key" : "DATE:", "value" :  shmokeHandler.selectedDate]
             seshDataArray.append(dict)
         }
         if shmokeHandler.selectedTime.count == 0 {
@@ -46,34 +46,56 @@ class HomePresenter: HomePresenterProtocol {
             return nil
         } else if !self.validate(date: shmokeHandler.selectedDate, time: shmokeHandler.selectedTime){
             self.view?.showAlert("Please select appropriate time")
+            return nil
         } else {
-            let dict = ["TIME:": shmokeHandler.selectedTime]
+            let dict = ["key" : "TIME:", "value" :  shmokeHandler.selectedTime]
             seshDataArray.append(dict)
         }
         if shmokeHandler.selectedLocation.count == 0 {
             self.view?.showAlert("Please enter location")
             return nil
         } else {
-            let dict = ["LOCATION:": shmokeHandler.selectedLocation]
+            let dict = ["key" : "LOCATION:", "value" :  shmokeHandler.selectedLocation]
             seshDataArray.append(dict)
         }
         if shmokeHandler.selectedUtensilType.count == 0 {
             self.view?.showAlert("Please select Utensil")
             return nil
         } else {
-            let dict = ["UTENSIL:": shmokeHandler.selectedUtensilType]
+            let dict = ["key" : "UTENSIL:", "value" :  shmokeHandler.selectedUtensilType]
             seshDataArray.append(dict)
         }
-        
+
+        let seshBuddies = self.removeBlankBuddyFrom(buddyList: shmokeHandler.buddiesList)
+        if seshBuddies.count == 0 {
+            self.view?.showAlert("Please enter buddies")
+            return nil
+        }
         let sesssion = ["seshData": seshDataArray,
                         "seshType": SessionType.SHMOKE.rawValue,
                         "userId": "90805fish",
-                        "userName": "905fish"] as [String : Any]
+                        "userName": "905fish",
+                        "seshBuddies": seshBuddies] as [String : Any]
         
         let sessionsData = Session.modelsFromDictionaryArray(array: [sesssion])
         
         return sessionsData[0]
         
+    }
+    func removeBlankBuddyFrom(buddyList: [String]) -> [[String: Any]]  {
+        var buddies = [[String: Any]]()
+        let newArray =  buddyList.filter { (text) -> Bool in
+            if !text.isEmpty {
+                let dict = ["buddyName": text]
+                buddies.append(dict)
+                return true
+            }
+            return false
+        }
+        if newArray.count > 0 {
+            return buddies
+        }
+        return buddies
     }
     
     func buddyUpWith(matchHandler: MatchSessionHandler) -> Session? {
@@ -89,21 +111,21 @@ class HomePresenter: HomePresenterProtocol {
             self.view?.showAlert("Please select Gram Type")
             return nil
         } else {
-            let dict = ["GRAM:": matchHandler.selectedGramType]
+            let dict = ["key": "GRAM:", "value": matchHandler.selectedGramType]
             seshDataArray.append(dict)
         }
         if matchHandler.selectedStrainType.count == 0 {
             self.view?.showAlert("Please select Strain")
             return nil
         } else {
-            let dict = ["STRAIN:": matchHandler.selectedStrainType]
+            let dict = ["key" : "STRAIN:", "value" :  matchHandler.selectedStrainType]
             seshDataArray.append(dict)
         }
         if matchHandler.selectedDate.count == 0 {
             self.view?.showAlert("Please select Date")
             return nil
         } else {
-            let dict = ["DATE:": matchHandler.selectedDate]
+            let dict = ["key" : "DATE:", "value" :  matchHandler.selectedDate]
             seshDataArray.append(dict)
         }
         if matchHandler.selectedTime.count == 0 {
@@ -111,29 +133,36 @@ class HomePresenter: HomePresenterProtocol {
             return nil
         } else if !self.validate(date: matchHandler.selectedDate, time: matchHandler.selectedTime){
             self.view?.showAlert("Please select appropriate time")
+            return nil
         } else {
-            let dict = ["TIME:": matchHandler.selectedTime]
+            let dict = ["key" : "TIME:", "value" :  matchHandler.selectedTime]
             seshDataArray.append(dict)
         }
         if matchHandler.selectedLocation.count == 0 {
             self.view?.showAlert("Please enter location")
             return nil
         } else {
-            let dict = ["LOCATION:": matchHandler.selectedLocation]
+            let dict = ["key" : "LOCATION:", "value" :  matchHandler.selectedLocation]
             seshDataArray.append(dict)
         }
         if matchHandler.selectedUtensilType.count == 0 {
             self.view?.showAlert("Please select Utensil")
             return nil
         } else {
-            let dict = ["UTENSIL:": matchHandler.selectedUtensilType]
+            let dict = ["key" : "UTENSIL:", "value" :  matchHandler.selectedUtensilType]
             seshDataArray.append(dict)
         }
         
+          let seshBuddies = self.removeBlankBuddyFrom(buddyList: matchHandler.buddiesList)
+        if seshBuddies.count == 0 {
+            self.view?.showAlert("Please enter buddies")
+            return nil
+        }
         let sesssion = ["seshData": seshDataArray,
                         "seshType": SessionType.MATCH.rawValue,
                         "userId": "90805fish",
-                        "userName": "905fish"] as [String : Any]
+                        "userName": "905fish",
+                        "seshBuddies": seshBuddies] as [String : Any]
         
         let sessionsData = Session.modelsFromDictionaryArray(array: [sesssion])
         return sessionsData[0]
@@ -144,51 +173,65 @@ class HomePresenter: HomePresenterProtocol {
             self.view?.showAlert("Please select Sesh Type")
             return nil
         } else {
-            let dict = ["key" : "SESH TYPE:", dropHandler.selectedSeshType]
+            let dict = ["key" : "SESH TYPE:", "value" :  dropHandler.selectedSeshType]
             seshDataArray.append(dict)
         }
         if dropHandler.selectedStrainType.count == 0 {
             self.view?.showAlert("Please select Strain")
             return nil
         } else {
-            let dict = ["STRAIN:": dropHandler.selectedStrainType]
+            let dict = ["key" : "STRAIN:", "value" :  dropHandler.selectedStrainType]
+            seshDataArray.append(dict)
+        }
+        if dropHandler.selectedPointType.count == 0 {
+            self.view?.showAlert("Please select POINTS")
+            return nil
+        } else {
+            let dict = ["key" : "POINTS:", "value" :  dropHandler.selectedPointType]
             seshDataArray.append(dict)
         }
         if dropHandler.selectedDate.count == 0 {
             self.view?.showAlert("Please select Date")
             return nil
         } else {
-            let dict = ["DATE:": dropHandler.selectedDate]
+            let dict = ["key" : "DATE:", "value" :  dropHandler.selectedDate]
             seshDataArray.append(dict)
         }
+        
         if dropHandler.selectedTime.count == 0 {
             self.view?.showAlert("Please select Time")
             return nil
         } else if !self.validate(date: dropHandler.selectedDate, time: dropHandler.selectedTime){
             self.view?.showAlert("Please select appropriate time")
+            return nil
         } else {
-            let dict = ["TIME:": dropHandler.selectedTime]
+            let dict = ["key" : "TIME:", "value" :  dropHandler.selectedTime]
             seshDataArray.append(dict)
         }
         if dropHandler.selectedLocation.count == 0 {
             self.view?.showAlert("Please enter location")
             return nil
         } else {
-            let dict = ["LOCATION:": dropHandler.selectedLocation]
+            let dict = ["key" : "LOCATION:", "value" :  dropHandler.selectedLocation]
             seshDataArray.append(dict)
         }
         if dropHandler.selectedUtensilType.count == 0 {
             self.view?.showAlert("Please select Utensil")
             return nil
         } else {
-            let dict = ["UTENSIL:": dropHandler.selectedUtensilType]
+            let dict = ["key" : "UTENSIL:", "value" :  dropHandler.selectedUtensilType]
             seshDataArray.append(dict)
         }
-        
+        let seshBuddies = self.removeBlankBuddyFrom(buddyList: dropHandler.buddiesList)
+        if seshBuddies.count == 0 {
+            self.view?.showAlert("Please enter buddies")
+            return nil
+        }
         let sesssion = ["seshData": seshDataArray,
                         "seshType": SessionType.SHMOKE.rawValue,
                         "userId": "90805fish",
-                        "userName": "905fish"] as [String : Any]
+                        "userName": "905fish",
+                        "seshBuddies": seshBuddies] as [String : Any]
         
         let sessionsData = Session.modelsFromDictionaryArray(array: [sesssion])
         return sessionsData[0]
@@ -199,21 +242,21 @@ class HomePresenter: HomePresenterProtocol {
         self.view?.showAlert("Please select Sesh Type")
         return nil
     } else {
-        let dict = ["key" : "SESH TYPE:", smoHandler.selectedSeshType]
+        let dict = ["key" : "SESH TYPE:", "value" :  smoHandler.selectedSeshType]
         seshDataArray.append(dict)
     }
     if smoHandler.selectedReasonsType.count == 0 {
         self.view?.showAlert("Please select Strain")
         return nil
     } else {
-        let dict = ["REASON:": smoHandler.selectedReasonsType]
+        let dict = ["key" : "REASON:", "value" :  smoHandler.selectedReasonsType]
         seshDataArray.append(dict)
     }
     if smoHandler.selectedDate.count == 0 {
         self.view?.showAlert("Please select Date")
         return nil
     } else {
-        let dict = ["DATE:": smoHandler.selectedDate]
+        let dict = ["key" : "DATE:", "value" :  smoHandler.selectedDate]
         seshDataArray.append(dict)
     }
     if smoHandler.selectedTime.count == 0 {
@@ -221,23 +264,31 @@ class HomePresenter: HomePresenterProtocol {
         return nil
     } else if !self.validate(date: smoHandler.selectedDate, time: smoHandler.selectedTime){
        self.view?.showAlert("Please select appropriate time")
+        return nil
     } else {
-        let dict = ["TIME:": smoHandler.selectedTime]
+        let dict = ["key" : "TIME:", "value" :  smoHandler.selectedTime]
         seshDataArray.append(dict)
     }
     if smoHandler.selectedLocation.count == 0 {
         self.view?.showAlert("Please enter location")
         return nil
     } else {
-        let dict = ["LOCATION:": smoHandler.selectedLocation]
+        let dict = ["key" : "LOCATION:", "value" :  smoHandler.selectedLocation]
         seshDataArray.append(dict)
     }
+    let seshBuddies = self.removeBlankBuddyFrom(buddyList: smoHandler.buddiesList)
     
+    if seshBuddies.count == 0 {
+        self.view?.showAlert("Please enter buddies")
+        return nil
+    }
+        
     
     let sesssion = ["seshData": seshDataArray,
                     "seshType": SessionType.SMO.rawValue,
                     "userId": "90805fish",
-                    "userName": "905fish"] as [String : Any]
+                    "userName": "905fish",
+                    "seshBuddies": seshBuddies] as [String : Any]
     
     let sessionsData = Session.modelsFromDictionaryArray(array: [sesssion])
     return sessionsData[0]

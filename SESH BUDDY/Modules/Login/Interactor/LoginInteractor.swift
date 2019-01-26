@@ -7,20 +7,31 @@
 //
 
 import Foundation
+import Alamofire
 
 class LoginInteractor: LoginInteractorInputProtocol {
     
     
-  var presenter: LoginInteractorOutputProtocol?
-  var dataManager: LoginDataManagerInputProtocol?
-  
-  func generateOtpWith(_ params: [String: Any]) {
-    dataManager?.generateOtpWith(params)
-  }
+    var presenter: LoginInteractorOutputProtocol?
+    var dataManager: LoginDataManagerInputProtocol?
+    
+    func generateOtpWith(_ params: [String: Any]) {
+        dataManager?.generateOtpWith(params)
+    }
     func fetchFacebookProfile() {
         self.dataManager?.fetchFacebookProfile()
     }
-  
+    func loginUser(_ params: [String: Any]) {
+        let header = [ParametersKeys.platform : platform
+        ]
+        HTTPRequest.init(method: HTTPMethod.post, path: Urls.login, parameters: params, encoding: .json, files: nil)
+            .config(isIndicatorEnable: true, isAlertEnable: true).headers(headers: header)
+            .handler(httpModel: false) { (response: HTTPResponse) in
+                print(response.value ?? "No result")
+                let serverResponse = response.getServerResponseModal()
+                self.presenter?.generateuserLogin(serverResponse)
+        }
+    }
 }
 
 extension LoginInteractor: LoginDataManagerOutputProtocol {

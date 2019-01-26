@@ -21,4 +21,13 @@ class MatchSessionHandler: NSObject {
     override init() {
            
     }
+    func clearSession() {
+         selectedSeshType = ""
+         selectedGramType = ""
+         selectedStrainType = ""
+         selectedUtensilType = ""
+         selectedLocation = ""
+         selectedTime = ""
+         selectedDate = ""
+    }
 }

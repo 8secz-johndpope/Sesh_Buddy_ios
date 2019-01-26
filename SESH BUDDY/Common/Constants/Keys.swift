@@ -45,7 +45,11 @@ var appDelegate: AppDelegate {
     }
     return delegate
 }
-
+extension AppDelegate {
+    var baseURL: String {
+        return Environment.live.getBaseUrl()
+    }
+}
 //----------------------------------------URLS AND NETWORKING CONSTANTS--------------------------------------------//
 
 struct AppInfo {
@@ -59,15 +63,25 @@ struct AppInfo {
     static let likeUsOnFacebook = "https://www.facebook.com/jugnoose"
     static let login_type = 1
     static func getDefaultParams() -> [String: Any] {
+        
+        
         let dict = ["app_version": self.KAppVersion,
                     "device_type": self.DeviceType,
                     "client_id": ClientId,
                     "customer_package_name": Bundle.main.bundleIdentifier ?? "",
-                    "locale": L102Language.currentAppleLanguage(),
-                    ParametersKeys.operator_token: operatorToken]
+                    "locale": L102Language.currentAppleLanguage()
+                    ]
         return dict
     }
-    static var selectedStatusType: StatusTypes = .redUP
+    
+    static func getHeader() -> [String: String] {
+        let header = [ParametersKeys.platform : "1",
+                      ParametersKeys.accessToken: KeyChain.getAccessToken() ?? "",
+                      ParametersKeys.userId: "\(ApplicationData.shared.getLoginData().userId!)"
+            ] as [String : String]
+        return header
+    }
+    static var selectedStatusType: StatusTypes = ApplicationData.shared.getLoginData().userStatus
     static func setCurrentSelectedStatus(type: StatusTypes){
         switch type {
         case .redUP:
@@ -105,6 +119,80 @@ let SHMOKE =  "SHMOKE"
 let DROP =  "DROP"
 let SMO =  "SMO"
 let MATCH =  "MATCH"
+//----------------------------------------FCM KEYS --------------------------------------------//
+let fcmToken    = "dfgdfg"
 //----------------------------------------DATE FORMATTER --------------------------------------------//
 let sessionDateFormate  =   "MMMM dd, yyyy"
 
+let snapchatClientID     =   "526a91cc-8033-4a18-9479-0f6fb6edd9b3"// TEST "4620359d-b325-475f-8ac3-63b60a72a8b1"
+
+
+struct Urls {
+    static let register = "register"
+    static let logout = "logout"
+    static let getNotificationSetting = "getNotificationSetting"
+    static let updateNotificationSetting = "updateNotificationSetting"
+    static let updateUserStatus = "updateUserStatus"
+    static let login  = "login"
+    static let createUsername = "createUsername"
+    static let updateImage = "updateImage"
+    static let editProfile = "editProfile"
+}
+enum Regex: String {
+    case phoneNumber = "^((\\+)|(00))[0-9]{6,14}$"
+    case email = "^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-+]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z‌​]{2,})$"
+    case phoneNumberWithoutZero = "^[1-9][0-9]*$"
+    case noSpecialCharacter = ".*[^A-Za-z0-9].*"
+    case password = ""
+    func validate(_ string: String) -> Bool {
+        let Test = NSPredicate(format:"SELF MATCHES %@", self.rawValue)
+        if Test.evaluate(with: string) {
+            return true
+        }
+        return false
+    }
+    func validatePassword(_ string: String) -> Bool {
+        guard  string.count > 5 else {
+            return false
+        }
+        return true
+    }
+}
+enum Environment: Int {
+    case live
+    case test
+    case dev
+    func getBaseUrl() -> String {
+        switch self {
+        case .live:
+            return "https://upbrighterservices.com/mob-app/sesh_buddy/user"
+        case .test:
+            return "https://test.jugnoo.in:8012"
+        case .dev:
+            return "https://test.jugnoo.in:8012"
+        
+        }
+    }
+    
+    func getServerName() -> String {
+        switch self {
+        case .live:
+            return "Live"
+        case .dev:
+            return "Dev"
+        case .test:
+            return "Test"
+   }
+}
+}
+//----------------------------------------USER DEFAULT --------------------------------------------//
+let keyLoginData            = "loginData"
+struct UserDefaultsKeys {
+    static let AccessToken = "kDriverAccessToken"
+    static let KEY_IS_FIRST_TIME_USER = "is_user_first_time"
+}
+struct RESPONSE_STATUS {
+    static let success          =       1
+    static let failure          =       0
+}
+let platform    = "1"

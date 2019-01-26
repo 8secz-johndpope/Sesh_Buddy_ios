@@ -18,9 +18,10 @@ protocol AuthTokenVerifierViewProtocol: class {
 
 protocol AuthTokenVerifierWireFrameProtocol: class {
   static func createAuthTokenVerifierModule() -> UIViewController
-  func moveToRegister(_ fromView: AuthTokenVerifierViewProtocol)
+  func moveToCreateUser(_ fromView: AuthTokenVerifierViewProtocol)
   static func createSingleAuthTokenVerifierModule() -> UIViewController
   func showLoginScreen(from view: AuthTokenVerifierViewProtocol)
+  func moveToHomeScreen(_ fromView: AuthTokenVerifierViewProtocol)
   // PRESENTER -> WIREFRAME
 }
 

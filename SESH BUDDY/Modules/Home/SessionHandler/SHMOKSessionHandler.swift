@@ -22,4 +22,13 @@ class SHMOKSessionHandler: NSObject {
         currentSessions.append("90805fish")
         currentSessions.append("90806fish")
     }
+    
+    func clearSession() {
+         selectedSeshType = ""
+         selectedStrainType = ""
+         selectedUtensilType = ""
+         selectedTime = ""
+         selectedDate = ""
+         selectedLocation = ""
+    }
 }

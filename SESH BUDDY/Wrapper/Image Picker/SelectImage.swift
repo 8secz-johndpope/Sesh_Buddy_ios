@@ -209,7 +209,7 @@ class SelectImage: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
+             picker.dismiss(animated: true, completion: nil)
             if UIImageJPEGRepresentation(pickedImage, 1.0)!.count > 3*1024 {
                 try? UIImageJPEGRepresentation(pickedImage, 0.1)?.write(to: Foundation.URL(fileURLWithPath: String(filePath as NSString)), options: [.atomic])
             }
@@ -225,7 +225,7 @@ class SelectImage: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         }
         
         
-        picker.dismiss(animated: true, completion: nil)
+       
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

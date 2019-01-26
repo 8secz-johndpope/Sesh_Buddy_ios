@@ -35,6 +35,7 @@ class LoginOptionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.controller = self
         let newBackButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = newBackButton
         setUPUI()

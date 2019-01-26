@@ -9,6 +9,7 @@
 protocol SessionDetailsViewProtocols {
     func seshUPButtonClicked(session: Session, type: SessionStatusDetailType)
     func crossSeshUPButtonClicked()
+    func cancelSeshButtonClicked(session: Session)
 }
 enum SessionStatusType{
     case acceptSession
@@ -18,8 +19,15 @@ enum SessionStatusType{
 }
 enum SessionStatusDetailType{
     case addSession
+    case acceptSession
     case viewSession
+    case cancelSession
     case none
+}
+enum SeshDetailsSestion: Int {
+    case seshDetails
+    case buddies
+    case count
 }
 import UIKit
 
@@ -44,6 +52,7 @@ class SessionDetailViewController: UIViewController {
     let sessionDetailsTableViewCell = "SessionDetailsTableViewCell"
     var sessionsDetails = [SeshData]()
     var session: Session!
+    var buddiesText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
@@ -57,6 +66,9 @@ class SessionDetailViewController: UIViewController {
         } else {
              return
         }
+        let budyName = (session.seshBuddies.map { $0.buddyName!}).joined(separator: ",")
+  //
+        self.buddiesText = budyName
         let seshid = session.userId!
         let seshType = session.seshType!
         var seshTypeString = ""
@@ -82,12 +94,21 @@ class SessionDetailViewController: UIViewController {
         popUpView.layer.borderColor = UIColor.themeYellowColor.cgColor
         popUpView.layer.borderWidth = 1.0
         self.seshUPButton.layer.cornerRadius = 2.0
-        self.bottomLabel.text = "TO CONFIRM \(seshTypeString), CLICK SESH UP"
+        
         self.bottomLabel.font = Fonts.mavenProRegular.getFont(13)
         self.seshUPButton.titleLabel?.font = boldFont
         self.seshUPButton.backgroundColor = UIColor.buttonColor
         seshUPButton.setTitleColor(UIColor.white, for: .normal)
-        seshUPButton.setTitle("SESH UP", for: .normal)
+        if sessionDetailType == .cancelSession {
+            self.crossButton.isHidden = false
+            seshUPButton.backgroundColor = UIColor.themeYellowColor
+            seshUPButton.setTitleColor(UIColor.themeNavBarColor, for: .normal)
+            seshUPButton.setTitle("CANCEL SESSION", for: .normal)
+            self.bottomLabel.text = "PLANS CHANGED? CLICK BUTTON TO CANCEL SESH"
+        } else {
+            seshUPButton.setTitle("SESH UP", for: .normal)
+            self.bottomLabel.text = "TO CONFIRM \(seshTypeString), CLICK SESH UP"
+        }
     }
     func registerNib() {
         sessionDetailTableView.registerCellFrom(sessionDetailsTableViewCell)
@@ -99,6 +120,9 @@ class SessionDetailViewController: UIViewController {
         if sessionDetailType == .viewSession {
             self.bttomView.isHidden  = true
             bottomViewHeightConstraint.constant = 0
+        } else if sessionDetailType == .cancelSession {
+            self.bttomView.isHidden  = false
+            bottomViewHeightConstraint.constant = 100
         } else {
             self.bttomView.isHidden  = false
             bottomViewHeightConstraint.constant = 100
@@ -109,28 +133,49 @@ class SessionDetailViewController: UIViewController {
     }
     func setUPSessionDetailsOnly() {
         self.bttomView.isHidden = true
-        
     }
     @IBAction func crossButtonAction(_ sender: Any) {
         self.delegate?.crossSeshUPButtonClicked()
     }
     @IBAction func seshUPButtonAction(_ sender: Any) {
-        self.delegate?.seshUPButtonClicked(session: session, type: sessionDetailType)
-    } 
+        if sessionDetailType == .cancelSession {
+            self.delegate?.cancelSeshButtonClicked(session: session)
+        } else if sessionDetailType == .addSession {
+             self.delegate?.seshUPButtonClicked(session: session, type: sessionDetailType)
+        } else if sessionDetailType == .acceptSession {
+            self.delegate?.seshUPButtonClicked(session: session, type: sessionDetailType)
+        }
+    }
 }
 extension SessionDetailViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return SeshDetailsSestion.count.rawValue
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  sessionsDetails.count
+        if section == SeshDetailsSestion.seshDetails.rawValue {
+            return sessionsDetails.count
+        } else if section == SeshDetailsSestion.buddies.rawValue {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: sessionDetailsTableViewCell) as? SessionDetailsTableViewCell else {
             return UITableViewCell()
         }
-        if self.sessionsDetails.count > indexPath.row {
-            let sessionInfo = self.sessionsDetails[indexPath.row]
-            cell.setUPData(info: sessionInfo)
+        
+        if indexPath.section == SeshDetailsSestion.seshDetails.rawValue {
+            if self.sessionsDetails.count > indexPath.row {
+                let sessionInfo = self.sessionsDetails[indexPath.row]
+                cell.setUPData(info: sessionInfo)
+            }
+        } else {
+            cell.leftLAbel.text = "BUDDIES:"
+            cell.rightLAbel.text = buddiesText
         }
+        
         tableView.layoutIfNeeded()
         self.tableViewHeightConstant.constant = tableView.contentSize.height
         return cell

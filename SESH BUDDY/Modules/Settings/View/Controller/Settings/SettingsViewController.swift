@@ -65,6 +65,10 @@ class SettingsViewController:UIViewController {
 
 }
 extension SettingsViewController: SettingsViewProtocol {
+    func reloadView(_ with: NotificationSetting) {
+        
+    }
+    
     func onError(value: String) {
         
     }

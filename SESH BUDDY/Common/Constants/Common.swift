@@ -73,7 +73,7 @@ class Common: NSObject {
     func getSessionsArray()-> [Session] {
         let sessionDict =         [
         
-                    "seshType": 1,
+                    "seshType": 4,
                     "userId": "60805fish",
                     "userName": "90fish",
                     "seshBuddies": [[
@@ -84,7 +84,39 @@ class Common: NSObject {
                     "rollsRating": 3,
                     "comment": "fdsfsd",
                     "buddyId": 233
-                    ]],
+                        ], [
+                            "profilePic": "url",
+                            "buddyName": "edfwe",
+                            "qualityRating": 1,
+                            "quantityRating": 2,
+                            "rollsRating": 3,
+                            "comment": "fdsfsd",
+                            "buddyId": 233
+                        ], [
+                            "profilePic": "url",
+                            "buddyName": "edfwe",
+                            "qualityRating": 1,
+                            "quantityRating": 2,
+                            "rollsRating": 3,
+                            "comment": "fdsfsd",
+                            "buddyId": 233
+                        ], [
+                            "profilePic": "url",
+                            "buddyName": "edfwe",
+                            "qualityRating": 1,
+                            "quantityRating": 2,
+                            "rollsRating": 3,
+                            "comment": "fdsfsd",
+                            "buddyId": 233
+                        ], [
+                            "profilePic": "url",
+                            "buddyName": "edfwe",
+                            "qualityRating": 1,
+                            "quantityRating": 2,
+                            "rollsRating": 3,
+                            "comment": "fdsfsd",
+                            "buddyId": 233
+                        ]],
                     "seshData": [[
                     "id": 1,
                     "key": "SESH TYPE:",
@@ -154,19 +186,6 @@ class Common: NSObject {
                                     "id": 6,
                                     "key": "LOCATION:",
                                     "value": "LOCATION 1",
-                                    "buddies": [[
-                                        "buddyId": 2342,
-                                        "buddyName": "ewdwed"
-                                        ], [
-                                            "buddyId": 2342,
-                                            "buddyName": "ewdwed"
-                                        ]
-                                    ]
-                        ],
-                                 [
-                                    "id": 7,
-                                    "key": "BUDDIES:",
-                                    "value": "BUDDIES 1",
                                     "buddies": [[
                                         "buddyId": 2342,
                                         "buddyName": "ewdwed"

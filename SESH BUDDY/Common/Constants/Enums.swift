@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum StatusTypes {
-    case redUP
-    case holding
-    case dry
+enum StatusTypes: Int {
+    case redUP = 0
+    case holding = 1
+    case dry = 2
 }
 enum SessionType: Int {
     case SHMOKE = 1
@@ -20,3 +20,11 @@ enum SessionType: Int {
     case SMO = 4
     case none
 }
+enum LoginType: Int {
+    case none = 0
+    case facebook = 1
+    case snapchat = 2
+    case signupOrLoginWithEmail = 3
+    
+}
+

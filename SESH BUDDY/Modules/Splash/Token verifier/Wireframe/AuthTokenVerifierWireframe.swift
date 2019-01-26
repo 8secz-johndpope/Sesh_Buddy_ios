@@ -62,12 +62,16 @@ class AuthTokenVerifierWireFrame: AuthTokenVerifierWireFrameProtocol {
     //      sourceView.navigationController?.pushViewController(RegisterViewController, animated: true)
     //    }
   }
-  
-  func moveToRegister(_ fromView: AuthTokenVerifierViewProtocol) {
-//    let RegisterController = RegisterWireFrame.createRegisterModule()
-//    if let sourceView = fromView as? UIViewController {
-//      sourceView.navigationController?.setViewControllers([RegisterController], animated: true)
-//    }
+    func moveToHomeScreen(_ fromView: AuthTokenVerifierViewProtocol) {
+     appDelegate.changeVisibleRootController(Storyboards.homeFlow.getHomeScreen())
+    }
+  func moveToCreateUser(_ fromView: AuthTokenVerifierViewProtocol) {
+    let createUserVC = CreateUserWireFrame.createUserModule() as? CreateUserViewController
+    createUserVC?.signUPType = .email
+    if let sourceView = fromView as? UIViewController {
+        DispatchQueue.main.async {
+            sourceView.navigationController?.setViewControllers([createUserVC!], animated: true)
+        }
+    }
   }
-  
 }

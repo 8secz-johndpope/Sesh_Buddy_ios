@@ -22,6 +22,11 @@ class ProfileInfoTableViewCell: UITableViewCell {
         descriptionTextView.contentInset = UIEdgeInsetsMake(10, 10, 10, 10)
         profileImageView.layer.masksToBounds = true
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2
+        let font = Fonts.mavenProRegular.getFont(14)
+        profileLabel.font = font
+        profileLabel.text = ApplicationData.shared.getLoginData().userName
+        self.descriptionTextView.isEditable = false
+        self.descriptionTextView.isSelectable = false
     }
 
 }

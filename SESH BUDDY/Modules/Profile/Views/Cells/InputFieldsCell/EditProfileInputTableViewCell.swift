@@ -33,10 +33,10 @@ class EditProfileInputTableViewCell: UITableViewCell {
         switch type {
         case .firstName:
             headerLabel.text = "First Name:"
-            profileTextField.text = "Hello"
+            profileTextField.text = ApplicationData.shared.getLoginData().firstName
         case .lastName:
             headerLabel.text = "Last Name:"
-            profileTextField.text = "World"
+            profileTextField.text = ApplicationData.shared.getLoginData().lastName
         case .dateOfBirth:
             headerLabel.text = "Date Of Birth:"
         case .gender:
@@ -51,7 +51,7 @@ class EditProfileInputTableViewCell: UITableViewCell {
         case .userName:
             profileTextField.isUserInteractionEnabled = true
             headerLabel.text = "Username:"
-            profileTextField.text = "90805fish"
+            profileTextField.text = ApplicationData.shared.getLoginData().userName
         case .favoritShope:
             profileTextField.isUserInteractionEnabled = true
             headerLabel.text = "Favourit Strain:"
@@ -59,7 +59,7 @@ class EditProfileInputTableViewCell: UITableViewCell {
         case .emailAddress:
             profileTextField.isUserInteractionEnabled = false
             headerLabel.text = "Email Address:"
-            profileTextField.text = "sesh@seshbuddies.com"
+            profileTextField.text = ApplicationData.shared.getLoginData().email
         default:
             break
         }

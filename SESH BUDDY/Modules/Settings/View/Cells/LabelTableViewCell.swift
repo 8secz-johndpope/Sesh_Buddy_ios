@@ -34,5 +34,27 @@ class LabelTableViewCell: UITableViewCell {
     func hideToogleButton(value: Bool){
         self.toggleSwitch.isHidden = value
     }
+    func setUPToggle(with: NotificationSetting?, type: Notifications) {
+        guard with != nil else {
+            self.toggleSwitch.isOn = false
+            return
+        }
+        switch type {
+        case .shmoke:
+           self.toggleSwitch.isOn = with!.data.seshShmoke
+        case .motch:
+            self.toggleSwitch.isOn = with!.data.seshMatch
+        case .drop:
+            self.toggleSwitch.isOn = with!.data.seshDrop
+        case .smo:
+            self.toggleSwitch.isOn = with!.data.seshSmo
+        case .deals:
+            self.toggleSwitch.isOn = with!.data.seshDeals
+        case .smoIous:
+            self.toggleSwitch.isOn = with!.data.seshSmoIou
+        default:
+            break
+        }
+    }
     
 }

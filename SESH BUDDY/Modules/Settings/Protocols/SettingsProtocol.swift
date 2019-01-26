@@ -13,6 +13,7 @@ protocol SettingsViewProtocol: class {
   var presenter: SettingsPresenterProtocol? { get set }
   func onError(value: String)
   func showAlert(_ string: String)
+    func reloadView(_ with: NotificationSetting)
 
 }
 
@@ -27,12 +28,20 @@ protocol SettingsPresenterProtocol: class {
   var view: SettingsViewProtocol? { get set }
   var interactor: SettingsInteractorInputProtocol? { get set }
   var wireFrame: SettingsWireFrameProtocol? { get set }
-    
+    var isSHMOKeEnabled: Bool! {get set}
+    var isMATCHEnabled: Bool! {get set}
+    var isDROPEnabled: Bool! {get set}
+    var isSMOEnabled: Bool! {get set}
+    var isDEALSEnabled: Bool! {get set}
+    var isSMOIOUEnabled: Bool! {get set}
+    func getNotificationSetting()
     func didTapAtNotifications()
+    func updateNotificationSettings()
 }
 
 protocol SettingsInteractorOutputProtocol: class {
   func generatedOtpWith(_ value: ServerResponseModal)
+  func getNotificationSetting(_ value: ServerResponseModal)
   func onError(value: String)
   // INTERACTOR -> PRESENTER
  
@@ -40,7 +49,9 @@ protocol SettingsInteractorOutputProtocol: class {
 
 protocol SettingsInteractorInputProtocol: class {
   var presenter: SettingsInteractorOutputProtocol? { get set }
-  func generateOtpWith(_ params: [String: Any]) 
+  func generateOtpWith(_ params: [String: Any])
+  func updateNotificationSettings(_ params: [String: Any])
+  func getNotificationSetting()
   // PRESENTER -> INTERACTOR
 }
 

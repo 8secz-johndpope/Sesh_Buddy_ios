@@ -18,7 +18,6 @@ class AuthTokenVerifierViewController: UIViewController {
     }
 }
 
-
 extension AuthTokenVerifierViewController: AuthTokenVerifierViewProtocol {
   func showAlert(_ string: String) {
     UIAlertController.presentAlert(title: nil, message: string, style: UIAlertControllerStyle.alert).action(title: AppStrings.Ok.localized, style: UIAlertActionStyle.default, handler: nil)

@@ -15,10 +15,10 @@ import Foundation
 public class SeshBuddies {
 	public var profilePic : String?
 	public var buddyName : String?
-	public var qualityRating : Int?
-	public var quantityRating : Int?
-	public var rollsRating : Int?
-	public var comment : String?
+	public var qualityRating : NSNumber!
+	public var quantityRating : NSNumber!
+	public var rollsRating : NSNumber!
+	public var comment : String!
 	public var buddyId : Int?
 
 /**
@@ -55,9 +55,9 @@ public class SeshBuddies {
 
 		profilePic = dictionary["profilePic"] as? String
 		buddyName = dictionary["buddyName"] as? String
-		qualityRating = dictionary["qualityRating"] as? Int
-		quantityRating = dictionary["quantityRating"] as? Int
-		rollsRating = dictionary["rollsRating"] as? Int
+		qualityRating = dictionary["qualityRating"] as? NSNumber
+		quantityRating = dictionary["quantityRating"] as? NSNumber
+		rollsRating = dictionary["rollsRating"] as? NSNumber
 		comment = dictionary["comment"] as? String
 		buddyId = dictionary["buddyId"] as? Int
 	}

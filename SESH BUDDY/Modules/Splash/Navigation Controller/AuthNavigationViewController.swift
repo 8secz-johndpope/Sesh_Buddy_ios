@@ -32,11 +32,8 @@ class AuthNavigationViewController: UINavigationController {
         self.navigationBar.tintColor = UIColor.themeNavBarButtonColor
         self.view.backgroundColor = .clear
         self.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: Fonts.mavenProRegular.getFont(20), NSAttributedStringKey.foregroundColor : UIColor.themeNavBarTitleColor]
-      self.navigationBar.layer.masksToBounds = false
-//      self.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
-//      self.navigationBar.layer.shadowOpacity = 0.8
-//      self.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//      self.navigationBar.layer.shadowRadius = 2
+       self.navigationBar.layer.masksToBounds = false
+
     }
 
 }

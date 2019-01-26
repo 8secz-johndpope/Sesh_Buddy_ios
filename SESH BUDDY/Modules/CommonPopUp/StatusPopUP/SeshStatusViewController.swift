@@ -6,11 +6,10 @@
 //  Copyright © 2018 Baljeet Kaur. All rights reserved.
 //
 
-protocol AcceptSessionViewProtocol {
+protocol SessionStatusViewProtocol {
     func viewSessionClicked(session: Session)
     func crossButtonClicked()
     func seshDetailsButtonClick(session: Session)
-    
 }
 
 import UIKit
@@ -28,34 +27,18 @@ class SeshStatusViewController: UIViewController {
     @IBOutlet weak var noThanksButton: UIButton!
     @IBOutlet weak var crossButton: UIButton!
     
-    var delegate: AcceptSessionViewProtocol?
+    var delegate: SessionStatusViewProtocol?
     var session: Session!
     var userID = ""
     var seshTypeString = ""
+    var seshActionType: SessionStatusType = .none
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         setUPUI()
     }
     func setUPUI(){
-        if session != nil, session.seshData != nil, session.seshData!.count > 0 {
-        } else {
-            return
-        }
-        userID = session.userId!
-        let seshType = session.seshType!
-        switch seshType {
-        case SessionType.SHMOKE.rawValue:
-            seshTypeString =  SHMOKE
-        case SessionType.DROP.rawValue:
-            seshTypeString =  DROP
-        case SessionType.SMO.rawValue:
-            seshTypeString = SMO
-        case SessionType.MATCH.rawValue:
-            seshTypeString = MATCH
-        default:
-            break
-        }
+        
         backgroundImageView.isHidden = true
         popupView.backgroundColor = UIColor.themeNavBarColor
         popupView.layer.borderColor = UIColor.themeYellowColor.cgColor
@@ -82,6 +65,25 @@ class SeshStatusViewController: UIViewController {
         sessionStatusVutton.titleLabel?.font = sessionButtonFont
     }
     func setSessionUPUI(sessionDetailType: SessionStatusType){
+        if session != nil, session.seshData != nil, session.seshData!.count > 0 {
+        } else {
+            return
+        }
+        userID = session.userId!
+        let seshType = session.seshType!
+        switch seshType {
+        case SessionType.SHMOKE.rawValue:
+            seshTypeString =  SHMOKE
+        case SessionType.DROP.rawValue:
+            seshTypeString =  DROP
+        case SessionType.SMO.rawValue:
+            seshTypeString = SMO
+        case SessionType.MATCH.rawValue:
+            seshTypeString = MATCH
+        default:
+            break
+        }
+        self.seshActionType = sessionDetailType
         switch sessionDetailType {
         case .acceptSession:
             crossButton.isHidden = true
@@ -89,7 +91,7 @@ class SeshStatusViewController: UIViewController {
             sessionStatusVutton.isHidden = true
             noThanksButton.isHidden = false
             viewSessionButton.isHidden = false
-            self.seshTypeLabel.text = "\(seshTypeString) SESH"
+            self.seshStatusLabel.text = "\(seshTypeString) SESH"
             self.setUPsessionIDText(secondText: "HAS SENT NEW", third: "")
         case .approvedSession:
             crossButton.isHidden = false
@@ -108,7 +110,7 @@ class SeshStatusViewController: UIViewController {
             noThanksButton.isHidden = true
             viewSessionButton.isHidden = true
             self.seshStatusLabel.text = "CANCELLED"
-            self.setUPsessionIDText(secondText: "SHMOKE", third: "SESH")
+            self.setUPsessionIDText(secondText: seshTypeString, third: "SESH")
             self.sessionStatusVutton.setTitle("GO BACK", for: .normal)
         case .none:
             break
@@ -138,7 +140,12 @@ class SeshStatusViewController: UIViewController {
         self.seshTypeLabel.attributedText = firstAttributtedString + secondAttributtedString + thirdAttributtedString
     }
     @IBAction func sessionSytatusButtonAction(_ sender: Any) {
-        self.delegate?.seshDetailsButtonClick(session: session)
+        if seshActionType == .approvedSession {
+            self.delegate?.seshDetailsButtonClick(session: session)
+        } else if seshActionType == .cancelled {
+            self.delegate?.crossButtonClicked()
+        }
+        
     }
     @IBAction func viewSessionButtonAction(_ sender: Any) {
         self.delegate?.viewSessionClicked(session: session)
